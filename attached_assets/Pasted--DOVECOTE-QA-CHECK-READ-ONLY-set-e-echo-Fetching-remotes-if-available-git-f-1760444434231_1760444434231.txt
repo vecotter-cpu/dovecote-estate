@@ -1,0 +1,112 @@
+# ===== DOVECOTE QA CHECK — READ-ONLY =====
+
+set -e
+
+echo "⏳ Fetching remotes (if available)…"
+git fetch origin >/dev/null 2>&1 || true
+
+# pick compare range (prefer remote)
+RANGE="origin/main..origin/seo_perf_pass"
+git rev-parse --verify origin/main >/dev/null 2>&1 || RANGE="main..seo_perf_pass"
+git rev-parse --verify seo_perf_pass >/dev/null 2>&1 || { echo "❌ Branch seo_perf_pass not found. Run the earlier script to create it."; exit 1; }
+
+echo ""
+echo "=== 1) BRANCH / DIFF STATUS ==="
+echo "Compare range: $RANGE"
+echo "Changed files:"
+git diff --name-status $RANGE || true
+
+echo ""
+echo "=== 2) PROTECTED PATHS CHECK (JDR / Lots / Packages) ==="
+PROTECT_REGEX='(JDR|Packages|Package|HomePackages|House.*Land|AvailableLots|Lots/|Lot/|Listings|Listing|src/data/|server/data/|public/.*/(packages|lots|jdr|listings|homes|floorplans)/)'
+if git diff --name-only $RANGE | grep -E "$PROTECT_REGEX" >/dev/null 2>&1; then
+  echo "❌ Found changes in protected paths:"
+  git diff --name-only $RANGE | grep -E "$PROTECT_REGEX" || true
+else
+  echo "✅ No changes in protected JDR / Available Lots / data / images."
+fi
+
+echo ""
+echo "=== 3) SEO HEAD CHECK (index.html) ==="
+# try common locations for index.html
+IDX=""
+for p in "index.html" "client/index.html" "public/index.html"; do
+  [ -f "$p" ] && IDX="$p" && break
+done
+if [ -z "$IDX" ]; then
+  echo "⚠️ index.html not found in ./, ./client, or ./public — skip head check."
+else
+  echo "Using $IDX"
+  node - <<'NODE'
+    const fs=require('fs');
+    const path=require('path');
+    const idx=process.argv[2];
+    const html=fs.readFileSync(idx,'utf8');
+    const head=(html.match(/<head[\s\S]*?<\/head>/i)||[""])[0];
+
+    function has(re){ return re.test(head); }
+    function show(name, ok){ console.log((ok?"✅":"❌"), name); }
+
+    console.log("— Title/Description/Robots/Canonical");
+    show("title", /<title>.*Dovecote Estate.*<\/title>/i.test(head));
+    show("meta description", /<meta[^>]+name=["']description["'][^>]+content=/i.test(head));
+    show("meta robots index/follow", /<meta[^>]+name=["']robots["'][^>]+(index|follow)/i.test(head));
+    show("canonical", /<link[^>]+rel=["']canonical["'][^>]+href=["']https:\/\/dovecoteestate\.com\.au\/["']/i.test(head));
+
+    console.log("— Open Graph / Twitter");
+    show("og:title", /property=["']og:title["']/i.test(head));
+    show("og:description", /property=["']og:description["']/i.test(head));
+    show("og:image 1200x630", /property=["']og:image["'][^>]+1200x630\.jpg/i.test(head));
+    show("twitter:card summary_large_image", /name=["']twitter:card["'][^>]+summary_large_image/i.test(head));
+
+    console.log("— JSON-LD blocks");
+    const jsonld=(head.match(/<script[^>]+type=["']application\/ld\+json["'][\s\S]*?<\/script>/gi)||[]);
+    console.log("JSON-LD scripts found:", jsonld.length);
+    const hasAgent = jsonld.some(s=>/RealEstateAgent|LocalBusiness/i.test(s));
+    const hasWebsite = jsonld.some(s=>/"@type"\s*:\s*"WebSite"/i.test(s));
+    const hasProduct = jsonld.some(s=>/"@type"\s*:\s*"Product"/i.test(s));
+    const hasFAQ = jsonld.some(s=>/"@type"\s*:\s*"FAQPage"/i.test(s));
+    const hasBreadcrumb = jsonld.some(s=>/"@type"\s*:\s*"BreadcrumbList"/i.test(s));
+    show("RealEstateAgent/LocalBusiness", hasAgent);
+    show("WebSite + SearchAction", hasWebsite);
+    show("Product (AggregateOffer)", hasProduct);
+    show("FAQPage", hasFAQ);
+    show("BreadcrumbList", hasBreadcrumb);
+  NODE "$IDX"
+fi
+
+echo ""
+echo "=== 4) SERVER MIDDLEWARE CHECK (compression, helmet, cache, canonical) ==="
+SERVER_PATH=""
+for p in "server/index.ts" "server/index.js" "src/server/index.ts" "src/server.ts" "server.ts" "src/index.ts" "api/server.ts"; do
+  [ -f "$p" ] && SERVER_PATH="$p" && break
+done
+if [ -z "$SERVER_PATH" ]; then
+  echo "ℹ️ No server entry found — skipping middleware check."
+else
+  echo "Using $SERVER_PATH"
+  (grep -q "compression()" "$SERVER_PATH" && echo "✅ compression()" ) || echo "❌ compression() missing"
+  (grep -q "helmet(" "$SERVER_PATH" && echo "✅ helmet()" ) || echo "❌ helmet() missing"
+  (grep -q "Cache-Control" "$SERVER_PATH" && echo "✅ Cache-Control headers" ) || echo "❌ Cache-Control headers missing"
+  (grep -Eq "redirect\\(301,.*dovecoteestate\\.com\\.au" "$SERVER_PATH" && echo "✅ Canonical https + host redirect" ) || echo "❌ Canonical redirect missing"
+fi
+
+echo ""
+echo "=== 5) ROBOTS / SITEMAP / OG ASSET CHECK ==="
+[ -f "public/robots.txt" ] && echo "✅ public/robots.txt present" || echo "❌ robots.txt missing"
+[ -f "public/sitemap.xml" ] && echo "✅ public/sitemap.xml present" || echo "❌ sitemap.xml missing"
+[ -d "public/assets/og" ] && echo "✅ public/assets/og/ exists" || echo "❌ OG folder missing"
+[ -f "public/assets/og/dovecote-og-1200x630.jpg" ] && echo "✅ og image present" || echo "⚠️ og image not found (place 1200x630 JPG at public/assets/og/dovecote-og-1200x630.jpg)"
+
+echo ""
+echo "=== 6) HEAVY IMAGE SCAN (>400 KB) ==="
+find public -type f -regex '.*\.\(png\|jpg\|jpeg\|webp\|svg\)' -exec du -k {} + 2>/dev/null | sort -nr | awk '($1>400){ printf "• %s KB  %s\n", $1, substr($0, index($0,$2)) }' | head -n 15 || true
+
+echo ""
+echo "=== 7) SUMMARY / NEXT STEPS ==="
+echo "• Review the compare view in GitHub:"
+echo "  https://github.com/vecotter-cpu/dovecote-estate/compare/main...seo_perf_pass"
+echo "• If all checks above are ✅, merge the PR."
+echo "• If any ❌ appeared, copy that line to Chatty for an exact fix."
+echo ""
+echo "Done."

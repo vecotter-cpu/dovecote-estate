@@ -1,0 +1,54 @@
+=== DOVECOTE QA (simple) ===
+Compare range: origin/main..origin/seo_perf_pass
+
+— Changed files —
+A	.seo-protect.txt
+A	attached_assets/Pasted--0-SAFETY-FIRST-create-a-branch-snapshot-git-add-A-git-commit-m-pre-seo-snapshot-ec-1760441170266_1760441170267.txt
+A	"attached_assets/Screenshot 2025-10-14 at 9.49.31\342\200\257pm_1760438986593.png"
+M	client/index.html
+M	client/src/components/footer.tsx
+M	package-lock.json
+M	package.json
+M	server/index.ts
+
+— index.html checks —
+Found client/index.html
+7:    <title>Premium Coastal Land & House Packages | Dovecote Estate, Stanley Tasmania</title>
+8:    <meta name="description" content="Discover Dovecote Estate, Stanley's premier coastal subdivision with ocean views, heritage charm and future growth potential. Land lots from $254K and designer home packages from $645K." />
+9:    <meta name="robots" content="index,follow,max-image-preview:large" />
+13:    <link rel="canonical" href="https://dovecoteestate.com.au/" />
+16:    <meta property="og:title" content="Premium Coastal Land & House Packages | Dovecote Estate, Stanley Tasmania" />
+17:    <meta property="og:description" content="Premium residential land and house packages in Stanley, Tasmania. Ocean views, walk to beaches, The Nut and the marina." />
+27:    <meta name="twitter:card" content="summary_large_image" />
+44:    <script type="application/ld+json">
+109:    <script type="application/ld+json">
+151:    <script type="application/ld+json">
+174:    <script type="application/ld+json">
+
+— server middleware checks —
+Found server/index.ts
+13:app.use(helmet({ 
+19:app.use(compression());
+24:    res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+26:    res.setHeader("Cache-Control", "no-cache");
+39:    return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
+
+— robots / sitemap / OG asset —
+robots.txt: OK
+sitemap.xml: OK
+public/assets/og/: OK
+total 0
+
+— Heavy images (>400 KB) —
+• 3648 KB  public/assets/Screen_Shot_2025-07-08_at_4.22.11_pm_1751955897101.png
+• 3648 KB  public/assets/Screen Shot 2025-07-08 at 4.22.11 pm_1751955897101.png
+• 3628 KB  public/assets/Screen_Shot_2025-07-08_at_4.22.25_pm_1751955897100.png
+• 3628 KB  public/assets/Screen Shot 2025-07-08 at 4.22.25 pm_1751955897100.png
+• 3496 KB  public/assets/Screen_Shot_2025-07-08_at_4.21.33_pm_1751955897102.png
+• 3496 KB  public/assets/Screen Shot 2025-07-08 at 4.21.33 pm_1751955897102.png
+• 3344 KB  public/assets/Screen_Shot_2025-07-08_at_4.21.39_pm_1751955897102.png
+• 3344 KB  public/assets/Screen Shot 2025-07-08 at 4.21.39 pm_1751955897102.png
+• 3252 KB  public/assets/Screen_Shot_2025-07-08_at_4.21.57_pm_1751955897101.png
+• 3252 KB  public/assets/Screen Shot 2025-07-08 at 4.21.57 pm_1751955897101.png
+• 3168 KB  public/assets/Screen_Shot_2025-07-08_at_4.21.50_pm_1751955897102.png
+• 3168 KB  public/assets/Screen Shot 2025-07-08 at 4.21.50 pm_1751955897102.png
