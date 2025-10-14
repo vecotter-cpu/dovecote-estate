@@ -2,10 +2,44 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
+import compression from "compression";
+import helmet from "helmet";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Security middleware
+app.use(helmet({ 
+  referrerPolicy: { policy: "no-referrer-when-downgrade" }, 
+  contentSecurityPolicy: false 
+}));
+
+// Compression middleware for better performance
+app.use(compression());
+
+// Caching headers for static assets
+app.use((req, res, next) => {
+  if (/\.(js|css|png|jpe?g|webp|svg|woff2|ico)$/i.test(req.path)) {
+    res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+  } else if (req.path.endsWith(".html")) {
+    res.setHeader("Cache-Control", "no-cache");
+  }
+  next();
+});
+
+// Canonical redirect (production only)
+app.use((req, res, next) => {
+  const host = req.headers.host || "";
+  const isProd = process.env.NODE_ENV === "production";
+  const canonicalHost = "dovecoteestate.com.au";
+  const isHttps = (req.headers["x-forwarded-proto"] || req.protocol) === "https";
+  
+  if (isProd && (host !== canonicalHost || !isHttps)) {
+    return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
+  }
+  next();
+});
 
 // Serve attached assets
 app.use('/attached_assets', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets')));
