@@ -136,12 +136,10 @@ export default function Footer() {
 
         {/* SEO-Rich Description */}
         <div className="mt-10 pt-8 border-t border-white/15">
-          <div className="text-sm text-[#E8E6E2] leading-relaxed max-w-5xl mx-auto">
-            <p className="mb-3">
-              <strong className="text-white">Dovecote Estate Stanley Tasmania</strong> - A premium coastal residential subdivision in Circular Head, offering land lots from $254,000 and JDR house and land packages from $645,000. Our exclusive location provides walking access to The Nut State Reserve, Godfrey&apos;s Beach, Stanley Golf Club, and the developing Stanley Marina - combining heritage coastal charm with modern living infrastructure.
-            </p>
-            <p className="text-xs opacity-90">
-              Situated in one of Tasmania's most sought-after coastal locations, residents enjoy proximity to beaches, golf, wilderness experiences, and Melbourne connectivity via nearby Wynyard Airport. Experience authentic coastal living where community, natural beauty, and investment value converge.
+          <div className="text-sm text-[#E8E6E2] leading-relaxed max-w-3xl mx-auto">
+            <p>
+              Dovecote Estate is a premium coastal residential subdivision in Stanley, Tasmania. 
+              Serviced residential land and curated house &amp; land packages from $254,000, within walking distance of beaches, The Nut, the marina and the golf club.
             </p>
           </div>
         </div>
