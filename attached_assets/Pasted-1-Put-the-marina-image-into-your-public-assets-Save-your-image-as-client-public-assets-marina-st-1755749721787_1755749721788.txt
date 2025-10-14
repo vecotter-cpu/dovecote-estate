@@ -1,0 +1,252 @@
+1) Put the marina image into your public assets
+
+Save your image as:
+
+client/public/assets/marina/stanley-marina.jpg
+
+
+(If you use a different name/path, update the MARINA_IMG constant below.)
+
+2) Create/replace these components
+A) client/src/components/marina-factor.tsx (includes the image + tasteful disclaimer)
+const MARINA_IMG = "/assets/marina/stanley-marina.jpg";
+
+export default function MarinaFactor() {
+  return (
+    <section id="marina" className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold">The Marina Factor (Planning Stage)</h2>
+          <p className="mt-3 text-gray-600 text-base md:text-lg">
+            A proposed marina is currently under consideration. If realised, it would anchor Stanley as a premier coastal
+            destination and amplify lifestyle, tourism and investment appeal.
+          </p>
+        </header>
+
+        {/* Imagery */}
+        <figure className="mt-8 overflow-hidden rounded-2xl border bg-white">
+          <a href={MARINA_IMG} target="_blank" rel="noreferrer" aria-label="Open marina image in a new tab">
+            <img
+              src={MARINA_IMG}
+              alt="Illustrative marina environment: berths, breakwater and waterfront amenities"
+              className="w-full h-[260px] md:h-[420px] object-cover"
+              loading="lazy"
+            />
+          </a>
+          <figcaption className="px-4 py-3 text-xs text-gray-500">
+            Concept reference only. Final design, location and scope subject to planning and approvals.
+          </figcaption>
+        </figure>
+
+        {/* Benefits grid */}
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Destination Magnet</h3>
+            <p className="mt-2 text-gray-600">
+              Attracts yachts, recreational boats and potentially cruise traffic—lifting year-round visitation.
+            </p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Economic Momentum</h3>
+            <p className="mt-2 text-gray-600">
+              Jobs, services and hospitality uplift from new marine activity and supporting businesses.
+            </p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Capital Growth</h3>
+            <p className="mt-2 text-gray-600">
+              Increased demand for housing and accommodation can put upward pressure on values.
+            </p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">First-Mover Advantage</h3>
+            <p className="mt-2 text-gray-600">
+              Dovecote owners are well placed to benefit if the project proceeds.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-6 text-xs text-gray-500">
+          *Marina proposal status: planning stage. Timeframes, approvals and outcomes are not guaranteed and may change.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+B) client/src/components/why-invest.tsx (tidy, premium tone — covers your bullets)
+export default function WhyInvest() {
+  return (
+    <section id="why-invest" className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-5">
+          <h2 className="text-3xl md:text-4xl font-bold">Why Invest in Dovecote Estate?</h2>
+        </div>
+        <div className="md:col-span-7 space-y-5 text-gray-700 text-lg">
+          <p><strong>Not just land</strong>—a foothold in one of Tasmania’s most exciting growth stories.</p>
+          <p>Stanley is central to a bold vision with new maritime infrastructure in planning, including a potential marina.</p>
+          <p>Buyers are positioning early in a high-growth coastal opportunity with scarcity on their side.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+C) client/src/components/location-highlights.tsx
+export default function LocationHighlights() {
+  return (
+    <section id="location" className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold">Location Highlights</h2>
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Fast Access</h3>
+            <p className="mt-2 text-gray-600">~40 mins to Wynyard Airport (multiple direct flights to Melbourne daily).</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Walkable</h3>
+            <p className="mt-2 text-gray-600">Stanley Nut, Godfreys Beach, Tatlows Bay and Stanley Golf Club.</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Village Lifestyle</h3>
+            <p className="mt-2 text-gray-600">Cafés, schools and heritage streets close by.</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Nature Gateway</h3>
+            <p className="mt-2 text-gray-600">Gateway to the Tarkine wilderness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+D) client/src/components/estate-features.tsx (uses your exact bullets)
+export default function EstateFeatures() {
+  return (
+    <section id="estate-features" className="py-16 md:py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-5">
+          <h2 className="text-3xl md:text-4xl font-bold">Development Ready</h2>
+          <p className="mt-3 text-gray-600">
+            Residential scarcity in a tightly held, award-winning coastal town.
+          </p>
+        </div>
+        <div className="lg:col-span-7 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Full Infrastructure</h3>
+            <p className="mt-2 text-gray-600">Connected to main sewerage, power and storm water.</p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Premium Location</h3>
+            <p className="mt-2 text-gray-600">Walking distance to beaches, cafés & attractions.</p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">NBN Ready</h3>
+            <p className="mt-2 text-gray-600">High-speed internet connectivity ready.</p>
+          </div>
+          <div className="rounded-2xl border bg-white p-5">
+            <h3 className="font-semibold">Quality Roads</h3>
+            <p className="mt-2 text-gray-600">Sealed entrances with footpaths.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+E) client/src/components/why-now.tsx
+export default function WhyNow() {
+  return (
+    <section id="why-now" className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold">Why Now?</h2>
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Scarcity + Demand</h3>
+            <p className="mt-2 text-gray-600">Land in Stanley is almost impossible to find.</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Tourism Growth</h3>
+            <p className="mt-2 text-gray-600">Visitors increasing year on year.</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Future Infrastructure</h3>
+            <p className="mt-2 text-gray-600">Planned projects could redefine Stanley’s profile and values.</p>
+          </div>
+          <div className="rounded-2xl border p-5">
+            <h3 className="font-semibold">Lifestyle & Legacy</h3>
+            <p className="mt-2 text-gray-600">Ideal for a dream build or long-term investment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+F) client/src/components/final-cta.tsx
+import { Link } from "wouter";
+
+export default function FinalCTA() {
+  return (
+    <section id="enquire" className="py-16 md:py-24 bg-slate-50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold">
+          This is more than land — it’s your entry into Stanley’s next chapter.
+        </h2>
+        <p className="mt-4 text-gray-700 text-lg">
+          Secure your block before values lift further.
+        </p>
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <Link href="/packages" className="rounded-2xl px-5 py-3 text-sm font-medium bg-black text-white">
+            View House &amp; Land Packages
+          </Link>
+          <a href="#contact" className="rounded-2xl px-5 py-3 text-sm font-medium border">
+            Enquire Now
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+3) Wire into your home page (keeping headline, imagery, lots & JDR packages intact)
+
+In client/src/pages/home.tsx, just import and place these between your existing sections. Keep your hero imagery and update the hero headline to your exact text (“Stanley, a Harbour of Heritage and Growth”).
+
+// NEW imports
+import WhyInvest from "@/components/why-invest";
+import MarinaFactor from "@/components/marina-factor";
+import LocationHighlights from "@/components/location-highlights";
+import EstateFeatures from "@/components/estate-features";
+import WhyNow from "@/components/why-now";
+import FinalCTA from "@/components/final-cta";
+
+// ...inside the return, after About/Gallery and BEFORE Lots/Homes:
+<WhyInvest />
+<MarinaFactor />
+<LocationHighlights />
+<EstateFeatures />
+
+{/* Keep these exactly as-is */}
+<LotsSection />
+<LifestyleSection />
+<HomesSection />
+
+<WhyNow />
+<FinalCTA />
+
+Guarantees / what stays unchanged
+
+Headline remains: “Stanley, a Harbour of Heritage and Growth.”
+
+All imagery you already have remains in place (we only add one new marina image block).
+
+Available Lots: unchanged data and layout.
+
+JDR House & Land Packages: unchanged listing, imagery, specs, features, and floor-plan click-throughs.
+
+If you want, I can also add a tiny “Learn more about the marina” expandable Q&A below the image to handle common questions (timelines, approvals, what “planning stage” means) — totally optional, but it keeps the section clear and compliant.
+
+You said:
+that would be great.  thank you chatty.  Also if you can think of any imagery to add that would be fitting and an improvement that would be great.  

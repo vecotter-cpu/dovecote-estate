@@ -1,0 +1,88 @@
+Goal: Upgrade typography to a premium pairing that matches Roma (high-contrast display) while keeping the site modern and clean.
+Headings/Logo: Prata (closest free alternative to Roma)
+Body/UI: Inter
+
+Do these edits exactly:
+
+1) Add Google Fonts in client/index.html (inside <head> before scripts). If the tags already exist, replace them:
+
+<!-- Fonts: Prata (headings/logo) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet" />
+
+
+2) Configure Tailwind font families. Open tailwind.config.ts (or .js if that’s what exists) and merge this under theme.extend.fontFamily (preserve anything else already there):
+
+// tailwind.config.(ts|js)
+export default {
+  theme: {
+    extend: {
+      fontFamily: {
+        heading: ['Prata', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif'],
+      },
+    },
+  },
+  // keep the rest of the config unchanged
+}
+
+
+3) Global base styles. Open client/src/index.css (or the main Tailwind CSS file where @tailwind base; lives) and append this after the Tailwind directives:
+
+/* Typography base */
+@layer base {
+  html { font-family: theme('fontFamily.sans'); }
+  body { @apply text-gray-800 antialiased; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.heading');
+    @apply tracking-tight text-gray-900;
+  }
+
+  /* Suggested sizes - adjust if needed */
+  h1 { @apply text-4xl md:text-5xl leading-tight; }
+  h2 { @apply text-3xl md:text-4xl leading-snug; }
+  h3 { @apply text-2xl md:text-3xl; }
+  p  { @apply text-base md:text-lg; }
+}
+
+
+4) Apply Prata to the logo/title. In client/src/components/navigation.tsx (or your Logo component), ensure the brand text uses the heading font and a clear size. If the logo is text, wrap it like this:
+
+// inside Navigation brand area
+<Link href="/" className="inline-flex items-center gap-2" aria-label="Dovecote Estate Home">
+  <span className="font-heading text-2xl md:text-3xl tracking-tight">
+    Dovecote
+  </span>
+</Link>
+
+
+(If you have a different brand name or a separate Logo component, apply className="font-heading tracking-tight" there.)
+
+5) Unify buttons (optional but recommended). Wherever primary/secondary CTAs are defined (shared Button or per component), ensure these classes:
+
+// Primary
+className="rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
+
+// Secondary
+className="rounded-2xl px-5 py-3 text-sm font-medium border border-forest-green text-forest-green bg-white hover:bg-forest-green/5 transition"
+
+
+6) Ensure JSON imports work (for packages pages). In tsconfig.json, make sure this option exists (add without removing existing options):
+
+{
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
+}
+
+
+Acceptance criteria:
+
+Headings & logo render in Prata; body copy renders in Inter.
+
+No layout shifts (fonts load via Google with display=swap).
+
+Buttons look consistent; heading hierarchy is clear across Home, /packages, and /packages/:slug.
+
+Do not change any copy, layout, or colors beyond typography and the optional button class standardization.

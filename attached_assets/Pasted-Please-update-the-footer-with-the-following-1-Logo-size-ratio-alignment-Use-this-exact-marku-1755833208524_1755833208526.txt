@@ -1,0 +1,64 @@
+Please update the footer with the following:
+
+1) Logo (size, ratio, alignment)
+
+Use this exact markup/classes (or equivalent) for the footer logo:
+
+<img
+  src="/assets/logo-footer.svg"
+  alt="Dovecote Estate Stanley"
+  class="block h-24 md:h-28 w-auto max-w-[220px] object-contain mt-0"
+/>
+
+
+Remove any inline width/height causing distortion.
+
+Ensure the footer inner wrapper uses a 3-col grid with top alignment and shared content width:
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+
+
+The three columns (Logo block, Quick Links, Contact) must start at the same top height (items-start, no extra mt-* on column wrappers or headings).
+
+2) Tagline under logo (center + readable)
+
+Place the tagline directly under the logo and center it beneath the logo’s width:
+
+<p class="mt-4 max-w-[36ch] text-center md:text-left md:max-w-prose text-gray-300">
+  Premium coastal living in Tasmania's most exclusive residential subdivision.
+</p>
+
+
+On mobile, text-center; on desktop, md:text-left to align with the column.
+
+3) Social icons row (centered, consistent)
+
+Position socials beneath the tagline, aligned visually with the logo block:
+
+<div class="mt-4 flex items-center justify-center md:justify-start gap-4 text-amber-300/80">
+  <!-- icons -->
+</div>
+
+
+Icon sizing: h-5 w-5 (or equivalent), with hover state:
+hover:text-amber-300 transition.
+
+4) Quick Links & Contact headings (normalize)
+
+Ensure headings have no top drift:
+class="text-base font-semibold tracking-tight mt-0 mb-4"
+
+5) Divider & legal row
+
+Keep divider aligned to the same container width:
+<hr class="mt-10 border-white/10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" />
+
+Acceptance criteria
+
+Logo shows at correct proportions (no squish), max width ~220px, aligned to the same top line as “Quick Links” and “Contact”.
+
+Tagline is centered under the logo on mobile, left-aligned on desktop; width visually balanced (no overly long line length).
+
+Social icons sit directly under the tagline, centered on mobile / left on desktop, with consistent sizing and hover.
+
+Overall footer aligns to the site’s content grid and looks balanced across breakpoints.

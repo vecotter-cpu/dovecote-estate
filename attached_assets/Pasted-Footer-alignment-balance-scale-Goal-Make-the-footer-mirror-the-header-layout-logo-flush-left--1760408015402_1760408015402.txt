@@ -1,0 +1,124 @@
+Footer alignment, balance & scale
+
+Goal:
+
+Make the footer mirror the header layout: logo flush left, Quick Links centered, Contact flush right.
+
+Increase visual weight (type sizes/spacing) while staying elegant.
+
+Keep it clean on mobile (stacked), and crisp on desktop (3-column layout).
+
+Use consistent paddings with the header: px-6 sm:px-10 lg:px-12.
+
+1) Replace your footer component (Footer.tsx)
+export default function Footer() {
+  return (
+    <footer className="bg-[#0E300E] text-white pt-10 pb-8">
+      {/* container mirrors header paddings */}
+      <div className="px-6 sm:px-10 lg:px-12 max-w-7xl mx-auto w-full">
+        {/* 3-col layout on desktop, stacked on mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          {/* LEFT: Logo + tagline */}
+          <div className="flex flex-col">
+            <div className="flex flex-col leading-tight">
+              <span className="font-prata text-[1.6rem] tracking-[0.02em] lg:text-[1.9rem]">
+                DOVECOTE ESTATE
+              </span>
+              <span className="font-inter uppercase tracking-[0.22em] text-[0.9rem] text-[#E8E6E2] mt-[-0.12rem]">
+                STANLEY
+              </span>
+            </div>
+
+            <p className="mt-4 text-sm text-[#E8E6E2] max-w-sm">
+              Premium coastal living in Tasmania&apos;s most exclusive residential subdivision.
+            </p>
+
+            {/* Social (optional) */}
+            <div className="mt-4 flex items-center gap-4 text-[#EAC04B]">
+              {/* Add icons if you want */}
+              {/* <a href="#" aria-label="Instagram">@</a> */}
+            </div>
+          </div>
+
+          {/* CENTER: Quick Links (balanced & readable) */}
+          <nav className="flex flex-col items-start lg:items-center">
+            <h4 className="font-inter text-sm uppercase tracking-[0.18em] text-[#EAC04B] mb-3">
+              Quick Links
+            </h4>
+
+            <ul className="grid grid-cols-2 gap-x-10 gap-y-2 text-[0.98rem]">
+              <li><a className="hover:underline underline-offset-4" href="/">Home</a></li>
+              <li><a className="hover:underline underline-offset-4" href="/packages">Packages</a></li>
+              <li><a className="hover:underline underline-offset-4" href="/#lots">Available Lots</a></li>
+              <li><a className="hover:underline underline-offset-4" href="/marina">Marina</a></li>
+              <li><a className="hover:underline underline-offset-4" href="/lifestyle">Lifestyle</a></li>
+              <li><a className="hover:underline underline-offset-4" href="/privacy">Privacy Policy</a></li>
+              {/* add Terms if you have a route */}
+            </ul>
+          </nav>
+
+          {/* RIGHT: Contact (flush right on desktop) */}
+          <div className="flex flex-col items-start lg:items-end">
+            <h4 className="font-inter text-sm uppercase tracking-[0.18em] text-[#EAC04B] mb-3">
+              Contact
+            </h4>
+
+            <div className="text-[0.98rem] space-y-1">
+              <p className="text-white">0455 569 646</p>
+              <p>
+                <a className="hover:underline underline-offset-4" href="mailto:info@dovecoteestate.com.au">
+                  info@dovecoteestate.com.au
+                </a>
+              </p>
+              <p className="text-[#E8E6E2]">40 Dovecote Rd, Stanley</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider line for finish */}
+        <div className="mt-8 border-t border-white/15 pt-6">
+          <div className="text-center text-xs text-[#E8E6E2]">
+            © {new Date().getFullYear()} Dovecote Estate Stanley. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+2) Typography & color consistency (optional polish)
+
+Add to your global CSS if not present yet:
+
+html { -webkit-font-smoothing: antialiased; }
+
+footer a { color: #FFFFFF; }
+footer a:hover { color: #EAC04B; }
+
+3) Spacing & scale notes
+
+The footer logo now uses the same lock-up as the header (Prata / Inter all caps), at desktop-weighted sizes so it doesn’t feel timid against the strong dark background.
+
+Quick Links are centered (column grid) for symmetry with the header’s center mass.
+
+Contact is hard-right (just like the hamburger/contact pair in the header).
+
+Paddings px-6 sm:px-10 lg:px-12 match the header, so left and right edges align across the site.
+
+4) Accessibility & contrast
+
+White and gold on #0E300E pass contrast nicely.
+
+Link hover underline improves clarity.
+
+Divider line uses border-white/15 for a subtle, premium finish.
+
+✅ Acceptance criteria
+
+Footer logo sits flush left, Quick Links centered, Contact flush right (mirrors header).
+
+Increased visual weight: larger wordmark, clear link sizes, balanced spacing.
+
+Mobile stacks cleanly (logo → links → contact).
+
+Colors, fonts, and spacings align with your Brand Guide.

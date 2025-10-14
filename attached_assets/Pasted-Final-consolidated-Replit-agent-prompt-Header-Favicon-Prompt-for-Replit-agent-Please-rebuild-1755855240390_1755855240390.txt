@@ -1,0 +1,194 @@
+Final consolidated Replit agent prompt (Header + Favicon)
+
+Prompt for Replit agent:
+
+“Please rebuild my site header using the new logo file I’ve uploaded:
+dovecote_estate_logo_TIGHT.png
+
+and the inspiration screenshot I’ve also provided:
+inspiration header.png
+
+Also set the site favicon using the two new files I’ve uploaded:
+
+favicon-de-light.png (black “DE” on white, for light theme)
+
+favicon-de-dark.png (white “DE” on black, for dark theme)
+
+Design instructions:
+
+Place the new logo on the left-hand side of the header.
+
+The logo should be as large as possible while still balanced and elegant, scaling larger on desktop breakpoints.
+
+Keep the navigation links and Contact button on the right-hand side.
+
+Keep the hamburger menu for mobile responsiveness.
+
+Style the Contact button as:
+
+White background
+
+Black text
+
+Black oval outline (pill-shaped border).
+
+Add a subtle bottom border/shadow to separate the header from the content, similar to the inspiration.
+
+Ensure the header has generous breathing room, subtle shadow, and matches the minimal luxury feel of the inspiration screenshot.
+
+The header should be responsive, centered within a max-width container, and sticky at the top.
+
+Please configure the favicon so that browsers show favicon-de-light.png in light mode and favicon-de-dark.png in dark mode.
+
+Example HTML structure:
+<head>
+  <!-- Favicon setup -->
+  <link rel="icon" href="/assets/favicon-de-light-32.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/assets/favicon-de-dark-32.png" media="(prefers-color-scheme: dark)">
+</head>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <img src="/assets/dovecote_estate_logo_TIGHT.png" 
+           alt="Dovecote Estate Stanley" class="brand-logo" />
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/property">Property</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+
+    <a href="/contact" class="contact-btn">Contact</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+CSS (header, logo scaling, Contact button, hamburger menu, subtle shadow):
+:root {
+  --header-bg: #fff;
+  --text: #000;
+  --container: 1200px;
+  --pad-x: 32px;
+  --pad-y: 18px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--header-bg);
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand-logo {
+  display: block;
+  height: 44px; /* default size */
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 1200px) {
+  .brand-logo {
+    height: 58px; /* larger logo on desktop */
+  }
+}
+
+.main-nav {
+  margin-left: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.main-nav a:hover {
+  opacity: .7;
+}
+
+.contact-btn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 9999px; /* pill shape */
+  padding: 8px 20px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.contact-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .main-nav { display: none; }
+  .contact-btn { display: none; }
+  .nav-toggle { display: block; margin-left: auto; }
+}
+
+body.nav-open .main-nav,
+body.nav-open .contact-btn {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 100%;
+  background: #fff;
+  padding: 16px 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+JavaScript for hamburger toggle:
+// header.js
+const btn = document.querySelector('.nav-toggle');
+const body = document.body;
+
+if (btn) {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    body.classList.toggle('nav-open', !expanded);
+  });
+}
+
+
+Please implement the header using this structure and CSS so it looks like my inspiration screenshot (inspiration header.png), with the logo on the left (scaling larger on desktop), nav + Contact button on the right, a clean minimal hamburger menu for mobile, and a favicon showing ‘DE’ — using favicon-de-light.png for light mode and favicon-de-dark.png for dark mode.”

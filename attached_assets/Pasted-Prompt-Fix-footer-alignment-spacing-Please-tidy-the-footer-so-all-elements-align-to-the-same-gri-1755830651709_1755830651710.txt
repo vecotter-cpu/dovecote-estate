@@ -1,0 +1,70 @@
+Prompt: Fix footer alignment & spacing
+
+Please tidy the footer so all elements align to the same grid and baseline.
+
+Layout & grid
+
+Use a 3-column grid inside the footer container with equal column widths on desktop:
+grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+
+Column 1 = Logo + tagline + socials
+Column 2 = Quick Links (two-column list)
+Column 3 = Contact
+
+Ensure the left padding matches the site’s main content container so the footer logo aligns vertically with the header logo.
+
+Column alignment
+
+Top-align all three columns (no vertical drift).
+
+Set consistent heading styles for “Quick Links” and “Contact” (same font-size/weight/margin). Example:
+text-base font-semibold tracking-tight mb-4
+
+Convert Quick Links to a two-column list on desktop:
+grid grid-cols-2 gap-x-8 gap-y-2
+
+Logo block (Column 1)
+
+Keep reduced logo size (≈50–60% of previous).
+
+Left-align the logo with the content grid; remove any extra left margin that pushes it inward.
+
+Tagline width should not exceed 32ch; apply: max-w-prose text-gray-300 mt-4.
+
+Social icons row: consistent 16px icons, equal gaps (flex gap-4 mt-4 items-center), vertically centered.
+
+Vertical rhythm
+
+Use consistent section spacing:
+
+Between logo → tagline → socials: mt-4 each.
+
+Between links and legal bar: mt-10 md:mt-12.
+
+Divider & legal bar
+
+The thin divider should span the same max-width as the grid and align with its left edge:
+<hr class="mt-10 border-white/10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" />
+
+Legal row (copyright, ABN, disclaimer) centered, small and readable:
+text-xs text-white/60 text-center mt-4 space-y-1
+
+Ensure the divider and legal row line up with the grid (no extra offsets).
+
+Responsive
+
+On mobile: stack columns (Logo → Links → Contact) with gap-8, keep left alignment, and maintain readable tap targets.
+
+Do not change
+
+Copy, links, phone/email, ABN, or colors—only alignment, spacing, and layout.
+
+Acceptance
+
+Footer logo left-aligned to the same vertical grid line as the header logo.
+
+Three columns top-aligned and visually balanced.
+
+Quick Links display in two neat columns on desktop, single column on mobile.
+
+Divider and legal text align perfectly with the content grid.

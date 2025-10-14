@@ -1,0 +1,107 @@
+Prompt — Convert header to white bar with black logo + modern controls
+
+Please update the site header as follows (desktop + mobile):
+
+Header container
+
+Make the header a separate white bar that sits on top of the hero image.
+
+Keep it sticky with a subtle divider/shadow when scrolling.
+
+Use a compact, modern height.
+
+Implementation (Tailwind example):
+
+<header
+  className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-black/10"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    {/* Left: Logo */}
+    {/* Center (optional): nav links if you have them */}
+    {/* Right: Contact + Hamburger */}
+  </div>
+</header>
+
+Logo (black on white)
+
+Invert the DOVECOTE ESTATE • STANLEY logo to black (or use a black SVG/PNG).
+
+Keep aspect ratio; size should be tidy (not oversized).
+
+Example:
+
+<img
+  src="/assets/logo-wordmark-black.svg"  // use black/mono version
+  alt="Dovecote Estate Stanley"
+  className="h-8 w-auto"
+  decoding="async"
+/>
+
+
+Optional (header-only lockup): If available, use a single-line wordmark (e.g., “DOVECOTE ESTATE”) for the header only, while keeping the full stacked lockup elsewhere. Do not change any other brand uses.
+
+Contact button (make smaller, white with black border)
+
+Reduce overall size to feel light and modern.
+
+Style: white fill, black border/text.
+
+Example:
+
+<a
+  href="#contact"
+  className="rounded-xl px-4 py-2 text-sm font-medium border border-black text-black bg-white hover:bg-black/5 transition"
+>
+  Contact
+</a>
+
+Hamburger (keep, align, and size to match)
+
+Keep the hamburger; ensure it visually balances with the reduced Contact button.
+
+Size: ~22–24px icon; 40–44px touch target.
+
+Example:
+
+<button
+  aria-label="Open menu"
+  className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-lg hover:bg-black/5"
+>
+  {/* your icon */}
+</button>
+
+Spacing & alignment
+
+Left: Logo
+
+Right: Contact button + Hamburger (with gap-2 or gap-3).
+
+Ensure consistent vertical centering and padding: header height h-16.
+
+On mobile, keep the same layout; Contact and hamburger remain on the right.
+
+Scroll polish
+
+When the page scrolls (>0), keep border-b border-black/10 and bg-white/95 backdrop-blur.
+
+No layout shift should occur.
+
+Do not change
+
+Navigation links, routes, or anchor behavior.
+
+Any hero content, imagery, or section ordering.
+
+Acceptance criteria
+
+Header is a clean white bar (sticky) above the hero image.
+
+Logo renders black and crisp on white; proportions preserved.
+
+Contact button is smaller, white with black border, and feels modern.
+
+Hamburger remains, sized to match, with adequate tap target.
+
+Spacing, alignment, and responsiveness are consistent across breakpoints.
+
+Optional single-line logo lockup can be used in header only (if available), without changing other brand placements.

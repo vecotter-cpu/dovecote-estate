@@ -1,0 +1,61 @@
+Rename Home & Land Packages + Taglines (SEO-friendly)
+
+You are editing the Dovecote Estate website.
+Update the “Home & Land Packages” section with premium, lifestyle-driven, SEO-friendly names and one-line taglines that reflect coastal Stanley elegance (heritage, calm, natural beauty). Do not change pricing, images, features, or layout.
+
+Tasks:
+
+Locate the Home & Land Packages component (e.g., HomePackages.tsx, HomePackagesSection.tsx, or similar).
+
+For the four visible cards, update the titles and insert a short tagline under each title (keep existing class names/structure).
+
+If each card image has an alt attribute, update it as specified. If not, add one.
+
+Preserve all lot numbers exactly.
+
+Verify responsive rendering on desktop and mobile.
+
+Rename + Tagline + Alt text:
+
+Current: JDR 197 – Lot 17
+New title: Seaside Serenity – Lot 17
+Tagline (new subline under title): A refined coastal retreat with light-filled living and effortless indoor–outdoor flow.
+Image alt: Seaside Serenity coastal house and land package in Stanley, Tasmania
+
+Current: JDR 228 – Lot 15
+New title: The Horizon – Lot 15
+Tagline: Expansive family living with generous entertaining spaces and sweeping coastal outlooks.
+Image alt: The Horizon family coastal home and land package, Stanley Tasmania
+
+Current: JDR 185 – Lot 23
+New title: The Bayview – Lot 23
+Tagline: Classic coastal elegance capturing morning light, sea breezes and everyday comfort.
+Image alt: The Bayview coastal residence house and land package in Stanley Tasmania
+
+Current: JDR 130 – Lot 24
+New title: The Hideaway – Lot 24
+Tagline: A compact designer escape—low-maintenance, stylish and perfectly positioned for weekends.
+Image alt: The Hideaway compact designer coastal home in Stanley Tasmania
+
+Implementation notes:
+
+Insert each tagline in the card body directly beneath the title element (<h3>/<h4>).
+
+Use existing typography classes (Prata for headings, Inter for body). If no suitable class exists, reuse the subtitle/body class used for features text; keep font size modest (e.g., text-sm md:text-base), muted color (e.g., text-neutral-700/90), and mt-1 spacing.
+
+Only change text strings and alt attributes. Do not modify images, prices, feature lists, or button links.
+
+Keep “Lot ##” exactly as shown.
+
+QA checklist:
+
+Titles show the new names with the original lot numbers.
+
+Taglines appear once under each title, wrap neatly, and don’t push buttons off-card on mobile.
+
+Image alt attributes exist and match the new names.
+
+No layout shift, prices and features untouched.
+
+On success, reply:
+✅ House & Land listings updated — Seaside Serenity, The Horizon, The Bayview, and The Hideaway (with taglines and SEO alts).

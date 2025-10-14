@@ -1,0 +1,155 @@
+Please restore the Project Gallery to the homepage and place it immediately beneath the “JDR Home & Land Packages” section and above the next section (keep the rest of the order unchanged). Requirements:
+
+1) Section content
+
+Title: Project Gallery
+
+Subhead (place under title):
+Explore aerial views and master planning of Dovecote Estate Stanley's exclusive coastal subdivision.
+
+Use the image set that previously powered the Project Gallery. If that file is missing, use all images found under client/public/assets/dovecote/gallery/ (or client/public/assets/gallery/) and load them dynamically.
+
+Every image must include a meaningful alt tag (e.g., “Aerial of Dovecote Estate coastline”, “Masterplan render of Dovecote subdivision”).
+
+2) Implementation details (Embla Carousel)
+
+Use the installed embla-carousel-react.
+
+Settings:
+
+loop: true
+
+Autoplay every 5s (pause on hover, resume on mouse leave).
+
+Enable drag/swipe, keyboard arrow navigation, and focus styles.
+
+UI:
+
+Full-width container with consistent aspect ratio (aspect-[16/9] desktop, aspect-[4/5] mobile).
+
+Images object-cover, rounded corners, and subtle shadow.
+
+Include prev/next arrows and dot indicators; dots reflect current slide.
+
+Performance:
+
+loading="lazy" on non-first slides.
+
+Provide srcSet/sizes if available; otherwise ensure images are compressed (~1600–2000px max width).
+
+Prevent layout shift by fixing height via Tailwind aspect-*.
+
+3) Create/replace component
+
+Create (or restore) client/src/components/project-gallery.tsx with an Embla carousel. Example skeleton (adjust imports/paths to match project):
+
+import { useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+
+const IMAGES = [
+  // Prefer the original list used previously.
+  // Fallback: enumerate files under /assets/dovecote/gallery/
+  // Example placeholders – replace with actual filenames in that folder:
+  "/assets/dovecote/gallery/aerial-01.jpg",
+  "/assets/dovecote/gallery/aerial-02.jpg",
+  "/assets/dovecote/gallery/masterplan-01.jpg",
+  "/assets/dovecote/gallery/coastline-01.jpg",
+];
+
+export default function ProjectGallery() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  useEffect(() => {
+    if (!emblaApi) return;
+    let t: any;
+    const play = () => { t = setInterval(() => emblaApi.scrollNext(), 5000); };
+    const stop = () => { if (t) clearInterval(t); };
+    play();
+    emblaApi.on("pointerDown", stop);
+    emblaApi.on("pointerUp", play);
+    return () => stop();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback((idx: number) => emblaApi?.scrollTo(idx), [emblaApi]);
+
+  const selectedIndex = emblaApi?.selectedScrollSnap() ?? 0;
+  const snaps = emblaApi?.scrollSnapList() ?? IMAGES.map((_, i) => i);
+
+  return (
+    <section id="project-gallery" className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold">Project Gallery</h2>
+          <p className="mt-3 text-gray-600 text-base md:text-lg">
+            Explore aerial views and master planning of Dovecote Estate Stanley&apos;s exclusive coastal subdivision.
+          </p>
+        </header>
+
+        <div className="mt-8">
+          <div className="overflow-hidden rounded-2xl shadow" ref={emblaRef}>
+            <div className="flex">
+              {IMAGES.map((src, i) => (
+                <div className="min-w-0 flex-[0_0_100%]" key={src}>
+                  <div className="aspect-[16/9] md:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={src}
+                      alt={
+                        i === 0
+                          ? "Aerial of Dovecote Estate and coastline"
+                          : "Dovecote Estate project gallery image"
+                      }
+                      className="h-full w-full object-cover"
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dots */}
+          <div className="mt-4 flex justify-center gap-2">
+            {snaps.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2.5 w-2.5 rounded-full transition ${
+                  i === selectedIndex ? "bg-gray-900" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                onClick={() => scrollTo(i)}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+4) Insert into the homepage layout
+
+In client/src/pages/home.tsx, import the component and render it directly after the JDR packages section and before the next section:
+
+import ProjectGallery from "@/components/project-gallery";
+
+// ...
+<HomesSection />     {/* JDR Packages */}
+<ProjectGallery />   {/* Insert here */}
+{/* next sections continue... */}
+
+5) Acceptance criteria
+
+Project Gallery appears under JDR Home & Land Packages.
+
+Title + subhead match exactly.
+
+Images auto-rotate (loop) every ~5s, with swipe/keyboard support.
+
+Dots/arrows present (or at least dots) and accessible.
+
+No CLS (layout shift); images maintain aspect ratio and are object-cover.
+
+All images have meaningful alt text.
+
+Performance: lazy-load non-first slides; large images compressed.
+
+If any image paths are unknown, please search the repo for prior gallery assets and restore those first. If missing, use whatever is under /assets/dovecote/gallery/ and keep filenames consistent.

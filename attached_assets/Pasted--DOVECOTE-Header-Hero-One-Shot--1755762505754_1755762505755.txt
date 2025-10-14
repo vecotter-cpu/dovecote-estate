@@ -1,0 +1,85 @@
+
+/* =========================
+   DOVECOTE: Header & Hero One-Shot
+   ========================= */
+
+/* HEADER LAYOUT */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0.5rem 2rem 0.75rem;   /* reduced top padding so logo sits higher */
+}
+
+/* LOGO: make it the hero */
+.logo{ flex:0 0 auto; margin-right:2rem; }
+
+.logo img,
+.header-logo{
+  height:210px !important;       /* desktop hero size */
+  width:auto !important;
+  max-height:none !important;     /* beat any theme caps */
+  object-fit:contain;
+  display:block;
+  margin:0.25rem 0;               /* slight vertical balance */
+}
+
+/* CONTACT BUTTON: visually subordinate */
+.contact-btn{
+  font-size:.9rem;
+  padding:.45rem .9rem;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:999px;
+  color:#fff; text-decoration:none;
+  background:rgba(0,0,0,.22);
+  backdrop-filter:saturate(115%) blur(2px);
+}
+
+/* ========== HERO COPY BALANCE ========== */
+/* Headline */
+.hero h1{
+  font-size:56px;            /* reduced so it doesn't overpower the logo */
+  font-weight:600;
+  letter-spacing:2px;        /* elegant spacing */
+  line-height:1.2;
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+/* Subhead (use .subhead class or h2) */
+.hero h2,
+.hero .subhead{
+  font-size:22px;            /* enlarged for readability */
+  font-weight:400;
+  letter-spacing:0.5px;      /* subtle luxury feel */
+  line-height:1.5;
+  color:rgba(255,255,255,.95);
+  text-shadow:0 1px 3px rgba(0,0,0,.4);
+  max-width:70%;             /* refined block width */
+  margin:0 auto;             /* centered under headline */
+  text-align:center;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:1024px){
+  .site-header{ padding:0.5rem 1.5rem 0.75rem; }
+  .logo img, .header-logo{ height:120px !important; }
+  .contact-btn{ font-size:.85rem; padding:.4rem .8rem; }
+
+  .hero h1{ font-size:44px; }
+  .hero h2, .hero .subhead{ font-size:20px; max-width:80%; }
+}
+
+@media (max-width:600px){
+  .site-header{ padding:0.5rem 1rem 0.6rem; }
+  .logo img, .header-logo{ height:80px !important; }
+  .contact-btn{ font-size:.8rem; padding:.38rem .7rem; }
+
+  .hero h1{ font-size:32px; }
+  .hero h2, .hero .subhead{ font-size:18px; max-width:90%; }
+}
+Image reference (ensure this is your current file path):
+
+<img src="/assets/Dovecote_Estate_Stanley_logo_cropped.png" alt="Dovecote Estate" class="header-logo" />
+
+

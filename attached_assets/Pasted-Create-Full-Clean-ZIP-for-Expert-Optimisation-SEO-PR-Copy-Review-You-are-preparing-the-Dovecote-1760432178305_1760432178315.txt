@@ -1,0 +1,133 @@
+Create Full Clean ZIP for Expert Optimisation, SEO, & PR Copy Review
+
+You are preparing the Dovecote Estate website for a full expert optimisation and professional SEO refinement.
+The goal is to produce one clean, downloadable ZIP that includes everything needed for:
+
+Advanced front-end performance and design review
+
+Back-end (Express + Drizzle + Neon) structure and database efficiency audit
+
+SEO + structured data optimisation (schema, meta, OG/Twitter)
+
+Google Lighthouse/Core Web Vitals improvement plan (target 95 +)
+
+Creation of a press-release-style SEO content block for editorial backlinks and PR distribution
+
+Follow these steps exactly.
+
+🧹 Step 1 – Clean unnecessary build files
+
+Remove all generated, cache, and dependency folders while keeping your working code.
+
+rm -rf node_modules dist .replit replit.nix .cache .vercel .next .turbo .pnpm-store
+
+📁 Step 2 – Ensure essential directories exist
+mkdir -p src public server shared attached_assets drizzle
+
+📦 Step 3 – Create consolidated project ZIP
+
+Bundle only what’s necessary for review:
+
+zip -r dovecote-estate-full.zip \
+src \
+public \
+server \
+shared \
+attached_assets \
+drizzle \
+package.json \
+tsconfig.json \
+vite.config.* \
+drizzle.config.* \
+index.html \
+tailwind.config.* \
+postcss.config.* \
+README.md \
+.env.example \
+.env
+
+
+(Keep .env only if it contains placeholder values — redact sensitive keys.)
+
+🗄️ Step 4 – Include Drizzle migrations/schema
+zip -ur dovecote-estate-full.zip drizzle/*.sql drizzle/*.json drizzle/*.ts
+
+✅ Step 5 – Verify
+ls -lh dovecote-estate-full.zip
+
+
+Ensure file size < 50 MB and that node_modules and dist were not re-added.
+
+🏁 Step 6 – Confirm
+
+Reply:
+
+✅ Dovecote Estate export complete — dovecote-estate-full.zip ready for expert world-class optimisation, Lighthouse audit, and PR-SEO content creation.
+
+💎 Step 7 – Purpose of Export
+
+This archive will allow an expert to:
+
+Optimise React/Vite performance, lazy loading, and caching
+
+Audit Express + Drizzle + Neon data handling
+
+Refine meta, schema, and Open Graph for SEO & shareability
+
+Tune accessibility and heading hierarchy
+
+Implement compression and CDN-level caching
+
+Optimise Core Web Vitals (LCP, CLS, FID/INP < 2.5 s / 0.1 / 100 ms)
+
+Prepare a press-release-quality content block for distribution to major property and lifestyle media
+
+📈 Step 8 – Keyword & SEO Framework
+
+Use naturally across headings, meta, and alt text:
+
+Primary:
+Stanley Tasmania real estate, coastal land for sale Tasmania, house and land packages Stanley, Dovecote Estate Stanley, premium coastal subdivision Tasmania
+
+Secondary:
+Tasmanian property growth, Stanley coastal investment, North West Tasmania lifestyle, ocean view land Tasmania, residential lots near The Nut
+
+Emotional / Brand:
+heritage growth and natural beauty, premium coastal living, coastal sanctuary Tasmania, modern architecture meets coastal charm
+
+🧭 Step 9 – Recommended meta block
+
+Add (or confirm) in <head> of index.html:
+
+<meta name="keywords" content="Stanley Tasmania real estate, coastal land for sale Tasmania, house and land packages Stanley, Dovecote Estate, Tasmanian property growth, coastal subdivision Tasmania, premium coastal living, Stanley coastal investment">
+<meta name="author" content="Dovecote Estate">
+<meta property="og:title" content="Dovecote Estate — Premium Coastal Land & House Packages in Stanley, Tasmania">
+<meta property="og:description" content="Discover Stanley’s premier coastal subdivision offering residential land and house & land packages with ocean views, heritage charm, and future growth potential.">
+
+⚙️ Step 10 – Lighthouse / Core Web Vitals Target
+Metric	Goal	Optimisation Focus
+LCP	< 2.5 s	Preload hero image, compress large assets
+CLS	< 0.1	Fixed image heights & consistent spacing
+INP/FID	< 100 ms	Lazy-load non-critical scripts & components
+Accessibility	> 95	ARIA labels, alt text, contrast checks
+Performance / SEO	> 95	Code-split, cache headers, semantic HTML
+📰 Step 11 – Press-Release Style SEO Content (for backlinks)
+
+After export, the expert will create a 250–300 word press-release block optimised for Domain, realestate.com.au, and Tasmanian Business Review with the following structure:
+
+Headline: e.g. “Dovecote Estate Brings Premium Coastal Living to Tasmania’s North-West”
+
+Lead paragraph: investment & lifestyle hook with keywords
+
+Body: details on land release, growth potential, and Stanley’s heritage charm
+
+CTA: drive traffic to dovecoteestate.com.au
+
+This content will be SEO-tuned for both news backlinking and Google Discover visibility.
+
+Once you’ve run this and downloaded dovecote-estate-full.zip, upload it here.
+Then the expert (ChatGPT) will:
+✨ Perform full optimisation,
+✨ Deliver Lighthouse & Core Web Vitals recommendations,
+✨ Refine meta and schema, and
+✨ Provide your premium press-release-ready SEO copy block for external publication and backlinks.

@@ -1,0 +1,107 @@
+Please update the mobile/desktop hamburger menu so it auto-closes reliably.
+
+Behavior required
+
+Close menu on:
+
+Mouse leave of the dropdown panel / menu container.
+
+Click/tap outside the menu.
+
+Link click (including hash/anchor links with smooth scroll).
+
+Route/hash change.
+
+Esc key.
+
+Implementation notes (React/Tailwind, using state isMenuOpen)
+
+Wrap the dropdown in a ref and add a mousedown listener to detect clicks outside.
+
+Add onMouseLeave={() => setIsMenuOpen(false)} to the dropdown container.
+
+On each nav link, call setIsMenuOpen(false) after handling scroll.
+
+Add effects for hashchange and popstate to close the menu on navigation.
+
+Add onKeyDown on the panel to close on Escape.
+
+Example patch (adapt to your component names):
+
+import { useEffect, useRef } from "react";
+
+function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Click outside
+  useEffect(() => {
+    const onDown = (e: MouseEvent) => {
+      if (!menuRef.current) return;
+      if (!menuRef.current.contains(e.target as Node)) setIsMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, []);
+
+  // Close on route/hash change
+  useEffect(() => {
+    const close = () => setIsMenuOpen(false);
+    window.addEventListener("hashchange", close);
+    window.addEventListener("popstate", close);
+    return () => {
+      window.removeEventListener("hashchange", close);
+      window.removeEventListener("popstate", close);
+    };
+  }, []);
+
+  const handleNavClick = (selector?: string) => {
+    if (selector) {
+      const el = document.querySelector(selector);
+      if (el) {
+        const y = (el as HTMLElement).getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <>
+      {/* hamburger button toggles isMenuOpen */}
+      {isMenuOpen && (
+        <div
+          ref={menuRef}
+          role="menu"
+          tabIndex={-1}
+          onKeyDown={(e) => e.key === "Escape" && setIsMenuOpen(false)}
+          onMouseLeave={() => setIsMenuOpen(false)}
+          className="absolute right-4 top-full mt-2 w-64 rounded-2xl bg-white/95 backdrop-blur shadow-lg ring-1 ring-black/5"
+        >
+          <nav className="p-2">
+            <button className="w-full text-left px-3 py-2" onClick={() => handleNavClick('#once-in-a-lifetime')}>
+              About
+            </button>
+            <button className="w-full text-left px-3 py-2" onClick={() => handleNavClick('#packages')}>
+              Home Packages
+            </button>
+            {/* other links… */}
+          </nav>
+        </div>
+      )}
+    </>
+  );
+}
+
+
+Acceptance
+
+Opening the hamburger then moving the cursor off the dropdown closes it.
+
+Clicking anywhere outside closes it.
+
+Clicking a menu link (hash or route) closes it after navigation.
+
+Pressing Esc closes it.
+
+Works on desktop and mobile (tap outside closes).

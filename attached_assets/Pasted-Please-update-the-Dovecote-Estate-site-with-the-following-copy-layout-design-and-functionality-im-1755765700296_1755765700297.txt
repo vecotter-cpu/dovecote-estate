@@ -1,0 +1,161 @@
+Please update the Dovecote Estate site with the following copy, layout, design, and functionality improvements.
+
+🔹 Global Design & Functionality
+
+Typography hierarchy
+
+H1 → text-5xl md:text-6xl leading-tight
+
+H2 → text-3xl md:text-4xl
+
+H3 → text-xl md:text-2xl
+
+Body → text-lg text-gray-700
+
+Fonts: Use Prata (sleek serif) for headings and Inter for body. This removes the western vibe and feels high-end/modern.
+
+Buttons unified everywhere (hero, lots, packages, contact):
+
+Primary: rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition
+
+Secondary: rounded-2xl px-5 py-3 text-sm font-medium border border-forest-green text-forest-green bg-white hover:bg-forest-green/5 transition
+
+Hero polish:
+
+Lock aspect ratio (aspect-[16/9] desktop, aspect-[4/5] mobile).
+
+Apply object-cover and add subtle dark overlay for text readability.
+
+Add preload: <link rel="preload" as="image" href="/assets/hero.jpg" />
+
+Navigation:
+
+Add scroll offset so section anchors don’t hide under nav bar:
+
+const scrollToSection = (id: string) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  const y = (el as HTMLElement).getBoundingClientRect().top + window.scrollY - 80;
+  window.scrollTo({ top: y, behavior: "smooth" });
+  setIsMenuOpen(false); 
+};
+
+
+Ensure mobile menu closes after click/route change.
+
+Add /packages link to desktop nav.
+
+Gallery & Lifestyle images:
+
+Use consistent ratios (aspect-square or aspect-[4/3]).
+
+Lazy-load below fold.
+
+Always set width/height to prevent layout shift.
+
+Footer:
+
+Add /privacy + /terms.
+
+Include ABN, copyright, and disclaimer (“Imagery is indicative only. Subject to council approval.”).
+
+🔹 Homepage Section Order & Copy
+Section 1 – Hero / Headline
+
+Headline: “Stanley, a Harbour of Heritage and Growth”
+
+Subhead: “Discover your perfect coastal sanctuary in Stanley's most exclusive residential subdivision.”
+
+CTA: “View Available Lots” → scroll to Lots section.
+
+Section 2 – A Once in a Lifetime Opportunity
+
+Headline: “A Once in a Lifetime Opportunity” (remove hyphens from subhead)
+
+Add subhead: “Development Ready”
+
+Keep icons here (moved from old “Development Ready” section):
+
+Full Infrastructure – Connected to sewerage, power & stormwater.
+
+Premium Location – Walking distance to beaches, cafés & attractions.
+
+NBN Ready – High-speed internet connectivity.
+
+Quality Roads – Sealed entrances with footpaths.
+
+Section 3 – Available Lots
+
+Keep interactive grid.
+
+Add skeleton loader (3–6 gray cards) while data loads.
+
+On error, show:
+“Lots are being updated. Please check back shortly or [enquire now] for a current schedule.”
+
+Section 4 – JDR Home & Land Packages
+
+Move directly under Available Lots.
+
+Intro line above: “Prefer turnkey? Explore architecturally designed homes paired with premium lots.”
+
+Keep all existing JDR listings, floor plans, features, and imagery.
+
+Section 5 – Stanley Marina
+
+Rename section (old “The Marina Factor”) → “Stanley Marina”
+
+Copy (rewrite for premium tone):
+“A proposed marina could redefine Stanley’s future. If realised, it would attract yachts, recreational boats, and cruise visitors — anchoring Stanley as a premier coastal destination. Beyond lifestyle benefits, it would generate tourism, jobs, and long-term capital growth.”
+
+Add FAQ accordion:
+
+When will it be approved? → “Currently in planning; updates will be shared as the process develops.”
+
+How could it impact property values? → “Historically, marina precincts create strong demand and uplift surrounding land values.”
+
+What are the lifestyle benefits? → “Enhanced tourism, marine culture, and access to water-based recreation.”
+
+Use provided marina imagery prominently in this section.
+
+Section 6 – The Stanley Lifestyle
+
+Headline: “The Stanley Lifestyle”
+
+Subheads (all white for readability):
+
+Godfrey’s Beach
+
+The Nut State Reserve
+
+Stanley Golf Club
+
+Cradle Mountain
+
+Gateway to Adventure
+
+Supporting copy in text-lg text-gray-600.
+
+Use consistent aspect ratios for lifestyle images.
+
+🔹 Deleted / Merged Sections
+
+Remove separate “Development Ready” and “Location Highlights” sections (content already integrated).
+
+✅ Acceptance Criteria
+
+Flow is: Hero → Opportunity → Lots → Packages → Marina → Lifestyle.
+
+Headline/subheads always readable (contrast fixed).
+
+Logo font = Prata (premium serif).
+
+Buttons unified across site.
+
+Marina imagery + FAQ accordion included.
+
+Lifestyle subheads in white.
+
+Footer has ABN, legal links, and disclaimer.
+
+Performance polish: preload hero, lazy-load galleries, consistent ratios.

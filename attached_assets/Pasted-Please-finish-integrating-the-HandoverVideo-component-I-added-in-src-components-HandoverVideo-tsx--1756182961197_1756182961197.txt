@@ -1,0 +1,41 @@
+Please finish integrating the HandoverVideo component I added in src/components/HandoverVideo.tsx.
+
+1. **Styles**
+   - Open src/index.css (or the main global stylesheet).
+   - Append the following CSS:
+
+.visually-hidden{position:absolute!important;left:-9999px!important}
+#hp-handover-video{padding:40px 0;background:linear-gradient(180deg,#f7f9fc,#ffffff)}
+.hp-video-wrap{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(10,26,51,.12)}
+.hp-video{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;background:#0a1a33}
+.hp-video-caption{font-size:14px;color:#5a6b80;padding:8px 4px 0}
+@media(min-width:768px){#hp-handover-video{padding:56px 0}.hp-video-wrap{border-radius:20px}}
+
+2. **App integration**
+   - Open src/App.tsx (or whichever file renders the homepage sections).
+   - Import the video component at the top:
+     import HandoverVideo from "./components/HandoverVideo";
+   - Find the section with the subhead “The New Standard in Property Handover” and its agency logos marquee.
+   - Immediately after that block, insert:
+     <HandoverVideo />
+   - Ensure it appears before the next subhead “Show Buyers Everything. Forget Nothing.”
+
+3. **Public folder assets**
+   - Confirm the following files exist in the /public folder:
+     /homepilot-handover-1080p.mp4
+     /homepilot-handover-1080p.webm
+     /homepilot-video-poster.jpg
+     (optional) /homepilot-video-thumb.jpg
+     (optional) /homepilot-handover-transcript.html
+   - Verify they are referenced with leading slashes (e.g. /homepilot-handover-1080p.mp4) inside the component.
+
+4. **Testing**
+   - Add a temporary test link at the top of App.tsx:
+     <a href="/homepilot-handover-1080p.mp4" target="_blank" rel="noreferrer">Test MP4</a>
+   - Run the project and confirm that clicking the link downloads or plays the MP4 in browser.
+   - Confirm the video auto-plays muted when scrolled into view and pauses when scrolled out.
+   - Confirm it displays seamlessly on desktop and mobile, between the agency logos marquee and the “Show Buyers Everything. Forget Nothing.” section.
+
+5. **Clean up**
+   - Once tested, remove the temporary “Test MP4” link.
+   - Confirm Lighthouse/SEO performance remains good and JSON-LD validates.

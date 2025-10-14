@@ -1,0 +1,53 @@
+The header logo is broken (shows missing image + alt text). Please fix all causes systematically:
+
+1) Determine which folder is actually served for static assets in this project (e.g., /public, /static, /assets). Inspect vite.config, next.config, or any static server config to confirm.
+
+2) Create (or use) the correct static folder and place this file there:
+   /public/dovecote-logo.png
+If the project uses a different public folder, put the file in that folder with exactly this filename and all lowercase.
+
+3) Update every header logo reference to this exact tag and path (root-relative):
+   <img src="/dovecote-logo.png" alt="Dovecote Estate" class="header-logo" />
+Remove or replace any old paths like ./assets/... or /assets/..., and remove any conflicting logo components.
+
+4) Search the codebase for max-height or height rules that constrain logos, e.g. .navbar-brand img, .logo img, .header-logo, and delete or override those caps.
+
+5) Add/keep the following CSS so the logo is large and responsive (do not alter the Contact button styles):
+
+.site-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0.5rem 2rem 0.75rem; /* reduced top padding */
+}
+.logo{ flex:0 0 auto; margin-right:2rem; }
+.header-logo{
+  height:210px !important; width:auto !important; max-height:none !important;
+  object-fit:contain; display:block; margin:0.25rem 0;
+}
+@media (max-width:1024px){ .header-logo{ height:120px !important; } }
+@media (max-width:600px){ .header-logo{ height:80px !important; } }
+
+6) Hero copy balance (keep Contact button unchanged):
+.hero h1{
+  font-size:56px; font-weight:600; letter-spacing:2px; line-height:1.2;
+  text-align:center; margin-bottom:1rem;
+}
+.hero h2, .hero .subhead{
+  font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:1.5;
+  color:rgba(255,255,255,.95); text-shadow:0 1px 3px rgba(0,0,0,.4);
+  max-width:70%; margin:0 auto; text-align:center;
+}
+@media (max-width:1024px){
+  .hero h1{ font-size:44px; }
+  .hero h2, .hero .subhead{ font-size:20px; max-width:80%; }
+}
+@media (max-width:600px){
+  .hero h1{ font-size:32px; }
+  .hero h2, .hero .subhead{ font-size:18px; max-width:90%; }
+}
+
+7) After the change, hard-reload the site and verify:
+   - /dovecote-logo.png loads directly in the browser (no 404).
+   - The header shows the logo at ~210px on desktop.
+   - Headline/subhead sizes match the CSS above.
+
+If any build step rewrites public paths, adjust accordingly so /dovecote-logo.png resolves at runtime.

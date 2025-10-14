@@ -1,0 +1,368 @@
+You are working on a full stack TypeScript project for “Dovecote Estate” with a Vite React client and an Express server using Drizzle and Neon. Complete the following tasks exactly. If a file already exists, replace only the specified sections. Otherwise, create it. When you finish, run the verification steps and report results.
+
+Objectives
+
+Make the client SEO friendly and production ready
+
+Wire the client and server together for /api/inquiries using Drizzle and Neon
+
+Add missing shared schema and Drizzle config
+
+Add basic seed data for Lots and Home Packages
+
+Add robots, sitemap and JSON-LD
+
+Ensure clean build and start on Replit
+
+1) Create shared schema used by both client and server
+
+Create file: shared/schema.ts
+
+import { pgTable, serial, text, integer, timestamp, varchar, jsonb } from "drizzle-orm/pg-core";
+import { z } from "zod";
+
+/** Lots */
+export const lots = pgTable("lots", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  size: text("size").notNull(),          // e.g. "650m²"
+  price: integer("price").notNull(),     // in AUD
+  features: jsonb("features").$type<string[]>().default([]).notNull(),
+  status: text("status").notNull(),      // "available" | "under-offer" | "sold"
+  description: text("description"),
+  imageUrl: text("image_url"),
+  createdAt: timestamp("created_at", { withTimezone: false }).defaultNow().notNull()
+});
+
+export const lotInsertSchema = z.object({
+  name: z.string().min(2),
+  size: z.string().min(2),
+  price: z.number().int().nonnegative(),
+  features: z.array(z.string()).default([]),
+  status: z.string().min(2),
+  description: z.string().optional().nullable(),
+  imageUrl: z.string().url().optional().nullable(),
+});
+export type Lot = typeof lots.$inferSelect;
+export type InsertLot = z.infer<typeof lotInsertSchema>;
+
+/** Home Packages */
+export const homePackages = pgTable("home_packages", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  bedrooms: integer("bedrooms").notNull(),
+  bathrooms: integer("bathrooms").notNull(),
+  size: text("size").notNull(),          // e.g. "185m²"
+  price: integer("price").notNull(),
+  features: jsonb("features").$type<string[]>().default([]).notNull(),
+  description: text("description"),
+  imageUrl: text("image_url"),
+  createdAt: timestamp("created_at", { withTimezone: false }).defaultNow().notNull()
+});
+
+export const homePackageInsertSchema = z.object({
+  name: z.string().min(2),
+  bedrooms: z.number().int().nonnegative(),
+  bathrooms: z.number().int().nonnegative(),
+  size: z.string().min(1),
+  price: z.number().int().nonnegative(),
+  features: z.array(z.string()).default([]),
+  description: z.string().optional().nullable(),
+  imageUrl: z.string().url().optional().nullable(),
+});
+export type HomePackage = typeof homePackages.$inferSelect;
+export type InsertHomePackage = z.infer<typeof homePackageInsertSchema>;
+
+/** Inquiries */
+export const inquiries = pgTable("inquiries", {
+  id: serial("id").primaryKey(),
+  firstName: varchar("first_name", { length: 120 }).notNull(),
+  lastName: varchar("last_name", { length: 120 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 64 }).notNull(),
+  interest: text("interest").notNull(),
+  message: text("message"),
+  createdAt: timestamp("created_at", { withTimezone: false }).defaultNow().notNull()
+});
+
+export const insertInquirySchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  email: z.string().email(),
+  phone: z.string().min(6),
+  interest: z.string().min(1),
+  message: z.string().optional().nullable(),
+});
+export type Inquiry = typeof inquiries.$inferSelect;
+export type InsertInquiry = z.infer<typeof insertInquirySchema>;
+
+
+Update TypeScript path alias so @shared/* resolves. Edit tsconfig.json:
+
+Ensure these keys in compilerOptions:
+
+{
+  "baseUrl": ".",
+  "paths": {
+    "@shared/*": ["shared/*"]
+  }
+}
+
+2) Add Drizzle config
+
+Create file: drizzle.config.ts
+
+import type { Config } from "drizzle-kit";
+
+if (!process.env.DATABASE_URL) {
+  console.warn("Warning: DATABASE_URL is not set. drizzle-kit push will fail until provided.");
+}
+
+export default {
+  schema: "./shared/schema.ts",
+  out: "./drizzle",
+  dialect: "postgresql",
+  dbCredentials: { url: process.env.DATABASE_URL! },
+  verbose: true,
+  strict: true,
+} satisfies Config;
+
+3) Seed script for initial data
+
+Create file: server/seed.ts
+
+import { db } from "./db";
+import { lots, homePackages } from "@shared/schema";
+import { sql } from "drizzle-orm";
+
+async function count(table: { [key: string]: any }) {
+  const tableName = (table as any).getSQL().tableName;
+  const res = await db.execute(sql.raw(`SELECT COUNT(*)::int AS count FROM ${tableName}`));
+  return (res as any)[0].count as number;
+}
+
+async function run() {
+  const lotCount = await count(lots);
+  const hpCount = await count(homePackages);
+
+  if (lotCount === 0) {
+    await db.insert(lots).values([
+      {
+        name: "Lot 1 - Ocean Views",
+        size: "650m²",
+        price: 285000,
+        features: ["Elevated ocean views", "North-facing aspect", "3 min walk to beach"],
+        status: "available",
+        description: "Level block with premium position and stunning ocean views",
+        imageUrl: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.43.39%20pm_1751971535615.png"
+      },
+      {
+        name: "Lot 5 - Corner Block",
+        size: "720m²",
+        price: 265000,
+        features: ["Large corner block", "Multiple access points", "5 min walk to cafes"],
+        status: "available",
+        description: "Spacious corner position with excellent garden potential",
+        imageUrl: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.13.12%20pm_1751971535616.png"
+      }
+    ]);
+  }
+
+  if (hpCount === 0) {
+    await db.insert(homePackages).values([
+      {
+        name: "The Seaside Sanctuary",
+        bedrooms: 4,
+        bathrooms: 2,
+        size: "185m²",
+        price: 695000,
+        features: ["Sustainable design", "Large outdoor deck", "Study/home office"],
+        description: "Contemporary home with sustainable features",
+        imageUrl: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.43.50%20pm_1751971535604.png"
+      }
+    ]);
+  }
+
+  console.log("Seed complete.");
+  process.exit(0);
+}
+
+run().catch((e) => { console.error(e); process.exit(1); });
+
+4) Client SEO and social tags
+
+Edit file: index.html in the client root. Replace the entire <head> with:
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <title>Dovecote Estate, Stanley — Premium Coastal Living in Tasmania</title>
+  <meta name="description" content="Secure an elevated coastal homesite at Dovecote Estate, Stanley. Premium subdivision near beaches, The Nut and marina. Register interest and view available lots." />
+  <link rel="canonical" href="https://dovecoteestate.com.au/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dovecote Estate, Stanley — Premium Coastal Living in Tasmania" />
+  <meta property="og:description" content="Premium coastal subdivision in Stanley. View available lots, lifestyle and marina access." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dovecoteestate.com.au/" />
+  <meta property="og:image" content="/assets/Screen_Shot_2025-07-08_at_4.22.25_pm_1751955897100.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dovecote Estate, Stanley — Premium Coastal Living in Tasmania" />
+  <meta name="twitter:description" content="Premium coastal subdivision in Stanley. View available lots, lifestyle and marina access." />
+  <meta name="twitter:image" content="/assets/Screen_Shot_2025-07-08_at_4.22.25_pm_1751955897100.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon-de-light.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/assets/favicon-de-dark.png" media="(prefers-color-scheme: dark)">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Prata&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"RealEstateAgent",
+    "name":"Dovecote Estate",
+    "url":"https://dovecoteestate.com.au/",
+    "logo":"https://dovecoteestate.com.au/assets/dovecote_estate_logo_TIGHT.png",
+    "address": { "@type":"PostalAddress", "addressLocality":"Stanley", "addressRegion":"TAS", "addressCountry":"AU" },
+    "areaServed":"Stanley, Circular Head, TAS",
+    "sameAs":[ "https://www.instagram.com/dovecoteestate" ]
+  }
+  </script>
+
+  <!-- Preload the first hero image for faster paint -->
+  <link rel="preload" as="image" href="/assets/Photo_6553672_DJI_72_jpg_5716447_0_20201220144554_photo_original_1751955954945.JPG">
+</head>
+
+
+Create file: public/robots.txt
+
+User-agent: *
+Allow: /
+Sitemap: https://dovecoteestate.com.au/sitemap.xml
+
+
+Create file: public/sitemap.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dovecoteestate.com.au/</loc></url>
+  <url><loc>https://dovecoteestate.com.au/gallery</loc></url>
+</urlset>
+
+5) Client image and accessibility tweaks
+
+Where you render the first hero image, add explicit dimensions and eager load for the first image only. For example:
+
+<img
+  src={image}
+  alt="Stanley aerial view"
+  loading={index === 0 ? "eager" : "lazy"}
+  width="1920"
+  height="1080"
+  className="w-full h-full object-cover"
+/>
+
+
+In your main <nav>, add role="navigation". Ensure the mobile menu toggle button has aria-controls pointing to the menu panel id, and add rel="noopener noreferrer" to all external links.
+
+6) Ensure server uses the shared schema
+
+Search the server code for imports of tables and types. Change them to import from @shared/schema if not already. For example:
+
+// before: import { inquiries } from "./something-local"
+import { inquiries, lots, homePackages } from "@shared/schema";
+
+
+Do not change route paths. Keep POST /api/inquiries exactly as implemented.
+
+7) Project environment and scripts
+
+Ensure the project has the required deps:
+
+npm i drizzle-orm drizzle-kit zod pg
+
+
+If using Neon with @neondatabase/serverless or neon, make sure the server db.ts is already configured. If not, keep the existing approach and only install pg if necessary.
+
+Add or confirm the following scripts in package.json at the repo root:
+
+{
+  "scripts": {
+    "dev": "tsx server/index.ts",
+    "build": "vite build && tsc -p tsconfig.json",
+    "start": "node dist/server/index.js",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "seed": "tsx server/seed.ts"
+  }
+}
+
+
+If your server build output path differs, adjust "start" accordingly.
+
+Set the Replit Secret DATABASE_URL to the Neon connection string.
+
+8) Drizzle migration and seed
+
+Run:
+
+npx drizzle-kit push
+npm run seed
+
+
+Confirm tables lots, home_packages, and inquiries exist and at least one row appears in lots and home_packages.
+
+9) Build and run
+npm run dev
+
+
+Confirm in logs that Express started and Vite middleware is serving the client. Visit the running URL and test:
+
+Home loads with correct title and description
+
+View source to confirm meta tags and JSON-LD are present
+
+Submit the contact form and verify inquiries row is created in the database
+
+Check GET /api/lots and GET /api/home-packages return data
+
+Then test a production build:
+
+npm run build
+npm run start
+
+
+Confirm the server serves the built client and API on the same origin and port.
+
+10) Asset mounting
+
+Ensure folder attached_assets/ exists at the repo root and includes the images referenced in server responses. The server should already have Express static for /attached_assets. If not, add:
+
+import path from "node:path";
+app.use("/attached_assets", express.static(path.resolve(process.cwd(), "attached_assets")));
+
+11) Deliverables
+
+A summary of edits and new files created
+
+Output from drizzle-kit push and npm run seed confirming success
+
+The running URL and confirmation that:
+
+Meta tags and JSON-LD are present
+
+robots.txt and sitemap.xml resolve
+
+Contact form writes to the inquiries table
+
+GET /api/lots and GET /api/home-packages return seeded data
+
+If anything blocks, state exactly which file and line need attention and fix it.

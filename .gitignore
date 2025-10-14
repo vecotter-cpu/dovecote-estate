@@ -1,0 +1,27 @@
+# Builds & deps
+node_modules/
+dist/
+.build/
+.cache/
+.vercel/
+.next/
+.turbo/
+.pnpm-store/
+
+# Replit & local
+.replit
+replit.nix
+
+# Env & logs
+.env
+.env.local
+.env.*.local
+*.log
+
+# Archives & large exports
+*.tar
+*.tar.gz
+*.zip
+
+# Drizzle journals
+drizzle/*-journal

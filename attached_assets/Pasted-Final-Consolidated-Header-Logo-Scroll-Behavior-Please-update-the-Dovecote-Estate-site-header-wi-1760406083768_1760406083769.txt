@@ -1,0 +1,126 @@
+Final Consolidated Header + Logo + Scroll Behavior
+
+Please update the Dovecote Estate site header with the following improvements:
+
+🔹 Overall Goals
+
+Keep a white header by default.
+
+When scrolling down, transition to a dark green header (#0E300E) with a compact height and white logo text.
+
+Ensure the logo remains flush left, and the Contact button + Hamburger icon flush right.
+
+Maintain the elegant centered two-line logo:
+
+“DOVECOTE ESTATE” (Prata, serif)
+
+“STANLEY” (Inter, all caps, centered below, smaller)
+
+Ensure the header feels premium, modern, and proportional on all screen sizes.
+
+🧩 Step 1: Header Structure (navigation.tsx or header component)
+
+Replace the current <header> section with:
+
+import { useEffect, useState } from "react";
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
+        isScrolled
+          ? "bg-[#0E300E] py-2 shadow-md"
+          : "bg-white py-4 shadow-none"
+      }`}
+    >
+      <div className="flex items-center justify-between px-6 sm:px-10 lg:px-12">
+        {/* Logo */}
+        <Link
+          href="/"
+          aria-label="Dovecote Estate Home"
+          className="flex flex-col leading-tight items-center justify-center"
+        >
+          <span
+            className={`font-prata tracking-[0.02em] ${
+              isScrolled ? "text-white" : "text-[#0E300E]"
+            } text-[1.35rem] sm:text-[1.45rem] lg:text-[1.85rem] xl:text-[2.0rem]`}
+          >
+            DOVECOTE ESTATE
+          </span>
+          <span
+            className={`font-inter uppercase mt-[-0.12rem] tracking-[0.18em] sm:text-[0.82rem] lg:text-[0.92rem] xl:text-[1.0rem] ${
+              isScrolled ? "text-[#EAC04B]" : "text-[#2E3A2F]"
+            }`}
+          >
+            STANLEY
+          </span>
+        </Link>
+
+        {/* Right-side nav */}
+        <div className="flex items-center space-x-4">
+          <button
+            className={`border rounded-full px-5 py-2 text-sm transition-all duration-300 ${
+              isScrolled
+                ? "bg-transparent border-[#EAC04B] text-[#EAC04B] hover:bg-[#EAC04B] hover:text-[#0E300E]"
+                : "bg-white border-[#0E300E] text-[#0E300E] hover:bg-[#0E300E] hover:text-white"
+            }`}
+          >
+            Contact
+          </button>
+
+          {/* Hamburger */}
+          <button className={`${isScrolled ? "text-white" : "text-[#0E300E]"}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+🎨 Step 2: Styling & Font Setup
+
+Make sure your tailwind.config.ts includes:
+
+extend: {
+  fontFamily: {
+    prata: ['Prata', 'serif'],
+    inter: ['Inter', 'sans-serif'],
+  },
+},
+
+
+And ensure these fonts are loaded in your index.html:
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+
+💡 Step 3: Optional Subtle Enhancements
+
+Add to your index.css for a bit of polish:
+
+header {
+  transition: background-color 0.5s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
