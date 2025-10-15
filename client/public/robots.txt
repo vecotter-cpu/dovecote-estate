@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dovecoteestate.com.au/sitemap.xml
