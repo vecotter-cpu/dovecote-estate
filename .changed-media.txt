@@ -1,0 +1,18 @@
+package-lock.json
+package.json
+public/assets/Photo_6553672_DJI_72_jpg_5716447_0_20201220144554_photo_original_1751955954945.webp
+public/assets/Photo_6553680_DJI_80_jpg_4880146_0_20201220161210_photo_original_1751955954946.webp
+public/assets/Photo_6553681_DJI_81_jpg_5378036_0_20201220161216_photo_original_1751955954947.webp
+public/assets/Screen Shot 2025-07-08 at 4.21.33 pm_1751955897102.webp
+public/assets/Screen Shot 2025-07-08 at 4.21.39 pm_1751955897102.webp
+public/assets/Screen Shot 2025-07-08 at 4.21.50 pm_1751955897102.webp
+public/assets/Screen Shot 2025-07-08 at 4.21.57 pm_1751955897101.webp
+public/assets/Screen Shot 2025-07-08 at 4.22.11 pm_1751955897101.webp
+public/assets/Screen Shot 2025-07-08 at 4.22.25 pm_1751955897100.webp
+public/assets/Screen_Shot_2025-07-08_at_4.21.33_pm_1751955897102.webp
+public/assets/Screen_Shot_2025-07-08_at_4.21.39_pm_1751955897102.webp
+public/assets/Screen_Shot_2025-07-08_at_4.21.50_pm_1751955897102.webp
+public/assets/Screen_Shot_2025-07-08_at_4.21.57_pm_1751955897101.webp
+public/assets/Screen_Shot_2025-07-08_at_4.22.11_pm_1751955897101.webp
+public/assets/Screen_Shot_2025-07-08_at_4.22.25_pm_1751955897100.webp
+public/assets/og/dovecote-og-1200x630.jpg
