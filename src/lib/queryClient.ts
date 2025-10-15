@@ -12,7 +12,7 @@ const MOCK_LOTS = [
   { lot: 2, sizeSqm: 910, price: 319000, status: "available" },
 ];
 
-export const queryClient = new QueryClient();
+export const queryClient = new QueryClient({ defaultOptions: { queries: { queryFn: fetcher, retry: 0 } } });
 export async function fetcher({ queryKey }: { queryKey: readonly [string, ...unknown[]] }) {
   const url = queryKey[0];
   try {

@@ -7,11 +7,11 @@ export default function MarinaSection() {
   
   const marinaImages = [
     {
-      src: "/attached_assets/Stanley Marina_1755772835942.jpg",
+      src: "/assets/marina/stanley-marina.jpg",
       alt: "Stanley Marina concept with boats and facilities"
     },
     {
-      src: "/attached_assets/Stanley Marina render 255_1755773279923.JPG", 
+      src: "/assets/marina/stanley-marina.jpg", 
       alt: "Stanley Marina aerial view render"
     }
   ];
