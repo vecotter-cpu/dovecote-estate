@@ -342,7 +342,7 @@ export default function LotsSection() {
               <CardContent className="flex-grow flex flex-col">
                 <div className="mb-4">
                   <span className="text-2xl font-bold text-caramel">
-                    ${lot.price.toLocaleString()}
+                    ${Number(lot.price ?? 0).toLocaleString()}
                   </span>
                 </div>
                 <ul className="text-sm text-gray-600 mb-6 space-y-2 flex-grow">
