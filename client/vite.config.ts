@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react'; // fine even if not used; harmless
 
 export default defineConfig({
-  // config file is inside client/, so '.' == client/
-  root: '.',
+  root: '.',           // client/ is the root
   plugins: [react()],
   build: {
-    outDir: 'dist',
+    outDir: 'dist',    // outputs to client/dist
     emptyOutDir: true
   },
 });
