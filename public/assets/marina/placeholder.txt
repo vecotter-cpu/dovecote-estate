@@ -1,0 +1,4 @@
+Place your marina image here as:
+stanley-marina.jpg
+
+The component will fallback to a professional marina concept image if this file is not present.
