@@ -1,48 +1,37 @@
-import React, { Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 
-/**
- * Tries to lazy-load a real App from common locations.
- * If none exist, renders a simple shell so the site loads.
- */
-const TryRealApp = React.lazy(async () => {
-  // Try common paths from typical Replit/Vite setups
-  const candidates = [
-    () => import('./app/App'),           // src/app/App.tsx
-    () => import('./pages/App'),         // src/pages/App.tsx
-    () => import('./pages/Home'),        // src/pages/Home.tsx
-    () => import('./App')                // src/App.tsx (will be this file; ignored)
-  ];
-  for (const load of candidates) {
+/** Probe a few likely locations for your real app without static imports */
+const candidates = import.meta.glob([
+  './App.real.tsx',
+  './AppReal.tsx',
+  './app/App.tsx',
+  './pages/App.tsx',
+  './pages/Home.tsx'
+]);
+
+async function loadFirst(): Promise<React.ComponentType | null> {
+  for (const loader of Object.values(candidates)) {
     try {
-      const mod = await load();
-      if (mod && (mod.default || mod.App)) {
-        return { default: (mod.default ?? mod.App) as React.ComponentType };
-      }
-    } catch {}
-  }
-  // Fallback shell UI
-  return {
-    default: function FallbackApp() {
-      return (
-        <div style={{fontFamily:'Inter, system-ui, Arial', padding: '32px', lineHeight: 1.5}}>
-          <h1 style={{margin:0}}>Dovecote Estate</h1>
-          <p style={{opacity:0.8, marginTop:8}}>
-            App component not found in common paths. This is a temporary shell so the site renders.
-          </p>
-          <ul style={{marginTop:16}}>
-            <li>Place your real App component at <code>src/App.tsx</code>, or</li>
-            <li>Adjust <code>src/main.tsx</code> to import your actual root component.</li>
-          </ul>
-        </div>
-      );
+      const mod: any = await loader();
+      return (mod.default ?? mod.App) as React.ComponentType;
+    } catch {
+      /* keep trying */
     }
-  };
-});
+  }
+  return null;
+}
 
 export default function App() {
+  const [Comp, setComp] = useState<React.ComponentType | null>(null);
+  useEffect(() => { loadFirst().then(setComp); }, []);
+  if (Comp) return <Comp />;
   return (
-    <Suspense fallback={<div style={{padding:24}}>Loading…</div>}>
-      <TryRealApp />
-    </Suspense>
+    <div style={{fontFamily:'system-ui, -apple-system, Segoe UI', padding: 24, lineHeight: 1.5}}>
+      <h1 style={{margin:0}}>Dovecote Estate</h1>
+      <p style={{opacity:.8, marginTop:8}}>
+        Temporary shell. Place your real app at <code>src/App.real.tsx</code>
+        (or <code>src/app/App.tsx</code>, <code>src/pages/App.tsx</code>, <code>src/pages/Home.tsx</code>) and redeploy.
+      </p>
+    </div>
   );
 }
