@@ -1,19 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import AppReal from "./App.real";
 
-function ensureMount(): HTMLElement {
-  const el = document.getElementById('root')
-          || document.getElementById('app');
-  if (el) return el as HTMLElement;
-  const div = document.createElement('div');
-  div.id = 'root';
-  document.body.appendChild(div);
-  return div;
-}
-
-ReactDOM.createRoot(ensureMount()).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <AppReal />
   </React.StrictMode>
 );
