@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 4.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 4.9%);
+  --primary: hsl(120, 100%, 20%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 46%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(120, 100%, 20%);
+  --radius: 0.5rem;
+  
+  /* Premium forest green and caramel color palette */
+  --navy: hsl(220, 13%, 18%);
+  --midnight: hsl(220, 13%, 18%);
+  --ocean: hsl(199, 84%, 55%);
+  --coastal: hsl(158, 73%, 42%);
+  --sandy: hsl(48, 33%, 96%);
+  --sunset: hsl(24, 95%, 53%);
+  --dark-green: #0E300E;
+  --forest-green: #2E3A2F;
+  --caramel: #8B7040;
+  --caramel-hover: #7A5F35;
+  --gold: hsl(45, 100%, 50%);
+  --dark-gold: hsl(45, 100%, 40%);
+  --premium-gold: hsl(43, 85%, 58%);
+  --mist-white: #FAFAF9;
+  --smoke-white: #E8E6E2;
+  --warm-gray: #E8E6E2;
+  
+  /* Header variables */
+  --header-bg:#fff;
+  --text:#000;
+  --container:1200px;
+  --pad-x:32px;
+  --pad-y:18px;
+  --shadow:0 1px 2px rgba(0,0,0,.06);
+  --panel-radius:10px;
+  --slide-max:300px;
+}
+
+.dark {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(217, 32%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --ring: hsl(207, 90%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html { 
+    font-family: theme('fontFamily.sans'); 
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body { 
+    @apply text-gray-800 antialiased bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prata', serif;
+    @apply tracking-tight text-gray-900;
+  }
+
+  /* Typography hierarchy */
+  h1 { @apply text-5xl md:text-6xl leading-tight; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  p  { @apply text-lg text-gray-700; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-navy {
+    color: var(--navy);
+  }
+  
+  .text-ocean {
+    color: var(--ocean);
+  }
+  
+  .text-coastal {
+    color: var(--coastal);
+  }
+  
+  .text-sunset {
+    color: var(--sunset);
+  }
+  
+  .text-dark-green {
+    color: var(--dark-green);
+  }
+  
+  .text-forest-green {
+    color: var(--forest-green);
+  }
+  
+  .text-midnight {
+    color: var(--midnight);
+  }
+  
+  .text-caramel {
+    color: var(--caramel);
+  }
+  
+  .text-gold {
+    color: var(--gold);
+  }
+  
+  .text-dark-gold {
+    color: var(--dark-gold);
+  }
+  
+  .text-premium-gold {
+    color: var(--premium-gold);
+  }
+  
+  .bg-navy {
+    background-color: var(--navy);
+  }
+  
+  .bg-ocean {
+    background-color: var(--ocean);
+  }
+  
+  .bg-coastal {
+    background-color: var(--coastal);
+  }
+  
+  .bg-sandy {
+    background-color: var(--sandy);
+  }
+  
+  .bg-sunset {
+    background-color: var(--sunset);
+  }
+  
+  .bg-dark-green {
+    background-color: var(--dark-green);
+  }
+  
+  .bg-forest-green {
+    background-color: var(--forest-green);
+  }
+  
+  .bg-midnight {
+    background-color: var(--midnight);
+  }
+  
+  .bg-caramel {
+    background-color: var(--caramel);
+  }
+  
+  .bg-caramel-hover {
+    background-color: var(--caramel-hover);
+  }
+  
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  
+  .bg-dark-gold {
+    background-color: var(--dark-gold);
+  }
+  
+  .bg-premium-gold {
+    background-color: var(--premium-gold);
+  }
+  
+  .bg-mist-white {
+    background-color: var(--mist-white);
+  }
+  
+  .bg-smoke-white {
+    background-color: var(--smoke-white);
+  }
+  
+  .border-navy {
+    border-color: var(--navy);
+  }
+  
+  .border-ocean {
+    border-color: var(--ocean);
+  }
+  
+  .border-sunset {
+    border-color: var(--sunset);
+  }
+  
+  .border-dark-green {
+    border-color: var(--dark-green);
+  }
+  
+  .border-forest-green {
+    border-color: var(--forest-green);
+  }
+  
+  .border-midnight {
+    border-color: var(--midnight);
+  }
+  
+  .border-caramel {
+    border-color: var(--caramel);
+  }
+  
+  .border-gold {
+    border-color: var(--gold);
+  }
+  
+  .hover\:bg-sunset:hover {
+    background-color: hsl(24, 95%, 48%);
+  }
+  
+  .hover\:bg-navy:hover {
+    background-color: hsl(223, 76%, 15%);
+  }
+  
+  .hover\:bg-ocean:hover {
+    background-color: hsl(199, 84%, 50%);
+  }
+  
+  .hover\:bg-forest-green:hover {
+    background-color: var(--forest-green);
+  }
+  
+  .hover\:bg-caramel:hover {
+    background-color: var(--caramel);
+  }
+  
+  .hover\:bg-caramel-hover:hover {
+    background-color: var(--caramel-hover);
+  }
+  
+  .hover\:bg-midnight:hover {
+    background-color: hsl(220, 13%, 15%);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero section overlay */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* Smooth hover transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210, 40%, 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ocean);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--navy);
+}
+
+/* =========================
+   HEADER STYLING
+   ========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Header row */
+.header-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--pad-y) 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left: Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  transition: background-color 0.5s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo span:first-child {
+  line-height: 1.1;
+}
+
+.logo:hover {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .logo span:first-child {
+    letter-spacing: 0.04em;
+  }
+  .logo span:last-child {
+    letter-spacing: 0.22em;
+  }
+}
+
+/* Right: Contact + hamburger group */
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Contact button */
+.contact-btn {
+  background: #fff; 
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+.contact-btn:hover { 
+  background: rgba(0, 0, 0, 0.05); 
+}
+
+/* Hamburger (always visible) */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all .2s ease-in-out;
+}
+
+.nav-toggle:hover {
+  opacity: 0.8;
+}
+
+.hamburger-icon {
+  height: 20px;
+  width: 20px;
+}
+
+/* Dropdown panel: positioned under right-group, aligned right */
+.dropdown-panel {
+  position: absolute;
+  right: var(--pad-x);
+  top: calc(100% + 8px);
+  background:#fff;
+  border:1px solid #eee;
+  border-radius: var(--panel-radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  overflow:hidden;
+
+  /* slide animation states */
+  max-height:0;
+  opacity:0;
+  transform: translateY(-6px);
+  transition: max-height .35s ease, opacity .25s ease, transform .35s ease, width .2s ease;
+}
+
+/* When open */
+.dropdown-panel.open {
+  max-height: var(--slide-max);
+  opacity:1;
+  transform: translateY(0);
+}
+
+.dropdown-panel ul {
+  list-style:none;
+  margin:0;
+  padding:12px 16px;
+}
+.dropdown-panel li { margin:6px 0; }
+.dropdown-panel li:last-child { margin-bottom:0; }
+.dropdown-panel a,
+.dropdown-panel button {
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+  background:none;
+  border:0;
+  cursor:pointer;
+  width:100%;
+  text-align:left;
+  padding:4px 0;
+}
+
+/* Optional: hide Contact button on very small screens */
+@media (max-width: 900px) {
+  .contact-btn { display:none; }
+}
+
+/* === HERO: move text up + add readable tint === */
+.hero{
+  position: relative;              /* for overlay */
+  padding-top: 0.5rem !important;  /* reduce any default top padding */
+}
+
+/* If you have a wrapper for the text, target it; otherwise h1/subhead rules below apply */
+.hero .hero-content{
+  margin-top: -1.25rem; /* nudge text block up a line */
+}
+
+/* Safety: also nudge if no .hero-content wrapper exists */
+.hero h1{ 
+  font-size:56px; font-weight:600; letter-spacing:2px; line-height:1.2;
+  text-align:center; margin-bottom:1rem; margin-top: -0.75rem;
+}
+.hero h2, .hero .subhead{ 
+  font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:1.5;
+  color:rgba(255,255,255,.95); text-shadow:0 1px 3px rgba(0,0,0,.4);
+  max-width:70%; margin:0 auto; text-align:center; margin-top: -0.5rem;
+}
+
+/* Overlay tint over the rotating/rolling hero images */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  /* subtle top-to-bottom gradient: clearer at top, darker behind text area */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.10) 0%,
+    rgba(0,0,0,0.18) 35%,
+    rgba(0,0,0,0.26) 70%,
+    rgba(0,0,0,0.28) 100%
+  );
+  z-index: 0;
+}
+
+/* Ensure the text sits above the tint */
+.hero .hero-content,
+.hero h1,
+.hero h2,
+.hero .subhead{
+  position: relative;
+  z-index: 1;
+}
+
+/* Unified Button Styles */
+.btn-primary {
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--forest-green);
+  color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+}
+
+.btn-secondary {
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--forest-green);
+  color: var(--forest-green);
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(46, 58, 47, 0.05);
+}
+
+/* Responsiveness */
+@media (max-width:1024px){
+  .hero .hero-content{ margin-top: -1rem; }
+  .hero h1{ font-size:44px; }
+  .hero h2, .hero .subhead{ font-size:20px; max-width:80%; }
+}
+@media (max-width:600px){
+  .hero .hero-content{ margin-top: -0.6rem; }
+  .hero h1{ font-size:32px; }
+  .hero h2, .hero .subhead{ font-size:18px; max-width:90%; }
+}
+
+/* =========================
+   FOOTER STYLING
+   ========================= */
+
+/* Footer link styling for premium hover effects */
+footer a,
+footer button {
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+footer a:hover,
+footer button:hover {
+  color: #EAC04B;
+}
