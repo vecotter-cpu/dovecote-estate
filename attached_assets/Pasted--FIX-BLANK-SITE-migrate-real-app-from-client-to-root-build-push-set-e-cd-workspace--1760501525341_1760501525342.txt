@@ -1,0 +1,88 @@
+# --- FIX BLANK SITE: migrate real app from client/ to root, build, push ---
+
+set -e
+cd ~/workspace
+
+# 0) Safety branch so we can revert if needed
+git checkout -B fix_blank_site || true
+
+# 1) Bring your actual app to the root build structure Vite is using
+#    (copy from client/ to the root src/, index.html, and public/)
+if [ -d client/src ]; then
+  rm -rf src
+  mkdir -p src
+  cp -a client/src/. src/ 2>/dev/null || cp -r client/src/* src/ || true
+fi
+
+[ -f client/index.html ] && cp -f client/index.html index.html
+
+if [ -d client/public ]; then
+  mkdir -p public
+  cp -a client/public/. public/ 2>/dev/null || cp -r client/public/* public/ || true
+fi
+
+# 2) Make sure index.html points at the standard Vite entry
+grep -q 'src="/src/main' index.html || \
+  sed -i 's#<script type="module".*#<script type="module" src="/src/main.tsx"></script>#' index.html
+
+# 3) Root Vite config with @ alias to ./src (works for "@/..." imports)
+cat > vite.config.ts <<'TS'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'node:url';
+
+export default defineConfig({
+  root: '.',
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
+});
+TS
+
+# 4) If your code imports "@/components/ui/toaster", ensure a stub exists
+#    (harmless if you already have the real one)
+mkdir -p src/components/ui
+[ -f src/components/ui/toaster.tsx ] || cat > src/components/ui/toaster.tsx <<'TSX'
+export default function Toaster(){ return null; }
+TSX
+
+# 5) Ensure SPA redirects exist for Netlify
+mkdir -p public
+echo "/*  /index.html  200" > public/_redirects
+
+# 6) Ensure build scripts (root) are correct and deps are present
+node - <<'NODE'
+const fs = require('fs');
+const p = JSON.parse(fs.readFileSync('package.json','utf8'));
+p.scripts = p.scripts || {};
+p.scripts.build = "vite build";
+p.engines = Object.assign({}, p.engines, { node: ">=20" });
+fs.writeFileSync('package.json', JSON.stringify(p,null,2));
+console.log("✅ root scripts.build set to:", p.scripts.build);
+NODE
+
+npm i -D vite @vitejs/plugin-react
+npm install
+
+# 7) Local production build (should produce dist/)
+npm run build
+
+# 8) Commit and push; then fast-forward main
+git add -A
+git commit -m "fix: migrate real app to root Vite build, alias @, SPA redirects, toaster stub"
+git push -u origin fix_blank_site
+
+git checkout main
+git merge --no-edit fix_blank_site
+git push origin main
+
+echo ""
+echo "✅ Done. In Netlify: 'Deploys' → 'Trigger deploy' → 'Deploy project without cache'."
+echo "   Build command = npm run build, Publish directory = dist."
