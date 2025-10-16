@@ -112,7 +112,7 @@ export default function LotsSection() {
 
   if (isLoading) {
     return (
-      <section id="lots-intro-1" className="hidden py-24 md:py-32 bg-smoke-white">
+      <section id="lots" className="py-24 md:py-32 bg-smoke-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>
@@ -124,8 +124,8 @@ export default function LotsSection() {
           {/* Project Gallery Carousel */}
           <div className="mb-20">
             <div className="relative group">
-              <div className="overflow-hidden rounded-2xl shadow-xl">
-                <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+              <div className="overflow-rounded-2xl shadow-xl">
+                <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-bg-slate-100">
                   <img
                     src={GALLERY_IMAGES[currentSlide].src}
                     alt={GALLERY_IMAGES[currentSlide].alt}
@@ -199,7 +199,7 @@ export default function LotsSection() {
 
   if (error) {
     return (
-      <section id="lots-intro-2" className="hidden py-24 md:py-32 bg-smoke-white">
+      <section id="lots-intro-2" className="py-24 md:py-32 bg-smoke-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>
@@ -218,8 +218,8 @@ export default function LotsSection() {
           {/* Project Gallery Carousel */}
           <div className="mb-20">
             <div className="relative group">
-              <div className="overflow-hidden rounded-2xl shadow-xl">
-                <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+              <div className="overflow-rounded-2xl shadow-xl">
+                <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-bg-slate-100">
                   <img
                     src={GALLERY_IMAGES[currentSlide].src}
                     alt={GALLERY_IMAGES[currentSlide].alt}
@@ -271,7 +271,7 @@ export default function LotsSection() {
   }
 
   return (
-    <section id="lots" className="py-24 md:py-32 bg-smoke-white">
+    <section id="lots-grid" className="py-24 md:py-32 bg-smoke-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>
@@ -283,8 +283,8 @@ export default function LotsSection() {
         {/* Project Gallery Carousel */}
         <div className="mb-20">
           <div className="relative group">
-            <div className="overflow-hidden rounded-2xl shadow-xl">
-              <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+            <div className="overflow-rounded-2xl shadow-xl">
+              <div className="aspect-[4/5] md:aspect-[16/9] w-full overflow-bg-slate-100">
                 <img
                   src={GALLERY_IMAGES[currentSlide].src}
                   alt={GALLERY_IMAGES[currentSlide].alt}
