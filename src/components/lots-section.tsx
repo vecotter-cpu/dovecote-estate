@@ -35,7 +35,8 @@ const GALLERY_IMAGES = [
 
 export default function LotsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const lots = MOCK_LOTS; // static fallback enforced
+  const lots = MOCK_LOTS;
+const isLoading = false; // static build fix // static fallback enforced
   const lotsData = (Array.isArray(lots) && lots.length ? lots : MOCK_LOTS);
 
   const scrollToSection = (sectionId: string) => {
