@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "serve -s dist -l tcp://0.0.0.0:${PORT:-80}",
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "preview": "vite preview --port 4173"
