@@ -56,84 +56,48 @@ export const MOCK_LOTS = [
     id: "lot-13",
     name: "Lot 13 – Corner Block",
     sqm: 776,
-    price: 310400,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
-    features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
-    ],
-    bucket: "Corner Block",
-    status: "available"
+    price: 310000,
+    tags: ["Corner block", "Ready to build"],
+    status: "available",
+    bucket: "Corner Block"
   },
   {
     id: "lot-1",
     name: "Lot 1 – Ocean Views",
     sqm: 635,
     price: 254000,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
-    features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
-    ],
-    bucket: "Ocean Views",
-    status: "available"
-  },
-  {
-    id: "lot-18",
-    name: "Lot 18 – Stanley Nut Views",
-    sqm: 769,
-    price: 307600,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
-    features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
-    ],
-    bucket: "Stanley Nut Views",
-    status: "available"
+    tags: ["Ocean views", "Close to beach"],
+    status: "available",
+    bucket: "Ocean Views"
   },
   {
     id: "lot-8",
     name: "Lot 8 – Golf Course",
     sqm: 730,
     price: 292000,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
-    features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
-    ],
-    bucket: "Golf Course",
-    status: "available"
+    tags: ["Near golf course", "Level site"],
+    status: "available",
+    bucket: "Golf Course"
+  },
+  {
+    id: "lot-18",
+    name: "Lot 18 – Stanley Nut Views",
+    sqm: 769,
+    price: 307600,
+    tags: ["Nut views", "Premium position"],
+    status: "available",
+    bucket: "Stanley Nut Views"
   },
   {
     id: "lot-12",
     name: "Lot 12 – Beachfront",
     sqm: 716,
     price: 286400,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
-    features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
-    ],
-    bucket: "Beachfront",
-    status: "available"
+    tags: ["Beachfront", "Walk to sand"],
+    status: "available",
+    bucket: "Beachfront"
   }
 ];
-
 /** ---- POST helper with mock fallback ---- */
 export async function apiRequest(method: string, path: string, data?: Record<string, unknown>) {
   try {
