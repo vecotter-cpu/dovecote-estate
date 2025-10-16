@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const MARINA_IMG = "/assets/marina/stanley-marina.jpg";
+const MARINA_IMG = "/assets/marina/marina-1.jpg";
 
 export default function MarinaFactor() {
   const [showQA, setShowQA] = useState(false);
