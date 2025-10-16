@@ -38,6 +38,7 @@ export default function LotsSection() {
   const { data: lots, isLoading, error } = useQuery<Lot[]>({
     queryKey: ["/api/lots"],
   });
+  const lotsData = (Array.isArray(lots) && lots.length ? lots : MOCK_LOTS);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
