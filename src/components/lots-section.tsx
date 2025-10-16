@@ -35,9 +35,7 @@ const GALLERY_IMAGES = [
 
 export default function LotsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { data: lots, isLoading, error } = useQuery<Lot[]>({
-    queryKey: ["/api/lots"],
-  });
+  const lots = MOCK_LOTS; // static fallback enforced
   const lotsData = (Array.isArray(lots) && lots.length ? lots : MOCK_LOTS);
 
   const scrollToSection = (sectionId: string) => {
