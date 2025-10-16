@@ -34,6 +34,10 @@ const GALLERY_IMAGES = [
 ];
 
 export default function LotsSection() {
+  const lots = MOCK_LOTS;
+  const isLoading = false;
+  const error = null;
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const lots = MOCK_LOTS;
 const isLoading = false; // static build fix // static fallback enforced
