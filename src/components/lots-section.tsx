@@ -175,7 +175,7 @@ export default function LotsSection() {
           {/* Skeleton loader */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((index) => (
-              <Card key={index} className="bg-mist-white animate-pulse">
+              <Card data-testid="lot-card" key={index} className="bg-mist-white animate-pulse">
                 <CardHeader>
                   <div className="h-6 bg-gray-200 rounded mb-2"></div>
                   <div className="h-4 bg-gray-200 rounded w-3/4"></div>
@@ -199,7 +199,7 @@ export default function LotsSection() {
 
   if (error) {
     return (
-      <section id="lots" className="py-24 md:py-32 bg-smoke-white">
+      <section id="lots-intro-1" className="py-24 md:py-32 bg-smoke-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>
@@ -271,7 +271,7 @@ export default function LotsSection() {
   }
 
   return (
-    <section id="lots" className="py-24 md:py-32 bg-smoke-white">
+    <section id="lots-intro-2" className="py-24 md:py-32 bg-smoke-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>
