@@ -1,5 +1,4 @@
 import { QueryClient } from "@tanstack/react-query";
-export const queryClient = new QueryClient();
 
 type Json = Record<string, unknown>;
 
@@ -51,55 +50,37 @@ const MOCK_HOME_PACKAGES = [
   },
 ];
 
-export const MOCK_LOTS = [
-  {
-    id: "lot-13",
-    name: "Lot 13 – Corner Block",
-    sqm: 776,
-    price: 310000,
-    tags: ["Corner block", "Ready to build"],
-    status: "available",
-    bucket: "Corner Block"
-  },
-  {
-    id: "lot-1",
-    name: "Lot 1 – Ocean Views",
-    sqm: 635,
-    price: 254000,
-    tags: ["Ocean views", "Close to beach"],
-    status: "available",
-    bucket: "Ocean Views"
-  },
-  {
-    id: "lot-8",
-    name: "Lot 8 – Golf Course",
-    sqm: 730,
-    price: 292000,
-    tags: ["Near golf course", "Level site"],
-    status: "available",
-    bucket: "Golf Course"
-  },
-  {
-    id: "lot-18",
-    name: "Lot 18 – Stanley Nut Views",
-    sqm: 769,
-    price: 307600,
-    tags: ["Nut views", "Premium position"],
-    status: "available",
-    bucket: "Stanley Nut Views"
-  },
-  {
-    id: "lot-12",
-    name: "Lot 12 – Beachfront",
-    sqm: 716,
-    price: 286400,
-    tags: ["Beachfront", "Walk to sand"],
-    status: "available",
-    bucket: "Beachfront"
-  }
+const MOCK_LOTS = [
+  { lot: 1, sizeSqm: 820, price: 315000, status: "available" },
+  { lot: 2, sizeSqm: 910, price: 319000, status: "available" },
+  { lot: 3, sizeSqm: 760, price: 299000, status: "available" },
+  { lot: 4, sizeSqm: 845, price: 309000, status: "available" },
+  { lot: 5, sizeSqm: 980, price: 329000, status: "available" },
+  { lot: 6, sizeSqm: 735, price: 289000, status: "available" },
 ];
+
+/** ---- React Query client (uses global fetcher) ---- */
+export const queryClient = new QueryClient({
+  defaultOptions: { queries: { queryFn: fetcher, retry: 0 } },
+});
+
+/** ---- Global fetcher with graceful fallback ---- */
+export async function fetcher({ queryKey }: { queryKey: readonly [string, ...unknown[]] }) {
+  const url = queryKey[0];
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.warn(`[fetcher] fallback for ${url}`, err);
+    if (url.includes("home-packages")) return MOCK_HOME_PACKAGES;
+    if (url.includes("lots")) return MOCK_LOTS;
+    return [];
+  }
+}
+
 /** ---- POST helper with mock fallback ---- */
-export async function apiRequest(method: string, path: string, data?: Record<string, unknown>) {
+export async function apiRequest(method: string, path: string, data?: Json) {
   try {
     const res = await fetch(path, {
       method,
