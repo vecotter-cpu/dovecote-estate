@@ -1,3 +1,4 @@
+import { MOCK_LOTS } from "@/lib/queryClient";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
@@ -330,7 +331,7 @@ export default function LotsSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {lots?.map((lot) => (
+          {(Array.isArray(lots) && lots.length ? lots : MOCK_LOTS).map((lot) => (
             <Card key={lot.id} className="bg-mist-white hover:shadow-lg transition-shadow h-full flex flex-col">
               <CardHeader className="flex-shrink-0">
                 <CardTitle className="text-xl text-forest-green mb-2">{lot.name}</CardTitle>
