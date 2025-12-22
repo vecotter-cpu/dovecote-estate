@@ -1,10 +1,8 @@
 import { MOCK_LOTS } from "@/lib/queryClient";
 import { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
-import type { Lot } from "@shared/schema";
 
 const GALLERY_IMAGES = [
   {
