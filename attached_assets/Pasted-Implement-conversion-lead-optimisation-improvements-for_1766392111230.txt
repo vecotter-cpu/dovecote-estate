@@ -1,0 +1,87 @@
+Implement conversion/lead optimisation improvements for Google Ads traffic without any visual or styling changes (no layout/spacing/colour/font changes, no component refactors, no new UI elements).
+
+Goals:
+
+Ensure Google Ads can use a dedicated high-intent landing URL: /contact (already exists). Make sure the contact form section is the primary content on that route.
+
+Improve SEO + ad relevance by adding/confirming correct meta tags and structured data in the root ./index.html (Vite project root) for the domain dovecoteestate.com.au.
+
+Keep the site visually identical.
+
+Steps (do not skip):
+
+A) Verify /contact route
+
+Confirm the router correctly serves /contact and it renders the existing Request Information / ContactSection content.
+
+Confirm refresh on /contact works on Netlify using SPA redirect rules.
+
+If _redirects exists, ensure it contains: /* /index.html 200
+
+B) Add SEO meta tags in ./index.html (project root)
+
+Add/confirm:
+
+<title>: “Dovecote Estate Stanley | Premium Coastal Land & House Packages Tasmania”
+
+<meta name="description" ...>: write a 150–160 char description aimed at investors (Tasmania, Stanley, coastal, land/house packages, enquire).
+
+Canonical: <link rel="canonical" href="https://dovecoteestate.com.au/" />
+
+Open Graph tags: og:title, og:description, og:url, og:type=website, og:image (use existing og image if present in /assets/og/...).
+
+Twitter card tags (summary_large_image) matching OG.
+
+Do not remove or alter existing script/style links. Only add tags in <head>.
+
+C) Add JSON-LD structured data (no visual change)
+
+In ./index.html add one <script type="application/ld+json"> with Schema.org:
+
+type: RealEstateAgent OR Organization (choose best fit)
+
+name: Dovecote Estate
+
+url: https://dovecoteestate.com.au/
+
+telephone: 0455 569 646
+
+email: info@dovecoteestate.com.au
+
+address: “40 Dovecote Rd, Stanley TAS, Australia”
+
+Keep it accurate and minimal.
+
+D) Make sure navigation consistently points to /contact
+
+Header “Contact” button and mobile menu “Contact” must link to /contact (not /#contact or /).
+
+No styling changes.
+
+E) Verify Netlify Forms still works
+
+Ensure the inquiries form still posts via Netlify Forms and the hidden detector form remains in root ./index.html body above <div id="root">.
+
+Do not change field names.
+
+F) Validation
+
+Run: npm run build
+
+Confirm build passes and dist/index.html includes:
+
+canonical tag
+
+meta description
+
+JSON-LD script
+
+the hidden Netlify detector form
+
+Do not introduce new dependencies or APIs.
+
+Output:
+
+Tell me exactly which files you changed and what you added (briefly).
+
+No visual changes whatsoever.
