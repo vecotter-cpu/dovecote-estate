@@ -1,0 +1,100 @@
+~/workspace$ cd ~/workspace
+
+# 1) Backup (already have one, but one more for safety)
+cp -v src/lib/queryClient.ts src/lib/queryClient.ts.before-lots-2.bak
+
+# 2) Create the full MOCK_LOTS block in a temp file (includes the export line)
+cat > /tmp/mock_lots.ts <<'TS'
+export const MOCK_LOTS = [
+  {
+    id: "lot-13",
+    name: "Lot 13 – Corner Block",
+    sqm: 776,
+    price: 310400,
+    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    features: [
+      "Panoramic coastal setting with fresh sea air",
+      "Moments from the beach, wharf, and Stanley township",
+      "Easy walk to cafés, restaurants, and the golf course",
+      "Fully serviced with NBN, power, water & sealed roads",
+      "Premium lifestyle in Tasmania's most exclusive coastal community"
+    ],
+    bucket: "Corner Block",
+    status: "available"
+  },
+  {
+    id: "lot-1",
+    name: "Lot 1 – Ocean Views",
+    sqm: 635,
+    price: 254000,
+    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    features: [
+      "Panoramic coastal setting with fresh sea air",
+      "Moments from the beach, wharf, and Stanley township",
+      "Easy walk to cafés, restaurants, and the golf course",
+      "Fully serviced with NBN, power, water & sealed roads",
+      "Premium lifestyle in Tasmania's most exclusive coastal cogit push origin mains, features"K_LOTS with accurate names, sqm,
+'src/lib/queryClient.ts' -> 'src/lib/queryClient.ts.before-lots-2.bak'
+54:export const MOCK_LOTS = [
+export const MOCK_LOTS = [
+  {
+    id: "lot-13",
+    name: "Lot 13 – Corner Block",
+    sqm: 776,
+    price: 310400,
+    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    features: [
+      "Panoramic coastal setting with fresh sea air",
+      "Moments from the beach, wharf, and Stanley township",
+      "Easy walk to cafés, restaurants, and the golf course",
+      "Fully serviced with NBN, power, water & sealed roads",
+      "Premium lifestyle in Tasmania's most exclusive coastal community"
+    ],
+    bucket: "Corner Block",
+    status: "available"
+  },
+  {
+    id: "lot-1",
+    name: "Lot 1 – Ocean Views",
+    sqm: 635,
+    price: 254000,
+    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    features: [
+      "Panoramic coastal setting with fresh sea air",
+      "Moments from the beach, wharf, and Stanley township",
+      "Easy walk to cafés, restaurants, and the golf course",
+      "Fully serviced with NBN, power, water & sealed roads",
+      "Premium lifestyle in Tasmania's most exclusive coastal community"
+    ],
+    bucket: "Ocean Views",
+    status: "available"
+  },
+  {
+    id: "lot-18",
+    name: "Lot 18 – Stanley Nut Views",
+    sqm: 769,
+    price: 307600,
+    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    features: [
+
+> rest-express@1.0.0 build
+> vite build
+
+vite v5.4.20 building for production...
+✓ 1723 modules transformed.
+dist/index.html                   8.60 kB │ gzip:   2.43 kB
+dist/assets/index-D83Jv-b9.css   91.99 kB │ gzip:  15.62 kB
+dist/assets/index-CpfdgAJE.js   378.89 kB │ gzip: 118.73 kB
+✓ built in 6.36s
+[main 81c051f] lots: replace MOCK_LOTS with accurate names, sqm, prices, descriptions, features
+ 3 files changed, 174 insertions(+), 23 deletions(-)
+ create mode 100644 src/lib/queryClient.ts.before-lots-2.bak
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.01 KiB | 1.01 MiB/s, done.
+Total 7 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To https://github.com/vecotter-cpu/dovecote-estate.git
+   589eebe..81c051f  main -> main
