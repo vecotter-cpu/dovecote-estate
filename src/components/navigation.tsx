@@ -96,12 +96,8 @@ export default function Navigation() {
 
         {/* Right-side nav */}
         <div className="flex items-center space-x-4 right-group">
-          <a
+          <Link
             href="/contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#contact");
-            }}
             className={`border rounded-full px-5 py-2 text-sm transition-all duration-300 ${
               isScrolled
                 ? "bg-transparent border-white text-white hover:bg-white hover:text-[#0E300E]"
@@ -109,7 +105,7 @@ export default function Navigation() {
             }`}
           >
             Contact
-          </a>
+          </Link>
 
           {/* Hamburger */}
           <button 
@@ -179,15 +175,15 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
-            <button
+            <Link 
+              href="/contact"
               onClick={() => {
-                scrollToSection("#contact");
                 document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
                 document.querySelector('#menu-panel')?.classList.remove('open');
               }}
             >
               Contact
-            </button>
+            </Link>
           </li>
         </ul>
       </nav>
