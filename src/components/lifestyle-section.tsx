@@ -3,7 +3,7 @@ import { Plane, Mountain, Users, TreePine } from "lucide-react";
 export default function LifestyleSection() {
   const lifestyleFeatures = [
     {
-      image: "/attached_assets/Screen%20Shot%202025-07-08%20at%206.38.41%20pm_1751963926184.png",
+      image: "/assets/Screen_Shot_2025-07-08_at_6.38.41_pm_1751963926184.png",
       title: "Godfrey's Beach",
       description: "Popular surf beach with golden sand, family facilities, BBQ areas, and penguin viewing platform. Perfect for swimming, surfing, and water sports."
     },
@@ -18,7 +18,7 @@ export default function LifestyleSection() {
       description: "Nine-hole links-style course established in 1909, set just 10 meters from the ocean with stunning coastal views of Bass Strait."
     },
     {
-      image: "/attached_assets/Screen%20Shot%202025-07-08%20at%206.28.59%20pm_1751963949078.png",
+      image: "/assets/Screen_Shot_2025-07-08_at_6.28.59_pm_1751963949078.png",
       title: "Cradle Mountain",
       description: "Day trip access to Cradle Mountain-Lake St Clair National Park, Tasmania's premier wilderness experience and World Heritage Area."
     }
