@@ -142,7 +142,20 @@ export default function ContactSection() {
                   </div>
                 </div>
               ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="inquiries"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="inquiries" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
@@ -150,6 +163,7 @@ export default function ContactSection() {
                     </Label>
                     <Input
                       id="firstName"
+                      name="firstName"
                       type="text"
                       placeholder="Enter your first name"
                       value={formData.firstName}
@@ -165,6 +179,7 @@ export default function ContactSection() {
                     </Label>
                     <Input
                       id="lastName"
+                      name="lastName"
                       type="text"
                       placeholder="Enter your last name"
                       value={formData.lastName}
@@ -182,6 +197,7 @@ export default function ContactSection() {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="Enter your email"
                     value={formData.email}
@@ -198,6 +214,7 @@ export default function ContactSection() {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="Enter your phone number"
                     value={formData.phone}
@@ -212,6 +229,7 @@ export default function ContactSection() {
                   <Label htmlFor="interest" className="text-sm font-medium text-gray-700">
                     Interest *
                   </Label>
+                  <input type="hidden" name="interest" value={formData.interest} />
                   <Select value={formData.interest} onValueChange={(value) => handleInputChange("interest", value)}>
                     <SelectTrigger className="mt-1" data-testid="select-interest">
                       <SelectValue placeholder="Select your interest" />
@@ -231,6 +249,7 @@ export default function ContactSection() {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Enter your message"
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
