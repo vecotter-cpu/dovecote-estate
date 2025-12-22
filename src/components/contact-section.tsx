@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,13 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { Phone, Mail, MapPin, Loader2 } from "lucide-react";
-import type { InsertInquiry } from "@shared/schema";
 
 export default function ContactSection() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,36 +21,7 @@ export default function ContactSection() {
     message: ""
   });
 
-  const inquiryMutation = useMutation({
-    mutationFn: async (data: InsertInquiry) => {
-      const response = await apiRequest("POST", "/api/inquiries", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      setIsSubmitted(true);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        interest: "",
-        message: ""
-      });
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send inquiry. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.interest) {
       toast({
@@ -61,7 +30,51 @@ export default function ContactSection() {
       });
       return;
     }
-    inquiryMutation.mutate(formData);
+
+    setIsSubmitting(true);
+
+    const formBody = new URLSearchParams({
+      "form-name": "inquiries",
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      interest: formData.interest,
+      message: formData.message,
+    });
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody.toString(),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          interest: "",
+          message: ""
+        });
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send inquiry. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -230,10 +243,10 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   className="w-full rounded-2xl px-5 py-3 text-base font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
-                  disabled={inquiryMutation.isPending}
+                  disabled={isSubmitting}
                   data-testid="button-submit-inquiry"
                 >
-                  {inquiryMutation.isPending ? (
+                  {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" color="#8B7040" />
                       Sending...
