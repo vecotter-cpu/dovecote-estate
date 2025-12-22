@@ -206,11 +206,21 @@
 
     <!-- Preload the first hero image for faster paint -->
     <link rel="preload" as="image" as="image" href="/assets/Photo_6553672_DJI_72_jpg_5716447_0_20201220144554_photo_original_1751955954945.JPG">
-    <script type="module" crossorigin src="/assets/index-Dh22NwI3.js"></script>
+    <script type="module" crossorigin src="/assets/index-1XBRpj4X.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BZw_5_Gw.css">
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Hidden Netlify Form for build-time detection -->
+    <form name="inquiries" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="interest" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
 
+    <div id="root"></div>
   </body>
 </html>
