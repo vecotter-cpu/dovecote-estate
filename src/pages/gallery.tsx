@@ -20,7 +20,7 @@ export default function Gallery() {
       alt: "Stanley Nut and harbor aerial view"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%206.38.41%20pm_1751963926184.png",
+      src: "/assets/gallery_godfreys_beach.png",
       alt: "Godfrey's Beach - Popular surf beach with golden sand and family facilities"
     },
     {
@@ -32,31 +32,31 @@ export default function Gallery() {
       alt: "Stanley Golf Club - Nine-hole links-style course established in 1909"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%206.28.59%20pm_1751963949078.png",
+      src: "/assets/gallery_cradle_mountain.png",
       alt: "Cradle Mountain - Day trip access to Tasmania's premier wilderness experience"
     },
     {
-      src: "/attached_assets/Stanley Marina_1755772835942.jpg",
+      src: "/assets/gallery_marina_1.jpg",
       alt: "Stanley Marina concept with boats and facilities"
     },
     {
-      src: "/attached_assets/Stanley Marina render 255_1755773279923.JPG", 
+      src: "/assets/gallery_marina_2.jpg", 
       alt: "Stanley Marina aerial view render"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.43.39%20pm_1751971535615.png",
+      src: "/assets/gallery_lot1.png",
       alt: "Lot 1 - Ocean Views aerial perspective"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.13.12%20pm_1751971535616.png",
+      src: "/assets/gallery_lot5.png",
       alt: "Lot 5 - Corner Block aerial view"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.46.09%20pm_1751971583580.png",
+      src: "/assets/gallery_lot8.png",
       alt: "Lot 8 - Golf Course outlook aerial view"
     },
     {
-      src: "/attached_assets/Screen%20Shot%202025-07-08%20at%208.43.50%20pm_1751971535604.png",
+      src: "/assets/gallery_overview.png",
       alt: "Development aerial overview"
     },
     {
