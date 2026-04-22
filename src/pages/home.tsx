@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import OpportunitySection from "@/components/opportunity-section";
+import NewsSection from "@/components/news-section";
 import LotsSection from "@/components/lots-section";
 import HomesSection from "@/components/homes-section";
 import MarinaSection from "@/components/marina-section";
@@ -29,6 +30,7 @@ export default function Home() {
         {/* New section flow: Hero → Opportunity → Lots (with integrated gallery) → Packages → Lifestyle → Marina → Location */}
         <HeroSection />
         <OpportunitySection />
+        <NewsSection />
         <LotsSection />
         <HomesSection />
         <LifestyleSection />

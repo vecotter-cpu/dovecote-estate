@@ -1,0 +1,119 @@
+Build a new "News & Press" section on the homepage. Place this section between the existing "Why Stanley. Why now." section and the Stanley Lifestyle section. Do not modify any other section.
+SECTION STRUCTURE
+The section has three parts, in this order:
+
+Section heading and intro line
+"As Featured In" publication strip
+Article grid (3 × 3 layout on desktop)
+
+1. SECTION HEADING
+Main heading (same serif typography as other section headings on the site): Press & Coverage
+Italic supporting line directly below, centred: Stanley has been named Tasmania's Top Tiny Tourism Town, won the 2025 People's Choice award, and is featured regularly in national travel, food and lifestyle press.
+Both heading and supporting line are centred on the page.
+2. "AS FEATURED IN" STRIP
+Below the heading, centred, display a small uppercase label: AS FEATURED IN
+Style: small uppercase letters, muted grey, approximately 0.85rem, with 0.1em letter-spacing.
+Directly below this label, in a single horizontal row on desktop, display the following six publication names with generous horizontal spacing between each. On tablet (below 1024px), they may wrap to two rows. On mobile (below 640px), three rows of two:
+GOURMET TRAVELLER · BROADSHEET · AUSTRALIAN TRAVELLER · SMH TRAVELLER · 9TRAVEL · THE MERCURY
+Style each name as: uppercase, muted grey (one tone lighter than body text), roughly 1rem, letter-spacing 0.08em, in a clean sans-serif or the existing body typeface. No logos — text only to avoid trademark complications.
+Vertical padding above and below this strip: approximately 3rem each side on desktop, 2rem on mobile.
+3. ARTICLE GRID
+Below the "As Featured In" strip, display a 3 × 3 grid of cards (9 cards total). On tablet, 2 columns. On mobile, single column.
+Each standard card contains (top to bottom):
+
+Small uppercase publication name in the site's gold/tan accent colour, letter-spaced
+Date in muted grey (if applicable)
+Article headline in serif, approximately 1.15rem, regular weight
+A thin horizontal divider
+"Read the article →" link in dark green at the bottom
+
+Card styling:
+
+Soft off-white background with a fine 1px border in muted grey
+Internal padding approximately 2rem
+Gap between cards approximately 1.5rem
+No heavy shadows
+
+All article links must open in a new tab: target="_blank" rel="noopener noreferrer"
+CARD CONTENT — IN EXACT DISPLAY ORDER:
+Card 1 — Row 1, Position 1
+Publication: PULSE TASMANIA
+Date: JULY 2025
+Headline: "Deloraine, Stanley and Devonport win top Tasmanian tourism awards"
+Link: https://pulsetasmania.com.au/news/deloraine-stanley-and-devonport-win-top-tasmanian-tourism-awards/
+Card 2 — Row 1, Position 2
+Publication: PREMIER OF TASMANIA
+Date: JULY 2024
+Headline: "Tassie's Top Tourism Towns crowned for 2024"
+Link: https://www.premier.tas.gov.au/latest-news/2024/june/tassies-top-tourism-towns-crowned-for-2024
+Card 3 — Row 1, Position 3
+Publication: SPIRIT OF TASMANIA
+Date: 2021
+Headline: "Stanley — Tassie's Top Tourism Town, Gold Winner"
+Link: https://www.spiritoftasmania.com.au/blog/stanley-tassie-s-top-tourism-town-2021-gold-winner
+Card 4 — Row 2, Position 1
+Publication: SMH TRAVELLER
+Date: MAY 2025
+Supporting line above headline (italic muted grey, approximately 0.85rem): Part of SMH's "Best of Tasmania" guide
+Headline: "This Aussie road trip is outstanding, even if my car isn't"
+Byline below headline (small muted grey): — Jim Darby
+Link: https://www.smh.com.au/traveller/inspiration/this-aussie-road-trip-is-outstanding-even-if-my-car-isn-t-20241205-p5kw3p.html
+Card 5 — Row 2, Position 2 — FEATURED PRESS CARD (different treatment)
+This card is visually distinct from the others. It displays a cropped newspaper thumbnail image and functions as a press clipping viewer.
+Card content, top to bottom:
+
+Publication label at top: THE MERCURY · NEWS 09
+Newspaper article thumbnail image: use the uploaded file at /public/images/mercury-zivah-stanley.jpg (or wherever the file sits in the project — locate and link it correctly). Crop the visible area of the thumbnail to focus on the upper half of the article — the headline "A fresh, modern twist" and the main ZIVAH exterior photograph should be clearly visible. Apply a subtle desaturation filter (approximately 15–20% reduction in saturation) for an archival feel.
+Pull quote below the thumbnail (serif italic, approximately 1.15rem): "How a young restaurateur is reinventing dining in Stanley."
+Byline (small, muted grey): — Bridget Clarke, The Mercury
+Link at the bottom (dark green, same style as other cards): View press clipping →
+
+Card distinguishing treatment: apply either a 2px border in the dark green brand colour (instead of the 1px grey border used on other cards), OR a small "FEATURED" badge in the top-right corner of the card. Pick whichever looks cleaner in the grid.
+Lightbox behaviour for Card 5:
+Clicking either the thumbnail image or the "View press clipping →" link opens a lightbox overlay displaying the full newspaper scan at maximum readable size.
+Lightbox spec:
+
+Centred image on a black background at 85% opacity
+Close button (X icon) in the top-right corner
+Closes on: clicking the background, pressing Escape, or clicking the X
+If the image exceeds viewport size, allow zoom or scroll
+Image alt text: "Hobart Mercury article: A fresh, modern twist — ZIVAH Stanley, by Bridget Clarke"
+Keyboard accessible (trigger is focusable, Enter key opens lightbox)
+
+Use vanilla JavaScript or a minimal library — no heavy dependencies.
+Card 6 — Row 2, Position 3
+Publication: 9TRAVEL
+Date: 2026
+Headline: "Best Beaches in Australia 2026"
+Link: https://travel.nine.com.au/latest/best-beaches-in-australia-2026-sydney-secret-bay-winner/c24a416a-eb2b-4bef-9d12-d37c970c1f0c
+Card 7 — Row 3, Position 1
+Publication: AUSTRALIAN TRAVELLER
+Headline: "The Best Australian Beaches"
+Link: https://www.australiantraveller.com/australia/best-australian-beach/
+Card 8 — Row 3, Position 2
+Publication: GOURMET TRAVELLER
+Date: 2026
+Headline: "Best Restaurants in Tasmania to Visit in 2026"
+Link: https://www.gourmettraveller.com.au/dining-out/restaurant-guide/best-restaurants-tasmania-20149/
+Card 9 — Row 3, Position 3
+Publication: WORLDATLAS
+Headline: "The 8 Can't-Miss Towns in Tasmania"
+Link: https://www.worldatlas.com/cities/the-8-cant-miss-towns-in-tasmania.html
+SECTION SPACING
+Vertical padding above the section (from the bottom of the Investment section): approximately 6rem on desktop, 4rem on mobile.
+Vertical padding below the section (before the Stanley Lifestyle section): same.
+Section background: same as surrounding sections. This section should feel integrated into the page, not differentiated as a separate ad.
+RESPONSIVE BEHAVIOUR
+Desktop (1200px+): 3 × 3 grid
+Tablet (768–1199px): 2 column grid, rows adjust naturally
+Mobile (below 768px): single column, cards stack vertically
+The featured press card (Card 5) retains its distinct styling at all viewport sizes. The lightbox on mobile should open to a zoomable, scrollable view of the full newspaper image.
+FINAL VERIFICATION
+Before confirming complete:
+
+Test each of the 8 external article links to confirm they open in new tabs
+Test the Card 5 lightbox on both desktop and mobile
+Check the "As Featured In" strip wraps cleanly on narrow viewports
+Confirm the grid order matches the specification exactly
+
+Commit with message "news & press section — full build with As Featured In strip, 9-card grid, Mercury lightbox" and give me the commit hash.
