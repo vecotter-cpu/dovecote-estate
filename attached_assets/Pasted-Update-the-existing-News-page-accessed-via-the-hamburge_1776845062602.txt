@@ -1,0 +1,61 @@
+Update the existing News page (accessed via the hamburger menu "News & Updates" link). Do not remove the page entirely — we are keeping it as a dedicated Dovecote Estate news hub.
+1. Rename the nav item
+In the hamburger menu, rename "News & Updates" to: News
+2. Remove two articles entirely
+Remove these two articles from the News page and delete their detail/route pages:
+
+"Stanley Property Market Shows Strong Growth in 2025"
+"Why Coastal Tasmania Remains Australia's Best-Kept Investment Secret"
+
+3. Rewrite the JDR article completely
+Replace the existing article "JDR Homes Announces New Design Options for Dovecote Estate" with a factual, shorter piece using the content below. Keep the article's position in the grid (top-left). Update both the article card and the full article detail page.
+Article card (grid tile):
+Category tag: Development
+Date: (keep the existing date, or update to today's date if preferred)
+Headline: JDR Homes Packages Available on Lots 23 and 24
+Preview text (short, under the headline): Tasmanian builder JDR Homes has published house-and-land packages on two Dovecote Estate lots. Optional turnkey pathway for buyers who prefer a ready-to-build solution.
+Button: Read Full Article →
+Full article detail page:
+Category tag at top: Development
+Date: (same as card)
+Headline: JDR Homes Packages Available on Lots 23 and 24
+Body copy (in paragraphs, matching the site's existing article typography):
+
+Tasmanian builder JDR Homes has published two house-and-land packages for Dovecote Estate Stanley, offering buyers an optional turnkey pathway on specific lots.
+Lot 23 — Three-bedroom package
+3 bed, 2 bath, 2 car on a 714m² lot, with a 190m² home. Total package price: $734,000.
+Lot 24 — Two-bedroom package
+2 bed, 1 bath, 1 car on a 714m² lot, with a 134m² home. Total package price: $646,000.
+Both packages include JDR Homes' 'Essentials' specification with a minimum 6-star energy rating. Site cost allowances are confirmed following soil tests and survey. Full plans, inclusions and specifications are available directly from JDR Homes.
+JDR Homes is based in Ulverstone on Tasmania's north-west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
+Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots at Dovecote Estate. The JDR packages are offered as one option among many — particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
+Enquiries regarding JDR packages can be directed to JDR Homes directly, or via the Dovecote Estate sales team for assistance coordinating the land purchase and build contract.
+
+At the bottom of the article, below the body copy, add two call-to-action links side by side (or stacked on mobile):
+
+View JDR Homes → (opens https://www.jdrhomes.com.au in a new tab, target="_blank" rel="noopener noreferrer")
+Enquire about these lots → (scrolls to or links to the Dovecote Estate contact form)
+
+4. Keep the Stanley Lifestyle article unchanged
+"The Stanley Lifestyle: More Than Just Ocean Views" — no changes to content or detail page. Leave as-is.
+5. Update the News page heading
+Change the page heading from "News & Market Updates" to: Dovecote Estate News
+Update the subheading below the page title to: Updates from the development, partnership announcements, and the story of Stanley life.
+6. Update the grid layout
+With only 2 articles remaining, display them in a 2-column grid centred on the page. Do not leave empty card placeholders. The grid should feel balanced and intentional, not sparse.
+On tablet/mobile, stack to single column.
+7. Add a cross-link at the bottom of the News page
+Below the 2-card grid, add a small centred link with vertical padding of 3rem above and below:
+See press coverage of Stanley →
+This link goes to the anchor id "press-coverage" on the homepage (the Press & Coverage section we will be building next). Use: href="/#press-coverage" or equivalent based on the project's routing.
+Style: serif typography, dark green, letter-spacing 0.02em, no underline by default, underline on hover.
+8. Verify everything works
+Before confirming complete:
+
+Test the "Read Full Article" buttons on both remaining articles
+Test the "View JDR Homes" link opens in a new tab
+Test the "Enquire about these lots" link goes to the contact form
+Test the cross-link to press-coverage (it will 404 or scroll incorrectly until the Press & Coverage section is built — that's expected for now, just confirm the link exists)
+Confirm no broken routes from the removed articles
+
+Commit with message "news page cleanup — removed 2 generic articles, rewrote JDR article with factual package details, kept lifestyle article" and give me the commit hash.

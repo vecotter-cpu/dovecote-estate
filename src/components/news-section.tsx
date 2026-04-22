@@ -331,7 +331,7 @@ export default function NewsSection() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
-    <section id="news" className="py-16 md:py-24" style={{ backgroundColor: "var(--mist-white)" }}>
+    <section id="press-coverage" className="py-16 md:py-24" style={{ backgroundColor: "var(--mist-white)" }}>
       <MercuryLightbox open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
