@@ -18,6 +18,11 @@ export default function LifestyleSection() {
       description: "Nine-hole links-style course established in 1909, set just 10 meters from the ocean with stunning coastal views of Bass Strait."
     },
     {
+      image: "/images/highfield.jpg",
+      title: "Highfield Historic Site",
+      description: "1830s Regency house and farm on the headland overlooking Godfrey's Beach. Original home of the Van Diemen's Land Company — open daily with views across to The Nut."
+    },
+    {
       image: "/assets/Screen_Shot_2025-07-08_at_6.28.59_pm_1751963949078.png",
       title: "Cradle Mountain",
       description: "Day trip access to Cradle Mountain-Lake St Clair National Park, Tasmania's premier wilderness experience and World Heritage Area."
@@ -34,7 +39,7 @@ export default function LifestyleSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {lifestyleFeatures.map((feature, index) => (
             <div key={index} className="text-center">
               <div className="mb-6">
@@ -57,7 +62,7 @@ export default function LifestyleSection() {
             <h3 className="text-2xl font-semibold mb-4 text-white" style={{ fontFamily: 'Prata, serif' }}>Gateway to Adventure</h3>
             <p className="text-lg text-gray-300 mb-6">
               Stanley serves as the gateway to the Tarkine wilderness and Cradle Mountain-Lake St Clair National Park, offering endless opportunities for exploration and adventure. 
-              With established infrastructure, NBN connectivity, and Wynyard Airport just 40 minutes away providing daily flights to Melbourne, you'll enjoy premium connectivity while living in this pristine coastal paradise where waterfront properties command premium prices.
+              With established infrastructure, NBN connectivity, and Wynyard Airport just 40 minutes away providing daily flights to Melbourne, you'll enjoy premium connectivity while living in one of Tasmania's most tightly held coastal villages.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <div className="flex items-center justify-center">

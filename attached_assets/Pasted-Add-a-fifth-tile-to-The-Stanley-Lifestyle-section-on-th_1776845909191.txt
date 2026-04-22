@@ -1,0 +1,40 @@
+Add a fifth tile to "The Stanley Lifestyle" section on the homepage, and make a small copy edit to the "Gateway to Adventure" block below it.
+1. Upload the new image
+A new image has been uploaded: Highfield_and_The_Nut_RS11630.jpg
+Move or rename it to live at /public/images/highfield.jpg for consistency with the other lifestyle tile images.
+2. Add a fifth tile to The Stanley Lifestyle section
+The section currently shows 4 tiles in a single horizontal row:
+Godfrey's Beach · The Nut State Reserve · Stanley Golf Club · Cradle Mountain
+Add a fifth tile positioned between Stanley Golf Club and Cradle Mountain. The final order should be:
+
+Godfrey's Beach
+The Nut State Reserve
+Stanley Golf Club
+Highfield Historic Site (NEW)
+Cradle Mountain
+
+New tile content:
+Image: /public/images/highfield.jpg
+Title: Highfield Historic Site
+Caption: 1830s Regency house and farm on the headland overlooking Godfrey's Beach. Original home of the Van Diemen's Land Company — open daily with views across to The Nut.
+Match the exact typography, image styling, card dimensions, spacing, and caption formatting of the existing four tiles. The row must remain a single horizontal row on desktop (all 5 tiles in one line). On tablet, wrap to 2 or 3 columns naturally. On mobile, stack vertically.
+If 5 tiles in a single row causes them to become too narrow on desktop (below approximately 240px wide), allow the row to flow to responsive behaviour slightly earlier, but test first to see if 5 tiles at standard desktop width (1440px) look good.
+3. Copy edit to the Gateway to Adventure paragraph
+In the "Gateway to Adventure" block directly below the tile row, the current closing sentence reads:
+
+"...you'll enjoy premium connectivity while living in this pristine coastal paradise where waterfront properties command premium prices."
+
+Replace the phrase "this pristine coastal paradise where waterfront properties command premium prices" with: "one of Tasmania's most tightly held coastal villages."
+So the full sentence now reads:
+
+"...you'll enjoy premium connectivity while living in one of Tasmania's most tightly held coastal villages."
+
+Do not modify any other part of the Gateway to Adventure paragraph or the four icon tiles below it.
+4. Verification
+
+Confirm all 5 tiles display correctly at desktop (1440px) and mobile (375px)
+Confirm image loads from /public/images/highfield.jpg
+Confirm tile order matches the specification above
+Confirm the Gateway to Adventure copy now reads correctly
+
+Commit with message "added Highfield Historic Site tile to Stanley Lifestyle, refined Gateway to Adventure copy" and give me the commit hash.
