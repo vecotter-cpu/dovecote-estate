@@ -163,6 +163,14 @@ export default function News() {
         <section className="py-12 text-center" style={{ backgroundColor: 'var(--mist-white)' }}>
           <a
             href="/#news"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/#news';
+              setTimeout(() => {
+                const el = document.getElementById('news');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}
             className="text-sm font-medium hover:underline"
             style={{ color: 'var(--dark-green)', fontFamily: 'Inter, sans-serif' }}
           >
