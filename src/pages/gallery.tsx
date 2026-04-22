@@ -20,6 +20,26 @@ export default function Gallery() {
       alt: "Stanley Nut and harbor aerial view"
     },
     {
+      src: "/images/gallery/stanley-nut-rockpool.jpg",
+      alt: "The Nut reflected in a coastal rock pool at low tide, Stanley"
+    },
+    {
+      src: "/images/gallery/stanley-beach-sunset.jpg",
+      alt: "Purple and pink sunset over Godfrey's Beach with The Nut, Stanley"
+    },
+    {
+      src: "/images/gallery/stanley-godfrey-aerial.jpg",
+      alt: "Aerial view of Godfrey's Beach curving around to The Nut, Stanley"
+    },
+    {
+      src: "/images/gallery/stanley-beach-boat.jpg",
+      alt: "People resting on a weathered boat on the beach with The Nut and seagulls, Stanley"
+    },
+    {
+      src: "/images/gallery/stanley-beach-walk.jpg",
+      alt: "Person walking dogs on a quiet beach with green farmland, Stanley"
+    },
+    {
       src: "/assets/gallery_godfreys_beach.png",
       alt: "Godfrey's Beach - Popular surf beach with golden sand and family facilities"
     },
