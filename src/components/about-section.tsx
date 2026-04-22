@@ -29,7 +29,7 @@ export default function AboutSection() {
               A Once-in-a-Lifetime Opportunity
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              With residential land in Stanley virtually unobtainable in recent years, this exclusive peninsula subdivision presents a once in a lifetime opportunity to secure premium coastal land in one of Tasmania's most tightly held and historic townships. Offering both lifestyle appeal and investment potential, opportunities of this calibre are extremely limited — making this release rare, strategic, and highly desirable.
+              With residential land in Stanley virtually unobtainable in recent years, this exclusive peninsula subdivision presents a once in a lifetime opportunity to secure premium coastal land in one of Tasmania's most tightly held and historic townships. Offering both lifestyle appeal and investment potential, opportunities of this calibre are extremely limited, making this release rare, strategic, and highly desirable.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               Just 40 minutes from Wynyard Airport, with daily flights direct to Melbourne, residents will enjoy premium connectivity while living in a pristine coastal paradise where coastal properties command premium prices.

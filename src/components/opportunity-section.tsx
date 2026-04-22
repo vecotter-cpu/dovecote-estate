@@ -22,7 +22,7 @@ export default function OpportunitySection() {
 
           <div className="mx-auto mb-12 space-y-6 text-left" style={{ maxWidth: '760px' }}>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Stanley is a 600-resident fishing village on Tasmania's north-west coast, hosting more than 145,000 visitors a year — 75,000 of them staying overnight. It has been named Tasmania's Top Tiny Tourism Town in 2024 and 2025, and won the People's Choice award at the 2025 Tasmanian Tourism Awards. Residential land inside the township is rarely offered: only 16 properties changed hands across the entire town in the past twelve months.
+              Stanley is a 600-resident fishing village on Tasmania's north-west coast, hosting more than 145,000 visitors a year, with 75,000 staying overnight. It has been named Tasmania's Top Tiny Tourism Town in 2024 and 2025, and won the People's Choice award at the 2025 Tasmanian Tourism Awards. Residential land inside the township is rarely offered: only 16 properties changed hands across the entire town in the past twelve months.
             </p>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
               Tasmania's north-west coast led the state's regional property recovery in 2025, offering some of the most affordable coastal real estate in the country. Mainland investor activity into northern Tasmania rose 56% last year, with total mainland buyer numbers into the state up 43.6%. Regional property prices nationally outperformed the capital cities over the past twelve months. These conditions are forecast to continue for at least the next three to five years.

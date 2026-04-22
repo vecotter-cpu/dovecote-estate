@@ -1,0 +1,65 @@
+Carry out a site-wide copy pass to remove em dashes ( — ) from all body copy, headings, and UI text, except where explicitly noted.
+WHAT TO REMOVE
+The em dash character ( — ). This is a long dash used as a stylistic break in sentences. It reads as AI-generated copy and must be replaced throughout the site.
+WHAT TO KEEP
+
+Hyphens ( - ) in compound words. Do not touch these. Examples that must remain unchanged: "tight-knit", "nine-hole", "award-winning", "first-home", "north-west", "short-stay", "build-ready", "two-bedroom", "three-bedroom", "four-bedroom", "six-star", "family-run", "walk-to-it", "heritage-listed", "year-round", "Van Diemen's Land", "cost-benefit", "ready-to-build", "one-point", "single-family", and similar.
+Em dashes inside verbatim quoted content. Do not modify text inside quotation marks on the Press & Coverage cards. Specifically preserve exactly as-is:
+
+The Mercury pull quote: "How a young restaurateur is reinventing dining in Stanley."
+The Australian pull quote: "From historic buildings to a striking geological landmark, Stanley has diversions aplenty."
+The SMH article headline: "This Aussie road trip is outstanding, even if my car isn't"
+Any byline format like "— Jim Darby" or "— Bridget Clarke, The Mercury" on the press cards. These are standard editorial byline attribution and should stay.
+
+
+En dashes ( – ) in ranges (e.g., "2–3 times", "$600–$800k"). Leave these as-is.
+
+HOW TO REPLACE EM DASHES
+For each em dash removed, replace with the most natural punctuation or restructure the sentence lightly:
+
+If it introduces an aside or clarification: replace with a comma or enclose the aside in commas on both sides
+If it introduces a new thought at the end of a sentence: replace with a full stop and new sentence
+If it connects two independent thoughts: replace with a full stop or semicolon
+
+Maintain grammatical correctness, natural flow, and the original meaning. Do not simply delete em dashes and leave awkward syntax.
+EXAMPLES OF CORRECT REWRITES
+Before: "Original home of the Van Diemen's Land Company — open daily with views across to The Nut."
+After: "Original home of the Van Diemen's Land Company. Open daily with views across to The Nut."
+Before: "Stanley — Tassie's Top Tourism Town, Gold Winner"
+After: "Stanley: Tassie's Top Tourism Town, Gold Winner" (heading — use a colon here)
+Before: "The JDR packages are offered as one option among many — particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact."
+After: "The JDR packages are offered as one option among many, particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact."
+Before: "It's different here — this place has a culture of its own."
+After: "It's different here. This place has a culture of its own."
+SCOPE
+Run this pass across the entire website, including:
+
+Homepage hero text and subheadings
+Available Lots section (all lot cards and the full lot table)
+Why Stanley. Why now. (Investment) section
+Press & Coverage section (cards and pull quotes — see exceptions above)
+The Stanley Lifestyle section (all 5 tiles + Gateway to Adventure block)
+Enquiry form and final CTA
+News page (both remaining articles and page heading/subheading)
+Any navigation labels, button text, form labels
+Meta descriptions and page titles
+Any footer text
+
+DO NOT MODIFY
+
+Structural markup, components, classes, or styling
+Images or layout
+Third-party article links or URLs
+Data values, prices, or numbers
+Verbatim quotes as listed above
+Nav labels that don't contain em dashes
+
+ONE ADDITIONAL SMALL FIX — Highfield caption
+While in The Stanley Lifestyle section, shorten the Highfield Historic Site caption for visual balance with the other tiles.
+Current: "1830s Regency house and farm on the headland overlooking Godfrey's Beach. Original home of the Van Diemen's Land Company — open daily with views across to The Nut."
+Replace with: "An 1830s Regency house and farm on the headland above Godfrey's Beach. The original seat of the Van Diemen's Land Company, open daily with views across to The Nut."
+This shortens the caption to roughly match the 5-6 line length of the other tiles.
+VERIFICATION
+After the pass, run a search for the em dash character ( — ) across the codebase and confirm only the permitted exceptions remain (press card bylines and verbatim article quotes). Paste a brief list of any remaining em dashes and their locations for my review.
+Commit with message "site-wide copy pass: removed em dashes, restructured for natural prose; preserved quotes and byline dashes" and give me the commit hash.
+

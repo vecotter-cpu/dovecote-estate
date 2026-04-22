@@ -115,7 +115,7 @@ const CARDS: CardData[] = [
     imageAlt: "The Nut volcanic plug rising above Stanley, Tasmania",
     publication: "SPIRIT OF TASMANIA",
     date: "2021",
-    headline: "Stanley — Tassie's Top Tourism Town, Gold Winner",
+    headline: "Stanley: Tassie's Top Tourism Town, Gold Winner",
     link: "https://www.spiritoftasmania.com.au/blog/stanley-tassie-s-top-tourism-town-2021-gold-winner",
   },
   // Row 2

@@ -20,7 +20,7 @@ export default function LifestyleSection() {
     {
       image: "/images/highfield.jpg",
       title: "Highfield Historic Site",
-      description: "1830s Regency house and farm on the headland overlooking Godfrey's Beach. Original home of the Van Diemen's Land Company — open daily with views across to The Nut."
+      description: "An 1830s Regency house and farm on the headland above Godfrey's Beach. The original seat of the Van Diemen's Land Company, open daily with views across to The Nut."
     },
     {
       image: "/assets/Screen_Shot_2025-07-08_at_6.28.59_pm_1751963949078.png",

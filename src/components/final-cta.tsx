@@ -5,7 +5,7 @@ export default function FinalCTA() {
     <section id="enquire" className="py-24 md:py-32 bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold">
-          This is more than land — it's your entry into Stanley's next chapter.
+          This is more than land. It's your entry into Stanley's next chapter.
         </h2>
         <p className="mt-4 text-gray-700 text-lg">
           Secure your block before values lift further.

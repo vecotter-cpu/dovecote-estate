@@ -49,7 +49,7 @@ const MOCK_UI_PACKAGES = [
   {
     id: "stanley-retreat",
     name: "The Horizon – Lot 15",
-    description: "JDR 228 — four-bedroom family plan with generous kitchen & alfresco.",
+    description: "JDR 228: four-bedroom family plan with generous kitchen & alfresco.",
     price: 841000,
     bedrooms: 4,
     bathrooms: 2,
@@ -60,7 +60,7 @@ const MOCK_UI_PACKAGES = [
   {
     id: "seaside-sanctuary",
     name: "The Bayview – Lot 23",
-    description: "JDR 185 — coastal living with elevated outlook and open-plan flow.",
+    description: "JDR 185: coastal living with elevated outlook and open-plan flow.",
     price: 750000,
     bedrooms: 3,
     bathrooms: 2,
@@ -71,7 +71,7 @@ const MOCK_UI_PACKAGES = [
   {
     id: "hideaway",
     name: "The Hideaway – Lot 24",
-    description: "JDR 130 — compact designer coastal home with efficient layout.",
+    description: "JDR 130: compact designer coastal home with efficient layout.",
     price: 635000,
     bedrooms: 2,
     bathrooms: 1,

@@ -3,7 +3,7 @@ import React from "react"
 export default function MarinaSection() {
   // 1) Image set
   const marinaImages = [
-    { src: "/assets/marina/marina-1.jpg", alt: "Stanley marina — working berths and calm waters" },
+    { src: "/assets/marina/marina-1.jpg", alt: "Stanley marina, working berths and calm waters" },
     { src: "/assets/marina/marina-2.jpg", alt: "Stanley marina aerial view beneath The Nut" },
   ]
 

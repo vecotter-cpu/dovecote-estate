@@ -129,11 +129,11 @@ export default function News() {
                     Tasmanian builder JDR Homes has published two house-and-land packages for Dovecote Estate Stanley, offering buyers an optional turnkey pathway on specific lots.
                   </p>
                   <p className="text-gray-700">
-                    <strong>Lot 23 — Three-bedroom package</strong><br />
+                    <strong>Lot 23: Three-bedroom package</strong><br />
                     3 bed, 2 bath, 2 car on a 714m² lot, with a 190m² home. Total package price: $734,000.
                   </p>
                   <p className="text-gray-700">
-                    <strong>Lot 24 — Two-bedroom package</strong><br />
+                    <strong>Lot 24: Two-bedroom package</strong><br />
                     2 bed, 1 bath, 1 car on a 714m² lot, with a 134m² home. Total package price: $646,000.
                   </p>
                   <p className="text-gray-700">
@@ -143,7 +143,7 @@ export default function News() {
                     JDR Homes is based in Ulverstone on Tasmania's north-west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
                   </p>
                   <p className="text-gray-700">
-                    Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots at Dovecote Estate. The JDR packages are offered as one option among many — particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
+                    Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots at Dovecote Estate. The JDR packages are offered as one option among many, particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
                   </p>
                   <p className="text-gray-700">
                     Enquiries regarding JDR packages can be directed to JDR Homes directly, or via the Dovecote Estate sales team for assistance coordinating the land purchase and build contract.
@@ -188,13 +188,13 @@ export default function News() {
                 </div>
                 <div className="prose prose-lg max-w-none space-y-5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <p className="text-gray-700">
-                    Living at Dovecote Estate means immediate access to Stanley Golf Club, Godfrey's Beach, The Nut chairlift, and a thriving local community. This isn't just about buying property — it's about embracing a coastal lifestyle that balances serenity with convenience.
+                    Living at Dovecote Estate means immediate access to Stanley Golf Club, Godfrey's Beach, The Nut chairlift, and a thriving local community. This isn't just about buying property. It's about embracing a coastal lifestyle that balances serenity with convenience.
                   </p>
                   <p className="text-gray-700">
                     Residents enjoy morning walks to Godfrey's Beach for surfing or swimming, afternoon rounds at the heritage-listed golf club, and weekend adventures exploring The Nut's walking trails and chairlift. The Stanley Marina development adds boating and water sports to the lifestyle mix, while Cradle Mountain sits just 90 minutes away for wilderness experiences.
                   </p>
                   <p className="text-gray-700">
-                    With Wynyard Airport just 40 minutes away offering daily Melbourne flights, and NBN connectivity enabling remote work, Stanley residents enjoy the perfect blend of coastal serenity and modern convenience. It's this unique combination that makes Dovecote Estate more than a property investment — it's a lifestyle transformation.
+                    With Wynyard Airport just 40 minutes away offering daily Melbourne flights, and NBN connectivity enabling remote work, Stanley residents enjoy the perfect blend of coastal serenity and modern convenience. It's this unique combination that makes Dovecote Estate more than a property investment. It's a lifestyle transformation.
                   </p>
                 </div>
               </article>
