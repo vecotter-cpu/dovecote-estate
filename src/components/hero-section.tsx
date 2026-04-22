@@ -46,19 +46,11 @@ export default function HeroSection() {
           </div>
         ))}
 
-        {/*
-          Gradient overlay:
-          Layer 1 — full-width bottom third: 25% black fading to 0% at 40% from bottom
-          Layer 2 — bottom-left concentration: 50% black fading to 0% at 60% diagonal
-          Combined: strong legibility in lower-left, sky/upper image stays clean
-        */}
+        {/* Gradient overlay — top to bottom, locked for legibility */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: [
-              'linear-gradient(to top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 40%)',
-              'linear-gradient(to top right, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.20) 30%, rgba(0,0,0,0) 60%)'
-            ].join(', ')
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.75) 100%)'
           }}
         />
       </div>
@@ -70,7 +62,7 @@ export default function HeroSection() {
           {/* H1 — pure white, regular weight, subtle text-shadow for legibility */}
           <h1
             className="text-white font-prata font-normal leading-tight text-4xl sm:text-5xl lg:text-[3rem] xl:text-[3.5rem]"
-            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
+            style={{ color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}
           >
             You've been to Stanley.{' '}
             <span className="whitespace-nowrap">Now stay.</span>
@@ -80,7 +72,7 @@ export default function HeroSection() {
           <p
             className="text-white font-prata italic font-normal leading-relaxed mt-7
                        text-[1.25rem] sm:text-[1.5rem] lg:text-[1.6rem] xl:text-[1.875rem]"
-            style={{ maxWidth: '520px' }}
+            style={{ maxWidth: '520px', color: '#FFFFFF', textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}
           >
             Twenty-five residential lots in one of Australia's most tightly held coastal villages.
           </p>
@@ -106,7 +98,7 @@ export default function HeroSection() {
           {/* Price micro-line — white at 75% opacity, ~1.5rem below buttons */}
           <p
             className="mt-6 text-sm font-normal"
-            style={{ color: 'rgba(255,255,255,0.75)', letterSpacing: '0.08em' }}
+            style={{ color: 'rgba(255,255,255,0.85)', letterSpacing: '0.08em' }}
           >
             Land from $254,000
           </p>
