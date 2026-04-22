@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, FileText, Home } from "lucide-react";
+import { FileText, Home } from "lucide-react";
 import Lightbox from "@/components/ui/lightbox";
 
 /* -----------------------------
@@ -86,12 +85,7 @@ export default function HomesSection() {
     name: string; image: string; pdf: string; specs: string;
   } | null>(null);
 
-  const { data: homePackages, isLoading } = useQuery({ queryKey: ["/api/home-packages"] });
-
-  // Always fall back to MOCK_UI_PACKAGES if API fails
-  const data = Array.isArray(homePackages) && homePackages.length >= 4
-    ? homePackages
-    : MOCK_UI_PACKAGES;
+  const data = MOCK_UI_PACKAGES;
 
   return (
     <section id="packages" className="py-24 md:py-32 bg-mist-white">
@@ -105,59 +99,52 @@ export default function HomesSection() {
           </p>
         </div>
 
-        {isLoading ? (
-          <div className="text-center">
-            <Loader2 className="mx-auto h-8 w-8 animate-spin" />
-            <p className="mt-4 text-gray-600">Loading home packages...</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {data.map((pkg: any) => (
-              <Card key={pkg.id} className="bg-smoke-white shadow-lg hover:shadow-xl transition overflow-hidden">
-                <div className="h-64 overflow-hidden">
-                  <img src={pkg.imageUrl} alt={pkg.name} className="w-full h-full object-cover" loading="lazy" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {data.map((pkg: any) => (
+            <Card key={pkg.id} className="bg-smoke-white shadow-lg hover:shadow-xl transition overflow-hidden">
+              <div className="h-64 overflow-hidden">
+                <img src={pkg.imageUrl} alt={pkg.name} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <CardHeader>
+                <div className="flex justify-between items-center">
+                  <CardTitle className="text-xl text-forest-green font-prata">{pkg.name}</CardTitle>
+                  <span className="text-xs bg-forest-green text-white px-2 py-1 rounded">JDR Homes</span>
                 </div>
-                <CardHeader>
-                  <div className="flex justify-between items-center">
-                    <CardTitle className="text-xl text-forest-green font-prata">{pkg.name}</CardTitle>
-                    <span className="text-xs bg-forest-green text-white px-2 py-1 rounded">JDR Homes</span>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">{pkg.description}</p>
-                  <p className="text-gray-600 text-sm mt-2">
-                    {jdrFloorPlans[pkg.name]?.specs || `${pkg.bedrooms} bed • ${pkg.bathrooms} bath • ${pkg.size}`}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-bold text-caramel">
-                      ${Number(pkg.price ?? 0).toLocaleString()}
-                    </span>
-                    <span className="text-sm text-gray-500">House & Land</span>
-                  </div>
-                  <ul className="text-xs text-gray-600 space-y-1 mb-6">
-                    {(pkg.features || []).slice(0, 5).map((f: string, i: number) => (
-                      <li key={i}>• {f}</li>
-                    ))}
-                  </ul>
-                  <Button
-                    onClick={() =>
-                      setSelectedFloorPlan({
-                        name: pkg.name,
-                        image: jdrFloorPlans[pkg.name]?.image || "",
-                        pdf: jdrFloorPlans[pkg.name]?.pdf || "",
-                        specs: jdrFloorPlans[pkg.name]?.specs || "",
-                      })
-                    }
-                    className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
-                  >
-                    <Home className="mr-2" size={16} />
-                    View Floor Plan
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
+                <p className="text-sm text-gray-600 mt-2">{pkg.description}</p>
+                <p className="text-gray-600 text-sm mt-2">
+                  {jdrFloorPlans[pkg.name]?.specs || `${pkg.bedrooms} bed • ${pkg.bathrooms} bath • ${pkg.size}`}
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-caramel">
+                    ${Number(pkg.price ?? 0).toLocaleString()}
+                  </span>
+                  <span className="text-sm text-gray-500">House & Land</span>
+                </div>
+                <ul className="text-xs text-gray-600 space-y-1 mb-6">
+                  {(pkg.features || []).slice(0, 5).map((f: string, i: number) => (
+                    <li key={i}>• {f}</li>
+                  ))}
+                </ul>
+                <Button
+                  onClick={() =>
+                    setSelectedFloorPlan({
+                      name: pkg.name,
+                      image: jdrFloorPlans[pkg.name]?.image || "",
+                      pdf: jdrFloorPlans[pkg.name]?.pdf || "",
+                      specs: jdrFloorPlans[pkg.name]?.specs || "",
+                    })
+                  }
+                  className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
+                >
+                  <Home className="mr-2" size={16} />
+                  View Floor Plan
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
 
       {selectedFloorPlan && (
