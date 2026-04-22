@@ -1,0 +1,34 @@
+Update the Available Lots section on the homepage. Two changes, done together. Do not change any other section.
+CHANGE 1 — ADD A SIXTH CARD AS A NAVIGATION TILE
+Add a sixth card to the featured lot grid so the section displays as a clean 3 × 2 grid. Keep the five existing cards (Lot 13, Lot 1, Lot 18, Lot 8, Lot 12) exactly as they are.
+The sixth card is not a lot — it's a navigation tile that links to the full lots table below. It should match the styling of the other cards (same dimensions, same border, same padding) so the grid reads as visually balanced, but its content is different.
+Sixth card content:
+Heading (same typographic style as lot names): Explore All 25 Lots
+Italic paragraph below heading (same style as other card paragraphs): Every lot, every size, every price. Fully serviced, titled and build-ready.
+Supporting line (same style as price text on other cards, in the gold/tan accent): 25 residential landholdings from $248,800
+Primary button at the bottom of the card (same styling as the "Enquire Now" buttons on other cards, in dark green): View the full release →
+Clicking the button (or anywhere on the card) should smoothly scroll to the "All Available Lots" table added in Change 2.
+Do not include lot-specific bullets, checkmarks, or a size notation on this card — it's intentionally simpler than the lot cards so it reads as a navigation element.
+CHANGE 2 — ADD "ALL AVAILABLE LOTS" REFERENCE TABLE
+Directly below the six cards, add a new subsection with the heading All Available Lots.
+Above the table, add a short italic intro line: All 25 lots are fully serviced, titled and build-ready. Enquire for site plans, lot positions, and private inspection.
+Below this intro, add a clean table listing all 25 lots with the following columns: Lot number, Size, Price, Enquire.
+Data (in this exact order):
+LotSizePriceLot 1635m²$254,000Lot 2678m²$271,200Lot 3677m²$270,800Lot 4676m²$270,400Lot 5675m²$270,000Lot 6622m²$248,800Lot 7755m²$302,000Lot 8730m²$292,000Lot 9730m²$292,000Lot 10730m²$292,000Lot 11730m²$292,000Lot 12716m²$286,400Lot 13776m²$310,400Lot 14777m²$310,800Lot 15777m²$310,800Lot 16777m²$310,800Lot 17777m²$310,800Lot 18769m²$307,600Lot 19733m²$293,200Lot 20714m²$285,600Lot 21714m²$285,600Lot 22714m²$285,600Lot 23714m²$285,600Lot 24714m²$285,600Lot 25706m²$282,400
+Each row should end with an "Enquire →" text link in the dark green accent colour. Clicking it scrolls to the enquiry form at the bottom of the page and, if technically possible, pre-fills the relevant lot number in the message or a dedicated field.
+Table styling:
+
+Use the same typography as the rest of the site
+Lot number column: bold, slightly larger than the others
+Size column: regular weight, muted grey
+Price column: gold/tan accent colour (same as used on the lot cards)
+"Enquire" column: small text link in dark green with a right-pointing arrow
+Row separation: a fine horizontal divider between rows — no heavy zebra striping
+Row padding: approximately 16–20px vertical, 24px horizontal
+Generous left and right page margins — the table should not stretch edge-to-edge
+
+Mobile behaviour (below 768px):
+On mobile, convert the table to a vertical card list. Each card shows the lot number (bold), size (muted), price (gold), and a full-width "Enquire →" button in dark green. Card order preserves the lot sequence (1 through 25).
+FINAL
+Verify the result on desktop (1440px) and mobile (375px). The sixth navigation card should smooth-scroll to the table when clicked. The table on mobile should convert to card format cleanly, not squish horizontally.
+Commit with the message "lot section v3 — navigation card + all 25 lots reference table with mobile card layout" and give me the commit hash.

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,6 +20,16 @@ export default function ContactSection() {
     interest: "",
     message: ""
   });
+
+  // Listen for lot-specific enquiry pre-fill from the lots table
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const { lot } = (e as CustomEvent).detail;
+      setFormData(prev => ({ ...prev, message: `I'd like to enquire about Lot ${lot}.` }));
+    };
+    window.addEventListener('enquireLot', handler);
+    return () => window.removeEventListener('enquireLot', handler);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

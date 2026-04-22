@@ -31,6 +31,34 @@ const GALLERY_IMAGES = [
   }
 ];
 
+const ALL_LOTS = [
+  { lot: 1,  sqm: 635, price: 254000 },
+  { lot: 2,  sqm: 678, price: 271200 },
+  { lot: 3,  sqm: 677, price: 270800 },
+  { lot: 4,  sqm: 676, price: 270400 },
+  { lot: 5,  sqm: 675, price: 270000 },
+  { lot: 6,  sqm: 622, price: 248800 },
+  { lot: 7,  sqm: 755, price: 302000 },
+  { lot: 8,  sqm: 730, price: 292000 },
+  { lot: 9,  sqm: 730, price: 292000 },
+  { lot: 10, sqm: 730, price: 292000 },
+  { lot: 11, sqm: 730, price: 292000 },
+  { lot: 12, sqm: 716, price: 286400 },
+  { lot: 13, sqm: 776, price: 310400 },
+  { lot: 14, sqm: 777, price: 310800 },
+  { lot: 15, sqm: 777, price: 310800 },
+  { lot: 16, sqm: 777, price: 310800 },
+  { lot: 17, sqm: 777, price: 310800 },
+  { lot: 18, sqm: 769, price: 307600 },
+  { lot: 19, sqm: 733, price: 293200 },
+  { lot: 20, sqm: 714, price: 285600 },
+  { lot: 21, sqm: 714, price: 285600 },
+  { lot: 22, sqm: 714, price: 285600 },
+  { lot: 23, sqm: 714, price: 285600 },
+  { lot: 24, sqm: 714, price: 285600 },
+  { lot: 25, sqm: 714, price: 285600 },
+];
+
 export default function LotsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const lots = MOCK_LOTS;
@@ -42,6 +70,11 @@ export default function LotsSection() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const enquireLot = (lotNum: number) => {
+    window.dispatchEvent(new CustomEvent('enquireLot', { detail: { lot: lotNum } }));
+    scrollToSection('#contact');
   };
 
   const nextSlide = () => {
@@ -328,6 +361,7 @@ export default function LotsSection() {
           </div>
         </div>
         
+        {/* 3×2 grid: 5 lot cards + 1 navigation tile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {(Array.isArray(lots) && lots.length ? lots : MOCK_LOTS).map((lot) => (
             <Card key={lot.id} className="bg-mist-white hover:shadow-lg transition-shadow flex flex-col">
@@ -361,15 +395,88 @@ export default function LotsSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <Button
-            onClick={() => scrollToSection("#contact")}
-            className="rounded-2xl px-8 py-4 text-lg font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
+
+          {/* 6th card — navigation tile to full lots table */}
+          <Card
+            className="bg-mist-white hover:shadow-lg transition-shadow flex flex-col cursor-pointer border-dashed"
+            onClick={() => scrollToSection('#all-lots')}
           >
-            View All Available Lots
-          </Button>
+            <CardHeader className="flex-shrink-0 pb-3">
+              <CardTitle className="text-xl text-forest-green mb-1">Explore All 25 Lots</CardTitle>
+              <p className="text-sm italic text-gray-600 leading-relaxed">
+                Every lot, every size, every price. Fully serviced, titled and build-ready.
+              </p>
+            </CardHeader>
+            <CardContent className="flex-grow flex flex-col pt-0">
+              <p className="text-2xl font-bold text-caramel mb-6">
+                25 residential landholdings from $248,800
+              </p>
+              <Button
+                onClick={(e) => { e.stopPropagation(); scrollToSection('#all-lots'); }}
+                className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition mt-auto"
+              >
+                View the full release →
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* All Available Lots reference table */}
+        <div id="all-lots" className="mt-24 scroll-mt-24">
+          <h2 className="text-forest-green mb-3" style={{ fontFamily: 'Prata, serif' }}>All Available Lots</h2>
+          <p className="text-base italic text-gray-600 mb-10">
+            All 25 lots are fully serviced, titled and build-ready. Enquire for site plans, lot positions, and private inspection.
+          </p>
+
+          {/* Desktop table */}
+          <div className="hidden md:block rounded-2xl overflow-hidden border border-gray-200">
+            <table className="w-full" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <thead>
+                <tr className="bg-[#f6f4f0] border-b border-gray-200">
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-forest-green">Lot</th>
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-gray-500">Size</th>
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-gray-500">Price</th>
+                  <th className="text-right px-6 py-4 text-sm font-semibold text-gray-500">Enquire</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ALL_LOTS.map((item, i) => (
+                  <tr key={item.lot} className={`border-b border-gray-100 hover:bg-[#f9f8f5] transition-colors ${i % 2 === 0 ? '' : ''}`}>
+                    <td className="px-6 py-4 font-bold text-forest-green text-base">Lot {item.lot}</td>
+                    <td className="px-6 py-4 text-gray-500 text-sm">{item.sqm}m²</td>
+                    <td className="px-6 py-4 font-semibold text-caramel">${item.price.toLocaleString()}</td>
+                    <td className="px-6 py-4 text-right">
+                      <button
+                        onClick={() => enquireLot(item.lot)}
+                        className="text-sm text-forest-green hover:underline font-medium"
+                      >
+                        Enquire →
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile card list */}
+          <div className="md:hidden space-y-3">
+            {ALL_LOTS.map((item) => (
+              <div key={item.lot} className="rounded-xl border border-gray-200 bg-mist-white px-5 py-4">
+                <div className="flex items-baseline justify-between mb-1">
+                  <span className="font-bold text-forest-green text-base">Lot {item.lot}</span>
+                  <span className="text-gray-500 text-sm">{item.sqm}m²</span>
+                </div>
+                <p className="font-semibold text-caramel mb-3">${item.price.toLocaleString()}</p>
+                <Button
+                  onClick={() => enquireLot(item.lot)}
+                  className="w-full rounded-xl px-4 py-2 text-sm font-medium bg-forest-green text-white hover:opacity-95 transition"
+                >
+                  Enquire →
+                </Button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
