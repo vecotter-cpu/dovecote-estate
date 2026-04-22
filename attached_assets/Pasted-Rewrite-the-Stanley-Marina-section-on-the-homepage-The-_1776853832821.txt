@@ -1,0 +1,57 @@
+Rewrite the Stanley Marina section on the homepage. The carousel currently contains one aerial image. Add a second image and replace the heading and body copy.
+Section placement
+The section sits between The Stanley Lifestyle section and the Find us in Stanley section. Do not move it.
+1. Add a second image to the carousel
+The carousel currently shows one image (the aerial photo of Stanley's port with The Nut).
+Add a second image to the carousel using the file already uploaded at:
+/public/images/stanley-marina-current.jpg
+Order:
+
+Slide 1: The existing aerial photo (keep as-is, first)
+Slide 2: The ground-level photo at /public/images/stanley-marina-current.jpg
+
+Alt text for slide 1: "Aerial view of Stanley's existing working port at the foot of The Nut."
+Alt text for slide 2: "Stanley's working port at ground level, with fishing boats, private yachts and the breakwater."
+Keep carousel controls and navigation dots working.
+2. Replace the heading
+Current: Stanley Marina
+New: Stanley Marina — A Developing Vision
+The em dash in the heading is intentional and should remain.
+3. Replace the body copy
+Replace all current body copy with the four paragraphs below. Keep existing typography and column layout.
+Paragraph 1:
+
+Plans for an 80–100 berth marina at Stanley are in early development with Circular Head Council, expanding on the village's existing working port at the foot of The Nut. Pre-application discussions are underway and the concept has been shared publicly with the Stanley community.
+
+Paragraph 2:
+
+Beyond recreational moorings and berthing, the marina is envisaged as the base for a regular passenger and vehicle ferry service from the mainland to Stanley, adding a direct travel route to the village over time.
+
+Paragraph 3:
+
+The marina is not yet council-approved and no construction has commenced. The site is owned by Circular Head Council, and any development will be subject to approvals, community consultation, and funding.
+
+Paragraph 4 (visually distinct — italic, slightly smaller or muted):
+
+The marina and ferry are a longer-term opportunity for the village.
+
+4. Em dash policy
+Heading keeps its em dash. Body copy must contain no em dashes. Hyphens in compound words are fine (e.g. "north-west", "passenger and vehicle"). Replace any em dashes in the body with commas or full stops.
+5. Preserve everything else
+Do not modify:
+
+The Stanley Lifestyle section above
+The Find us in Stanley section below
+Any other section of the site
+
+Verification
+
+Heading reads "Stanley Marina — A Developing Vision"
+Carousel has two slides: aerial first, ground-level second
+Both images display correctly with alt text
+Four new paragraphs of copy in correct order
+Paragraph 4 is italic and visually distinct
+No em dashes in body
+Layout and spacing consistent with the rest of the homepage
+
+Commit message: "marina section rewritten for honesty — added second real port photo, softened attribution, council ownership and ferry framing"
