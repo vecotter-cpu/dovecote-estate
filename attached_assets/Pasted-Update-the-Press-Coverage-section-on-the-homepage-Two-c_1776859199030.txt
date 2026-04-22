@@ -1,0 +1,54 @@
+Update the Press & Coverage section on the homepage. Two changes: reorder the 9 cards into a new arrangement, and remove the date line from every card.
+1. New card order (left to right, top to bottom)
+Row 1:
+
+Australian Traveller — "The Best Australian Beaches" (with existing Golden_hour.jpg image)
+Gourmet Traveller — "Best Restaurants in Tasmania to Visit in 2026" (with existing stanley_main_street.jpg image)
+The Australian · Travel — "Things to do in Stanley, Tasmania" (with existing the_australian_article.avif image)
+
+Row 2:
+4. SMH Traveller — "This Aussie road trip is outstanding, even if my car isn't" (with existing shin_inn.jpg image)
+5. The Mercury · News 09 — FEATURED card with pull quote "How a young restaurateur is reinventing dining in Stanley." (with existing mercury-zivah-stanley.jpg newspaper clipping — lightbox behaviour preserved)
+6. 9Travel — "Best Beaches in Australia 2026" (with existing Stanley_look_out.jpg image)
+Row 3:
+7. Pulse Tasmania — "Deloraine, Stanley and Devonport win top Tasmanian tourism awards" (with existing stanley_haven.webp image)
+8. Premier of Tasmania — "Tassie's Top Tourism Towns crowned for 2024" (with existing Table_Cape.webp image)
+9. Spirit of Tasmania — "Stanley: Tassie's Top Tourism Town, Gold Winner" (with existing the_nut.jpg image)
+Card 5 (The Mercury) retains its existing featured-card treatment (2px dark green border or FEATURED badge, whichever is currently applied) and the lightbox behaviour when the clipping is clicked.
+All article URLs, pull quotes, bylines, and image associations stay the same — only the position in the grid changes.
+2. Remove the date line from every card
+Each card currently displays the publication name in gold/tan uppercase, followed by a date line (e.g., "JULY 2025", "MAY 2025", "JANUARY 2023", "2021", "2026").
+Remove the date line from all 9 cards. Keep the publication name, the byline (where present), the headline or pull quote, the supporting italic lines, the divider, and the "Read the article →" link.
+After removal, each card should flow:
+
+Image
+Publication name (uppercase, gold/tan)
+Headline or pull quote
+Byline/supporting italic (where present)
+Divider
+Read the article → link
+
+3. Exception — keep dates only where integral to the headline
+Do not remove "2026" from within the headline "Best Beaches in Australia 2026" or "Best Restaurants in Tasmania to Visit in 2026" — those are part of the article title itself.
+Only remove the standalone date line that sits between the publication name and the headline.
+4. Do not modify
+
+The section heading "Press & Coverage"
+The intro line beneath the heading
+The "AS FEATURED IN" strip of publication names
+The cross-link at the bottom to Dovecote Estate news
+Card styling (padding, border, aspect ratios, hover states)
+Article URLs (all open in new tab)
+Image files or alt text
+The Mercury lightbox functionality
+
+5. Verification
+
+Card order matches the new arrangement exactly
+The Mercury is still in position 5 (row 2, middle) with featured styling
+All 9 article URLs still open correctly in a new tab
+Dates removed from the date line position on all 9 cards
+"2026" still appears within the headlines of the 9Travel and Gourmet Traveller cards (as part of article title)
+Grid layout unchanged at desktop (3×3) and mobile (stack)
+
+Commit message: "press & coverage section — reordered cards for stronger narrative flow, removed date lines for timeless reading"
