@@ -4,7 +4,7 @@ const DATA_TILES = [
   { stat: "240:1", label: "Visitor-to-resident ratio" },
   { stat: "145,000", label: "Visitors to Stanley each year" },
   { stat: "56%", label: "Rise in Northern Tasmania investor activity (2025)" },
-  { stat: "3.6%", label: "Annual property turnover in Stanley — roughly half the national average" },
+  { stat: "3.6%", label: "Annual turnover in Stanley\u00a0— half the national average" },
 ];
 
 export default function OpportunitySection() {
@@ -20,7 +20,7 @@ export default function OpportunitySection() {
             The market case for residential land in one of Australia's most tightly held coastal villages.
           </p>
 
-          <div className="max-w-4xl mx-auto mb-12 space-y-6 text-left">
+          <div className="mx-auto mb-12 space-y-6 text-left" style={{ maxWidth: '760px' }}>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
               Stanley is a 600-resident fishing village on Tasmania's north-west coast, hosting more than 145,000 visitors a year — 75,000 of them staying overnight. It has been named Tasmania's Top Tiny Tourism Town in 2024 and 2025, and won the People's Choice award at the 2025 Tasmanian Tourism Awards. Residential land inside the township is rarely offered: only 16 properties changed hands across the entire town in the past twelve months.
             </p>
@@ -58,6 +58,19 @@ export default function OpportunitySection() {
               </div>
             ))}
           </div>
+
+          <p
+            className="text-center text-gray-600"
+            style={{
+              fontFamily: 'Prata, serif',
+              fontStyle: 'italic',
+              fontSize: '1.25rem',
+              marginTop: '3rem',
+              marginBottom: '3rem',
+            }}
+          >
+            The case is in the numbers. The opportunity is in the timing.
+          </p>
 
           <h3 className="text-gray-700 mb-8" style={{ fontFamily: 'Prata, serif' }}>
             Development Ready
