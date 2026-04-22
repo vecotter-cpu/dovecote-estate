@@ -52,13 +52,10 @@ export default function HeroSection() {
       <div className="hero relative z-10 flex items-center justify-center h-full">
         <div className="text-center max-w-4xl mx-auto px-4" style={{ transform: 'translateY(10vh)' }}>
           <h1 className="text-white text-center font-prata text-5xl md:text-6xl leading-tight">
-            Stanley, rarely offered.
+            You've been to Stanley. Now stay.
           </h1>
-          <p className="text-white text-center mt-3 font-prata text-2xl md:text-3xl leading-snug">
-            25 lots. One release. A coastline that's been waiting.
-          </p>
-          <p className="text-white text-center mt-4 max-w-2xl mx-auto text-lg md:text-xl font-inter">
-            A premium residential release in one of Tasmania's most tightly held coastal townships — walking distance to the beach, The Nut, the marina and the golf club.
+          <p className="text-white text-center mt-10 max-w-2xl mx-auto font-prata italic font-normal text-xl md:text-2xl leading-relaxed">
+            Twenty-five residential lots in one of Australia's most tightly held coastal villages.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center">
             <Button
