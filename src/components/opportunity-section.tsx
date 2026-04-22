@@ -59,6 +59,19 @@ export default function OpportunitySection() {
             ))}
           </div>
 
+          {/* Airport callout banner */}
+          <div
+            className="flex items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white px-8 py-5 mt-4 mb-6"
+          >
+            <span style={{ color: 'var(--caramel)', fontSize: '1.1rem' }}>✈</span>
+            <p
+              className="text-gray-600 text-center"
+              style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}
+            >
+              Wynyard Airport is 40 minutes from Stanley, with multiple flights per day to Melbourne.
+            </p>
+          </div>
+
           <p
             className="text-center text-gray-600"
             style={{

@@ -1,0 +1,49 @@
+Add a horizontal callout banner directly beneath the 4 data tiles in the "Why Stanley. Why now." section. Do not modify the tiles themselves or any other part of the section.
+1. Placement
+Add a new horizontal callout banner immediately below the 4-tile row, sitting between the tiles and the existing italic closing line "The case is in the numbers. The opportunity is in the timing."
+Modest vertical spacing above and below the callout so it visually anchors to the tile row without crowding it.
+2. Banner content
+Single horizontal band, full width of the tile row. Centred text.
+Text content:
+
+✈ Wynyard Airport is 40 minutes from Stanley, with multiple flights per day to Melbourne.
+
+Use a small aircraft icon on the left (emoji ✈ is fine, or a matching outline icon in the site's gold/tan accent colour if cleaner).
+3. Visual styling
+Distinct from the 4 tiles — this is supporting context, not a 5th tile. Suggested styling:
+
+Background: very subtle tonal shift from the section background (slightly lighter or softer, or a thin 1px border with transparent fill)
+Height: approximately 60-70% of a data tile's height
+Typography: regular weight (not bold large numeral like the tiles), approximately 1rem size
+Text colour: same body text colour as the section
+Icon colour: gold/tan accent matching the tile number colour (or monochrome if cleaner)
+Border radius: matches the tile border radius
+Horizontal padding: comfortable breathing room on both sides of the text
+
+The intent is that a visitor reads the 4 tiles first, then the callout second as a supporting fact — not as a competing data point.
+4. Responsive behaviour
+
+Desktop (1200px+): full width beneath the tile row, single horizontal line of text
+Tablet (768-1199px): spans the full tile row width, may break to 2 lines if needed
+Mobile (below 768px): full width, icon and text stack or wrap naturally, still single sentence
+
+5. Do not modify:
+
+The 4 existing data tiles (240:1, 145,000, 56%, 3.6%) — all remain exactly as they are
+The section heading, supporting line, or body copy
+The italic closing line "The case is in the numbers. The opportunity is in the timing."
+Any other section of the site
+
+6. Em dash policy
+The callout text contains commas only. No em dashes.
+Verification:
+
+New callout banner appears directly below the 4-tile row
+Text reads exactly: "✈ Wynyard Airport is 40 minutes from Stanley, with multiple flights per day to Melbourne."
+Banner spans the full width of the tile row
+Visual styling is distinct from the tiles (clearly supporting context, not a 5th tile)
+Closing italic line ("The case is in the numbers...") still appears below the callout
+Tiles and all other section content unchanged
+
+Commit message: "added Wynyard Airport callout banner below investment section data tiles"
+
