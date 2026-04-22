@@ -1,0 +1,31 @@
+Update the Available Lots section on the homepage. Do not change any other section.
+Current state: The "All Available Lots" table showing 25 rows is currently always visible below the six lot cards. I want to hide it by default and only reveal it when the user clicks the "View the full release →" button on the sixth navigation card.
+Required behaviour:
+
+The "All Available Lots" section (heading, intro line, and the 25-row table) should be hidden by default when the page loads.
+Clicking the "View the full release →" button on the sixth card ("Explore All 25 Lots") should:
+
+Reveal the "All Available Lots" section with a smooth fade or slide-down animation (approximately 400ms)
+Smooth-scroll the page to bring the newly revealed table into view
+Change the button text from "View the full release →" to "Hide full release ▲" (or similar) so the user knows they can collapse it again
+
+
+Clicking the button again should:
+
+Smoothly hide the table
+Return the button text to "View the full release →"
+Smooth-scroll back up to the lot cards section
+
+
+The table should persist if the user scrolls — don't auto-collapse on scroll or time-out.
+
+Styling of the sixth card:
+Keep the sixth card's content and styling exactly as it currently is. Only the button behaviour changes — from a scroll-to anchor into an expand/collapse toggle.
+Technical notes:
+
+Use a simple CSS transition or JavaScript show/hide. No heavy animation libraries required.
+Ensure the table content remains in the DOM for SEO purposes — hide via CSS (display: none or max-height: 0 with overflow hidden), not by removing from DOM.
+Ensure keyboard accessibility: the button should be properly labelled with aria-expanded="true/false" and the hidden section should have aria-hidden matching its visibility state.
+
+Test both desktop (1440px) and mobile (375px). On mobile, the table converts to the vertical card list as previously configured — that behaviour stays the same, just hidden by default until the button is pressed.
+Commit with message "lot section v4 — collapsible all-lots table, expand/collapse via sixth card button" and give me the commit hash.

@@ -61,6 +61,7 @@ const ALL_LOTS = [
 
 export default function LotsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showAllLots, setShowAllLots] = useState(false);
   const lots = MOCK_LOTS;
   const isLoading = false;
   const error = null;
@@ -75,6 +76,18 @@ export default function LotsSection() {
   const enquireLot = (lotNum: number) => {
     window.dispatchEvent(new CustomEvent('enquireLot', { detail: { lot: lotNum } }));
     scrollToSection('#contact');
+  };
+
+  const toggleAllLots = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const next = !showAllLots;
+    setShowAllLots(next);
+    if (next) {
+      // Small delay lets the CSS transition start before scroll
+      setTimeout(() => scrollToSection('#all-lots'), 50);
+    } else {
+      scrollToSection('#lots-grid');
+    }
   };
 
   const nextSlide = () => {
@@ -396,10 +409,10 @@ export default function LotsSection() {
             </Card>
           ))}
 
-          {/* 6th card — navigation tile to full lots table */}
+          {/* 6th card — navigation tile / expand-collapse toggle */}
           <Card
             className="bg-mist-white hover:shadow-lg transition-shadow flex flex-col cursor-pointer border-dashed"
-            onClick={() => scrollToSection('#all-lots')}
+            onClick={toggleAllLots}
           >
             <CardHeader className="flex-shrink-0 pb-3">
               <CardTitle className="text-xl text-forest-green mb-1">Explore All 25 Lots</CardTitle>
@@ -412,17 +425,29 @@ export default function LotsSection() {
                 25 residential landholdings from $248,800
               </p>
               <Button
-                onClick={(e) => { e.stopPropagation(); scrollToSection('#all-lots'); }}
+                onClick={toggleAllLots}
+                aria-expanded={showAllLots}
+                aria-controls="all-lots"
                 className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition mt-auto"
               >
-                View the full release →
+                {showAllLots ? 'Hide full release ▲' : 'View the full release →'}
               </Button>
             </CardContent>
           </Card>
         </div>
 
-        {/* All Available Lots reference table */}
-        <div id="all-lots" className="mt-24 scroll-mt-24">
+        {/* All Available Lots reference table — hidden by default, revealed via toggle */}
+        <div
+          id="all-lots"
+          aria-hidden={!showAllLots}
+          className="scroll-mt-24 overflow-hidden"
+          style={{
+            maxHeight: showAllLots ? '9999px' : '0',
+            opacity: showAllLots ? 1 : 0,
+            marginTop: showAllLots ? '6rem' : '0',
+            transition: 'max-height 400ms ease-in-out, opacity 400ms ease-in-out, margin-top 400ms ease-in-out',
+          }}
+        >
           <h2 className="text-forest-green mb-3" style={{ fontFamily: 'Prata, serif' }}>All Available Lots</h2>
           <p className="text-base italic text-gray-600 mb-10">
             All 25 lots are fully serviced, titled and build-ready. Enquire for site plans, lot positions, and private inspection.
