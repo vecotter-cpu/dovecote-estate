@@ -96,10 +96,9 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-4xl font-bold text-forest-green mb-6">Ready to Secure Your Coastal Dream?</h2>
+            <h2 className="text-4xl font-bold text-forest-green mb-6">Enquire about Dovecote Estate</h2>
             <p className="text-lg text-gray-700 mb-8">
-              This is a once-in-a-lifetime opportunity to secure premium residential land in Stanley. 
-              With blocks becoming increasingly rare, don't miss your chance to invest in this award-winning coastal paradise.
+              Twenty-five titled, serviced residential lots are available at Dovecote Estate, Stanley, from $248,800. Request the information pack for full details on each lot, including plans, pricing, and buyer guidance.
             </p>
             
             <div className="space-y-6">
@@ -137,7 +136,7 @@ export default function ContactSection() {
           
           <Card className="bg-mist-white">
             <CardHeader>
-              <CardTitle className="text-2xl text-forest-green">Request Information</CardTitle>
+              <CardTitle className="text-2xl text-forest-green">Request the information pack</CardTitle>
             </CardHeader>
             <CardContent>
               {isSubmitted ? (
@@ -281,7 +280,7 @@ export default function ContactSection() {
                       Sending...
                     </>
                   ) : (
-                    "Send Enquiry"
+                    "Request information pack"
                   )}
                 </Button>
               </form>

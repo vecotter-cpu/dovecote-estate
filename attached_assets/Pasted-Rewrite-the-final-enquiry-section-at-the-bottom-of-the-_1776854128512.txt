@@ -1,0 +1,52 @@
+Rewrite the final enquiry section at the bottom of the homepage. This is the "Ready to Secure Your Coastal Dream?" section with contact details on the left and an enquiry form on the right.
+1. Replace the section heading
+Current: Ready to Secure Your Coastal Dream?
+New: Enquire about Dovecote Estate
+2. Replace the intro copy beneath the heading
+Current:
+
+"This is a once-in-a-lifetime opportunity to secure premium residential land in Stanley. With blocks becoming increasingly rare, don't miss your chance to invest in this award-winning coastal paradise."
+
+New:
+
+Twenty-five titled, serviced residential lots are available at Dovecote Estate, Stanley, from $248,800. Request the information pack for full details on each lot, including plans, pricing, and buyer guidance.
+
+Keep the existing typography. Do not modify the three contact detail blocks below (Call Us, Email Enquiries, Visit Stanley).
+3. Replace the form heading
+The form on the right currently has a heading "Request Information" at the top.
+Change to: Request the information pack
+4. Replace the submit button text
+The submit button currently reads "Send Enquiry".
+Change to: Request information pack
+Preserve all existing button styling, hover states, and the dark green colour.
+5. Keep the form fields unchanged
+Do not modify:
+
+Field order (First Name, Last Name, Email, Phone, Interest, Message)
+Required field indicators (the asterisks)
+Field placeholder text
+The Interest dropdown options
+Field validation logic
+
+6. Keep the contact details on the left unchanged
+Do not modify:
+
+Call Us / 0455 569 646
+Email Enquiries / info@dovecoteestate.com.au
+Visit Stanley / 40 Dovecote Rd, Stanley
+The icons on each item
+The spacing and layout
+
+7. Em dash policy
+No em dashes in the new copy. Hyphens in compound words remain (e.g. "built-for-life", etc.). If any em dashes are introduced, replace with commas or full stops.
+Verification:
+
+New heading reads "Enquire about Dovecote Estate"
+New intro copy matches the exact text above
+Form heading reads "Request the information pack"
+Submit button reads "Request information pack"
+Contact details block unchanged
+Form fields and dropdown unchanged
+Button styling and hover states preserved
+
+Commit message: "final enquiry section rewritten for restrained, factual tone and clearer CTA"
