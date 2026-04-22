@@ -330,41 +330,27 @@ export default function LotsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {(Array.isArray(lots) && lots.length ? lots : MOCK_LOTS).map((lot) => (
-            <Card key={lot.id} className="bg-mist-white hover:shadow-lg transition-shadow h-full flex flex-col">
-              <CardHeader className="flex-shrink-0">
-                <CardTitle className="text-xl text-forest-green mb-2">{lot.name}</CardTitle>
-                <p className="text-gray-600 mb-3">{lot.size}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.
-                </p>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col">
-                <div className="mb-4">
+            <Card key={lot.id} className="bg-mist-white hover:shadow-lg transition-shadow flex flex-col">
+              <CardHeader className="flex-shrink-0 pb-3">
+                <CardTitle className="text-xl text-forest-green mb-1">{lot.name}</CardTitle>
+                <div className="flex items-baseline gap-3 mb-3">
                   <span className="text-2xl font-bold text-caramel">
                     ${Number(lot.price ?? 0).toLocaleString()}
                   </span>
+                  <span className="text-sm text-gray-500 font-normal">{(lot as any).sqm}m²</span>
                 </div>
+                <p className="text-gray-600 text-sm italic leading-relaxed">
+                  {lot.description}
+                </p>
+              </CardHeader>
+              <CardContent className="flex-grow flex flex-col pt-0">
                 <ul className="text-sm text-gray-600 mb-6 space-y-2 flex-grow">
-                  <li className="flex items-start">
-                    <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                    <span>Panoramic coastal setting with fresh sea air</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                    <span>Moments from the beach, wharf, and Stanley township</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                    <span>Easy walk to cafés, restaurants, and the golf course</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                    <span>Fully serviced with NBN, power, water & sealed roads</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                    <span>Premium lifestyle in Tasmania's most exclusive coastal community</span>
-                  </li>
+                  {((lot as any).features ?? []).map((feature: string, i: number) => (
+                    <li key={i} className={`flex items-start ${i === 3 ? 'pt-2 border-t border-gray-100' : ''}`}>
+                      <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
                 <Button
                   onClick={() => scrollToSection("#contact")}

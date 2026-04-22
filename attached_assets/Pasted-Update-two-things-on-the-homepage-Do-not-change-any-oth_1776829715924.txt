@@ -1,0 +1,83 @@
+Update two things on the homepage. Do not change any other section.
+HERO PRICE CORRECTION
+Change the "Land from $254,000" text under the hero buttons to: Land from $248,800
+(The previous figure was based on Lot 1; Lot 6 is actually the lowest at $248,800.)
+LOT CARDS SECTION
+Replace the content inside all five lot cards with the following. Keep the card layout, price styling, "Enquire Now" button, checkmark icon style, and all other visual styling exactly as they are. Only change the lot titles, descriptive paragraphs, and bullet list content.
+Each card should contain:
+
+The lot title (some renamed — see below)
+Lot size and price
+A short italic descriptive paragraph
+Three lot-specific bullets
+Three shared infrastructure bullets (identical on every card)
+
+Shared bullets (last three on every card — identical):
+
+Fully serviced: NBN, power, water, sealed roads
+Walking distance to beach, cafés, The Nut and the golf club
+Titled, subdivision-approved, build-ready
+
+
+Card 1: Lot 13 — Corner Block · 776m² · $310,400
+Paragraph: A generous 776m² corner position with dual street frontage — the most flexible building envelope in the release.
+Lot-specific bullets:
+
+Corner position with two street frontages
+776m² — among the largest in the release
+North-east aspect toward the golf course
+
+
+Card 2: Lot 1 — Coastal Outlook · 635m² · $254,000
+(Rename from "Ocean Views" to "Coastal Outlook")
+Paragraph: A 635m² entry position at the northern edge of the estate, with outlook toward Sawyers Bay and The Nut.
+Lot-specific bullets:
+
+Outlook toward Sawyers Bay
+Entry pricing within the release
+North-facing aspect with Nut views beyond
+
+
+Card 3: Lot 18 — Nut Aspect · 769m² · $307,600
+(Rename from "Stanley Nut Views" to "Nut Aspect")
+Paragraph: The second-largest lot in the release at 769m², with outlook north toward Stanley's most photographed landmark.
+Lot-specific bullets:
+
+Outlook toward The Nut
+769m² — second-largest in the release
+Central elevated position within the estate
+
+
+Card 4: Lot 8 — Golf Course · 730m² · $292,000
+Paragraph: A 730m² position on the eastern edge of the estate, bordering Stanley Golf Club — a 1909 links course on the edge of Bass Strait.
+Lot-specific bullets:
+
+Bordering Stanley Golf Club
+Open outlook east across the fairway
+Adjacent to one of Australia's oldest links courses
+
+
+Card 5: Lot 12 — Coastal Aspect · 716m² · $286,400
+(Rename from "Beachfront" to "Coastal Aspect")
+Paragraph: A 716m² position at the northern edge of the estate, closest to Sawyers Bay within the release.
+Lot-specific bullets:
+
+Closest position to Sawyers Bay in the release
+Short walk to the coast
+North-facing aspect with ocean outlook beyond
+
+
+Styling notes:
+Add the lot size (e.g. "776m²") next to or beneath the price in the existing price styling. If there isn't a natural place for it, add it as a small muted line under the price.
+Style the new italic paragraph one step smaller than the lot title, regular weight. Position between the lot title/price block and the bullet list.
+If card heights become uneven due to varied content length, allow natural sizing — do not force equal heights.
+Commit with the message "lot cards v2 — accurate site-plan-based copy, hero price corrected to $248,800" and give me the commit hash.
+
+
+Things to verify before ship
+Even with this more careful version, I want to flag three things for you to check before going live:
+
+"Bordering Stanley Golf Club" for Lot 8 — is there a road or fence between Lot 8 and the golf course, or does the lot line actually touch the course boundary? If there's a road, change "bordering" to "opposite" or "overlooking."
+"Central elevated position" for Lot 18 — is the estate actually elevated relative to the surrounding land, or flat? If flat, change "elevated" to simply "central" or remove.
+"North-facing aspect" for Lots 1 and 12 — I've inferred this from the site plan (Lots 1–6 form the north row). Worth a 10-second confirmation with a compass or the developer.
+

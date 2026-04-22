@@ -54,82 +54,87 @@ const MOCK_HOME_PACKAGES = [
 export const MOCK_LOTS = [
   {
     id: "lot-13",
-    name: "Lot 13 – Corner Block",
+    name: "Lot 13 — Corner Block",
     sqm: 776,
     price: 310400,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    description: "A generous 776m² corner position with dual street frontage — the most flexible building envelope in the release.",
     features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
+      "Corner position with two street frontages",
+      "776m² — among the largest in the release",
+      "North-east aspect toward the golf course",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled, subdivision-approved, build-ready"
     ],
     bucket: "Corner Block",
     status: "available"
   },
   {
     id: "lot-1",
-    name: "Lot 1 – Ocean Views",
+    name: "Lot 1 — Coastal Outlook",
     sqm: 635,
     price: 254000,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    description: "A 635m² entry position at the northern edge of the estate, with outlook toward Sawyers Bay and The Nut.",
     features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
+      "Outlook toward Sawyers Bay",
+      "Entry pricing within the release",
+      "North-facing aspect with Nut views beyond",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled, subdivision-approved, build-ready"
     ],
-    bucket: "Ocean Views",
+    bucket: "Coastal Outlook",
     status: "available"
   },
   {
     id: "lot-18",
-    name: "Lot 18 – Stanley Nut Views",
+    name: "Lot 18 — Nut Aspect",
     sqm: 769,
     price: 307600,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    description: "The second-largest lot in the release at 769m², with outlook north toward Stanley's most photographed landmark.",
     features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
+      "Outlook toward The Nut",
+      "769m² — second-largest in the release",
+      "Central elevated position within the estate",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled, subdivision-approved, build-ready"
     ],
-    bucket: "Stanley Nut Views",
+    bucket: "Nut Aspect",
     status: "available"
   },
   {
     id: "lot-8",
-    name: "Lot 8 – Golf Course",
+    name: "Lot 8 — Golf Course",
     sqm: 730,
     price: 292000,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    description: "A 730m² position on the eastern edge of the estate, bordering Stanley Golf Club — a 1909 links course on the edge of Bass Strait.",
     features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
+      "Bordering Stanley Golf Club",
+      "Open outlook east across the fairway",
+      "Adjacent to one of Australia's oldest links courses",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled, subdivision-approved, build-ready"
     ],
     bucket: "Golf Course",
     status: "available"
   },
   {
     id: "lot-12",
-    name: "Lot 12 – Beachfront",
+    name: "Lot 12 — Coastal Aspect",
     sqm: 716,
     price: 286400,
-    description: "Exceptional lifestyle opportunity in Stanley's most exclusive coastal subdivision.",
+    description: "A 716m² position at the northern edge of the estate, closest to Sawyers Bay within the release.",
     features: [
-      "Panoramic coastal setting with fresh sea air",
-      "Moments from the beach, wharf, and Stanley township",
-      "Easy walk to cafés, restaurants, and the golf course",
-      "Fully serviced with NBN, power, water & sealed roads",
-      "Premium lifestyle in Tasmania's most exclusive coastal community"
+      "Closest position to Sawyers Bay in the release",
+      "Short walk to the coast",
+      "North-facing aspect with ocean outlook beyond",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled, subdivision-approved, build-ready"
     ],
-    bucket: "Beachfront",
+    bucket: "Coastal Aspect",
     status: "available"
   }
 ];
