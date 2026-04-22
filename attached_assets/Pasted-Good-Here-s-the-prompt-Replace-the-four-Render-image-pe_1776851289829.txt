@@ -1,0 +1,47 @@
+Good. Here's the prompt.
+
+Replace the four "Render image pending" placeholders in the JDR House & Land Packages section with the official exterior renders.
+The four images are uploaded and ready at /public/images/jdr/:
+
+lot-15-exterior.png
+lot-17-exterior.png
+lot-23-exterior.png
+lot-24-exterior.png
+
+Assign each image to its corresponding card:
+
+Hudson 27 — Lot 15: /public/images/jdr/lot-15-exterior.png
+Riverstone 23 — Lot 17: /public/images/jdr/lot-17-exterior.png
+Wattle 21 — Lot 23: /public/images/jdr/lot-23-exterior.png
+Mariner 14 — Lot 24: /public/images/jdr/lot-24-exterior.png
+
+Image styling:
+
+Display at the top of each card, full card width
+Aspect ratio 3:2 (or 4:3 if that looks more balanced — pick whichever produces a cleaner row)
+Rounded top corners matching the existing card border radius
+No desaturation filter. These are product renders and should display at full colour fidelity.
+Use object-fit: cover to handle any aspect ratio mismatch cleanly
+
+Alt text per image:
+
+Lot 15: "JDR Homes Hudson 27 exterior render, Haven facade — 4 bedroom home for Dovecote Estate Lot 15, Stanley"
+Lot 17: "JDR Homes Riverstone 23 exterior render, Standard facade — 3 bedroom home for Dovecote Estate Lot 17, Stanley"
+Lot 23: "JDR Homes Wattle 21 exterior render, Haven facade — 3 bedroom home for Dovecote Estate Lot 23, Stanley"
+Lot 24: "JDR Homes Mariner 14 exterior render, Gables facade — 2 bedroom home for Dovecote Estate Lot 24, Stanley"
+
+Do not modify anything else on any card:
+
+Model names, facade labels, specs, prices, bullet points, buttons — all remain exactly as they are
+Card layout (4 columns desktop, 2×2 tablet, 1 column mobile) stays the same
+Section heading, intro, and placement stay the same
+
+Verification before completing:
+
+All four images load without errors
+Each image is on the correct card
+Card heights remain balanced across the row
+Images display at full colour (no accidental desaturation)
+Alt text is applied
+
+Commit with message "JDR package cards now display real exterior renders" and give me the commit hash.

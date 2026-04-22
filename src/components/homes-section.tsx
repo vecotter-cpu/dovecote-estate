@@ -16,7 +16,8 @@ const PACKAGES = [
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf",
-    imageUrl: null,
+    imageUrl: "/images/jdr/lot-15-exterior.png",
+    imageAlt: "JDR Homes Hudson 27 exterior render, Haven facade — 4 bedroom home for Dovecote Estate Lot 15, Stanley",
   },
   {
     id: "lot-17",
@@ -33,7 +34,8 @@ const PACKAGES = [
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-17-Dovecote-Estate-Stanley.pdf",
-    imageUrl: null,
+    imageUrl: "/images/jdr/lot-17-exterior.png",
+    imageAlt: "JDR Homes Riverstone 23 exterior render, Standard facade — 3 bedroom home for Dovecote Estate Lot 17, Stanley",
   },
   {
     id: "lot-23",
@@ -50,7 +52,8 @@ const PACKAGES = [
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-23-Dovecote-Estate-Stanley.pdf",
-    imageUrl: null,
+    imageUrl: "/images/jdr/lot-23-exterior.png",
+    imageAlt: "JDR Homes Wattle 21 exterior render, Haven facade — 3 bedroom home for Dovecote Estate Lot 23, Stanley",
   },
   {
     id: "lot-24",
@@ -67,7 +70,8 @@ const PACKAGES = [
       "Entry-level turnkey price point",
     ],
     pdf: "/pdfs/HL_Lot-24-Dovecote-Estate-Stanley.pdf",
-    imageUrl: null,
+    imageUrl: "/images/jdr/lot-24-exterior.png",
+    imageAlt: "JDR Homes Mariner 14 exterior render, Gables facade — 2 bedroom home for Dovecote Estate Lot 24, Stanley",
   },
 ];
 
@@ -97,20 +101,14 @@ export default function HomesSection() {
               className="bg-smoke-white rounded-xl shadow-lg hover:shadow-xl transition flex flex-col overflow-hidden"
             >
               {/* Image area */}
-              {pkg.imageUrl ? (
-                <div className="h-52 overflow-hidden flex-shrink-0">
-                  <img
-                    src={pkg.imageUrl}
-                    alt={`${pkg.title} render — ${pkg.lot} Dovecote Estate`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              ) : (
-                <div className="h-52 flex-shrink-0 bg-gray-100 flex items-center justify-center">
-                  <span className="text-xs text-gray-400 italic text-center px-4">Render image pending</span>
-                </div>
-              )}
+              <div className="aspect-[3/2] overflow-hidden flex-shrink-0">
+                <img
+                  src={pkg.imageUrl}
+                  alt={pkg.imageAlt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
 
               {/* Card body */}
               <div className="flex flex-col flex-1 p-5">
