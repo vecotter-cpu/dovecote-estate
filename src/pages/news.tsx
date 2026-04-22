@@ -26,7 +26,7 @@ export default function News() {
     {
       id: 1,
       title: "JDR Homes Packages Available on Four Dovecote Lots",
-      date: "October 12, 2025",
+      date: "April 2026",
       excerpt: "Tasmanian builder JDR Homes has published four house-and-land packages at Dovecote Estate, ranging from two-bedroom to four-bedroom coastal homes. Optional turnkey pathway for buyers who prefer a ready-to-build solution.",
       category: "Development",
       slug: "jdr-homes-packages-lots-23-24",
@@ -34,7 +34,7 @@ export default function News() {
     {
       id: 2,
       title: "The Stanley Lifestyle: More Than Just Ocean Views",
-      date: "October 5, 2025",
+      date: "April 2026",
       excerpt: "Living at Dovecote Estate means immediate access to Stanley Golf Club, Godfrey's Beach, The Nut chairlift, and a thriving local community. With Wynyard Airport just 40 minutes away and NBN connectivity, residents enjoy the perfect blend of coastal serenity and modern convenience.",
       category: "Lifestyle",
       slug: "stanley-lifestyle-coastal-living",
@@ -122,7 +122,7 @@ export default function News() {
                 </h2>
                 <div className="flex items-center text-gray-500 text-sm mb-8">
                   <Calendar size={16} className="mr-2" />
-                  October 12, 2025
+                  April 2026
                 </div>
                 <div className="prose prose-lg max-w-none space-y-5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <p className="text-gray-700">
@@ -192,7 +192,7 @@ export default function News() {
                 </h2>
                 <div className="flex items-center text-gray-500 text-sm mb-8">
                   <Calendar size={16} className="mr-2" />
-                  October 5, 2025
+                  April 2026
                 </div>
                 <div className="prose prose-lg max-w-none space-y-5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <p className="text-gray-700">
