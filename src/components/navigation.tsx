@@ -160,7 +160,7 @@ export default function Navigation() {
                 document.querySelector('#menu-panel')?.classList.remove('open');
               }}
             >
-              News & Updates
+              News
             </Link>
           </li>
           <li>
