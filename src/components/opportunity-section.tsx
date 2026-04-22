@@ -4,7 +4,7 @@ const DATA_TILES = [
   { stat: "240:1", label: "Visitor-to-resident ratio" },
   { stat: "145,000", label: "Visitors to Stanley each year" },
   { stat: "56%", label: "Rise in Northern Tasmania investor activity (2025)" },
-  { stat: "3.6%", label: "Annual turnover in Stanley\u00a0— half the national average" },
+  { stat: "3.6%", label: "Annual turnover in Stanley, half the national average" },
 ];
 
 export default function OpportunitySection() {
