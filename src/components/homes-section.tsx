@@ -1,171 +1,195 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Home } from "lucide-react";
-import Lightbox from "@/components/ui/lightbox";
+import { FileText } from "lucide-react";
 
-/* -----------------------------
-   Floor plan data (from JDR)
-   ----------------------------- */
-const jdrFloorPlans: Record<string, { image: string; pdf: string; specs: string }> = {
-  "Seaside Serenity – Lot 17": {
-    image: "https://www.jdrhomes.com.au/wp-content/uploads/2021/09/JDR197-Plan.jpg",
-    pdf: "https://www.jdrhomes.com.au/wp-content/uploads/2021/10/JDR-House-Plan-197.pdf",
-    specs: "3 Bed • 2 Bath • 2 Car • 197 m² (21 Squares)",
-  },
-  "The Horizon – Lot 15": {
-    image: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/JDR228-4-Bedroom-Residence-3.png",
-    pdf: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/JDR-228-A4-plan-1.pdf",
-    specs: "4 Bed • 2 Bath • 2 Car • 228 m² (25 Squares)",
-  },
-  "The Bayview – Lot 23": {
-    image: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/Screen_Shot_2023-08-08_at_43059_pm1.jpg",
-    pdf: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/JDR-185-Plan.pdf",
-    specs: "3 Bed • 2 Bath • 2 Car • 185 m² (20 Squares)",
-  },
-  "The Hideaway – Lot 24": {
-    image: "https://www.jdrhomes.com.au/wp-content/uploads/2021/09/JDR130-Plan.jpg",
-    pdf: "https://www.jdrhomes.com.au/wp-content/uploads/2021/10/JDR-House-Plan-130.pdf",
-    specs: "2 Bed • 1 Bath • 1 Car • 130 m² (14 Squares)",
-  },
-};
-
-/* -----------------------------
-   Local UI fallback (JDR hero images + correct pricing)
-   ----------------------------- */
-const MOCK_UI_PACKAGES = [
+const PACKAGES = [
   {
-    id: "coastal-haven",
-    name: "Seaside Serenity – Lot 17",
-    description: "Seaside Serenity design paired with Lot 17 at Dovecote Estate.",
-    price: 783000,
-    bedrooms: 3,
-    bathrooms: 2,
-    size: "197 m²",
-    imageUrl: "https://www.jdrhomes.com.au/wp-content/uploads/2021/09/JDR197.jpg",
-    features: ["Premium coastal façade", "Double garage", "Alfresco dining", "Energy efficient glazing"],
+    id: "lot-15",
+    title: "Hudson 27",
+    lot: "Lot 15",
+    label: "HAVEN FACADE · JDR HOMES",
+    description: "Four-bedroom family home with double living, alfresco and double garage.",
+    specs: "4 Bed · 2 Bath · 2 Living · 2 Car · 246m² home · 770m² lot",
+    price: 830000,
+    features: [
+      "Master with walk-in robe and ensuite",
+      "Open-plan kitchen, dining and living",
+      "Separate lounge and alfresco",
+      "Double garage",
+    ],
+    pdf: "/pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf",
+    imageUrl: null,
   },
   {
-    id: "stanley-retreat",
-    name: "The Horizon – Lot 15",
-    description: "JDR 228: four-bedroom family plan with generous kitchen & alfresco.",
-    price: 841000,
-    bedrooms: 4,
-    bathrooms: 2,
-    size: "228 m²",
-    imageUrl: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/JDR-228-800x535.jpg",
-    features: ["Master with ensuite", "Walk-in pantry", "Double garage", "Outdoor living"],
+    id: "lot-17",
+    title: "Riverstone 23",
+    lot: "Lot 17",
+    label: "STANDARD FACADE · JDR HOMES",
+    description: "Three-bedroom coastal home with open-plan living and alfresco on a 770m² lot.",
+    specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 216m² home · 770m² lot",
+    price: 766000,
+    features: [
+      "Master with walk-in robe and ensuite",
+      "Open-plan kitchen, dining and living",
+      "Covered alfresco",
+      "Double garage",
+    ],
+    pdf: "/pdfs/HL_Lot-17-Dovecote-Estate-Stanley.pdf",
+    imageUrl: null,
   },
   {
-    id: "seaside-sanctuary",
-    name: "The Bayview – Lot 23",
-    description: "JDR 185: coastal living with elevated outlook and open-plan flow.",
-    price: 750000,
-    bedrooms: 3,
-    bathrooms: 2,
-    size: "185 m²",
-    imageUrl: "https://www.jdrhomes.com.au/wp-content/uploads/2023/08/JDR185-800x516.jpg",
-    features: ["Open-plan living", "Premium kitchen", "Deck/alfresco", "Quality fixtures"],
+    id: "lot-23",
+    title: "Wattle 21",
+    lot: "Lot 23",
+    label: "HAVEN FACADE · JDR HOMES",
+    description: "Three-bedroom coastal home with open-plan living and rear alfresco.",
+    specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 190m² home · 714m² lot",
+    price: 734000,
+    features: [
+      "Master with walk-in robe and ensuite",
+      "Open-plan kitchen, dining and living",
+      "Rear alfresco",
+      "Double garage",
+    ],
+    pdf: "/pdfs/HL_Lot-23-Dovecote-Estate-Stanley.pdf",
+    imageUrl: null,
   },
   {
-    id: "hideaway",
-    name: "The Hideaway – Lot 24",
-    description: "JDR 130: compact designer coastal home with efficient layout.",
-    price: 635000,
-    bedrooms: 2,
-    bathrooms: 1,
-    size: "130 m²",
-    imageUrl: "https://www.jdrhomes.com.au/wp-content/uploads/2021/09/JDR130-1-1200x675.jpg",
-    features: ["Low-maintenance living", "Chef’s kitchen", "Energy-smart design", "Move-in ready"],
+    id: "lot-24",
+    title: "Mariner 14",
+    lot: "Lot 24",
+    label: "GABLES FACADE · JDR HOMES",
+    description: "Compact two-bedroom coastal home on a generous 714m² lot.",
+    specs: "2 Bed · 1 Bath · 1 Living · 1 Car · 134m² home · 714m² lot",
+    price: 646000,
+    features: [
+      "Two bedrooms with built-in robes",
+      "Open-plan kitchen, dining and lounge",
+      "Single garage",
+      "Entry-level turnkey price point",
+    ],
+    pdf: "/pdfs/HL_Lot-24-Dovecote-Estate-Stanley.pdf",
+    imageUrl: null,
   },
 ];
 
 export default function HomesSection() {
-  const [selectedFloorPlan, setSelectedFloorPlan] = useState<{
-    name: string; image: string; pdf: string; specs: string;
-  } | null>(null);
-
-  const data = MOCK_UI_PACKAGES;
-
   return (
     <section id="packages" className="py-24 md:py-32 bg-mist-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
           <h2 className="text-forest-green mb-6" style={{ fontFamily: "Prata, serif" }}>
-            JDR Home & Land Packages
+            JDR House &amp; Land Packages
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
-            Explore architecturally designed JDR homes paired with premium Dovecote lots.
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+            Four JDR Homes packages are currently available on Dovecote Estate lots.
+          </p>
+          <p className="text-base italic text-gray-500 max-w-2xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
+            One optional turnkey pathway. Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.map((pkg: any) => (
-            <Card key={pkg.id} className="bg-smoke-white shadow-lg hover:shadow-xl transition overflow-hidden">
-              <div className="h-64 overflow-hidden">
-                <img src={pkg.imageUrl} alt={pkg.name} className="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <CardTitle className="text-xl text-forest-green font-prata">{pkg.name}</CardTitle>
-                  <span className="text-xs bg-forest-green text-white px-2 py-1 rounded">JDR Homes</span>
+        {/* 4-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+          {PACKAGES.map((pkg) => (
+            <div
+              key={pkg.id}
+              className="bg-smoke-white rounded-xl shadow-lg hover:shadow-xl transition flex flex-col overflow-hidden"
+            >
+              {/* Image area */}
+              {pkg.imageUrl ? (
+                <div className="h-52 overflow-hidden flex-shrink-0">
+                  <img
+                    src={pkg.imageUrl}
+                    alt={`${pkg.title} render — ${pkg.lot} Dovecote Estate`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="text-sm text-gray-600 mt-2">{pkg.description}</p>
-                <p className="text-gray-600 text-sm mt-2">
-                  {jdrFloorPlans[pkg.name]?.specs || `${pkg.bedrooms} bed • ${pkg.bathrooms} bath • ${pkg.size}`}
+              ) : (
+                <div className="h-52 flex-shrink-0 bg-gray-100 flex items-center justify-center">
+                  <span className="text-xs text-gray-400 italic text-center px-4">Render image pending</span>
+                </div>
+              )}
+
+              {/* Card body */}
+              <div className="flex flex-col flex-1 p-5">
+
+                {/* Title + lot */}
+                <div className="mb-1">
+                  <h3 className="text-lg text-forest-green leading-snug" style={{ fontFamily: "Prata, serif" }}>
+                    {pkg.title} <span className="text-gray-400 font-normal text-base">·</span> {pkg.lot}
+                  </h3>
+                </div>
+
+                {/* Label */}
+                <p
+                  className="text-gray-400 mb-3"
+                  style={{ fontFamily: "Inter, sans-serif", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase" }}
+                >
+                  {pkg.label}
                 </p>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl font-bold text-caramel">
-                    ${Number(pkg.price ?? 0).toLocaleString()}
+
+                {/* Description */}
+                <p className="text-sm italic text-gray-500 mb-3" style={{ fontFamily: "Inter, sans-serif" }}>
+                  {pkg.description}
+                </p>
+
+                {/* Specs */}
+                <p className="text-xs text-gray-600 mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
+                  {pkg.specs}
+                </p>
+
+                {/* Price */}
+                <div className="flex items-baseline justify-between mb-4">
+                  <span className="text-2xl font-bold text-caramel" style={{ fontFamily: "Inter, sans-serif" }}>
+                    ${pkg.price.toLocaleString()}
                   </span>
-                  <span className="text-sm text-gray-500">House & Land</span>
+                  <span className="text-xs text-gray-400 ml-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                    House &amp; Land
+                  </span>
                 </div>
-                <ul className="text-xs text-gray-600 space-y-1 mb-6">
-                  {(pkg.features || []).slice(0, 5).map((f: string, i: number) => (
-                    <li key={i}>• {f}</li>
+
+                {/* Features */}
+                <ul className="text-xs text-gray-600 space-y-1 mb-6 flex-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                  {pkg.features.map((f, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-forest-green flex-shrink-0">•</span>
+                      {f}
+                    </li>
                   ))}
                 </ul>
-                <Button
-                  onClick={() =>
-                    setSelectedFloorPlan({
-                      name: pkg.name,
-                      image: jdrFloorPlans[pkg.name]?.image || "",
-                      pdf: jdrFloorPlans[pkg.name]?.pdf || "",
-                      specs: jdrFloorPlans[pkg.name]?.specs || "",
-                    })
-                  }
-                  className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
+
+                {/* CTA */}
+                <a
+                  href={pkg.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-90 transition"
+                  style={{ fontFamily: "Inter, sans-serif" }}
                 >
-                  <Home className="mr-2" size={16} />
+                  <FileText size={15} />
                   View Floor Plan
-                </Button>
-              </CardContent>
-            </Card>
+                </a>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
 
-      {selectedFloorPlan && (
-        <Lightbox
-          title={selectedFloorPlan.name}
-          imageUrl={selectedFloorPlan.image}
-          pdfUrl={selectedFloorPlan.pdf}
-          onClose={() => setSelectedFloorPlan(null)}
-          actions={
-            <a
-              href={selectedFloorPlan.pdf}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-forest-green hover:underline"
-            >
-              <FileText size={16} />
-              Download Plan PDF
-            </a>
-          }
-        />
-      )}
+        {/* JDR Homes link */}
+        <p className="text-center mt-10 text-sm text-gray-500" style={{ fontFamily: "Inter, sans-serif" }}>
+          Full JDR Homes packages and plans:{" "}
+          <a
+            href="https://www.jdrhomes.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-forest-green hover:underline font-medium"
+          >
+            jdrhomes.com.au →
+          </a>
+        </p>
+
+      </div>
     </section>
   );
 }

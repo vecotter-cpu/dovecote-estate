@@ -1,0 +1,118 @@
+Fix and reposition the "JDR Home & Land Packages" section on the homepage. This section currently contains inaccurate data across all 4 cards. Replace every card with verified information from JDR Homes' official package PDFs.
+1. PDF uploads
+Four JDR package PDFs have been uploaded to /public/pdfs/:
+
+HL_Lot-15-Dovecote-Estate-Stanley.pdf
+HL_Lot-17-Dovecote-Estate-Stanley.pdf
+HL_Lot-23-Dovecote-Estate-Stanley.pdf
+HL_Lot-24-Dovecote-Estate-Stanley.pdf
+
+Confirm all four are accessible at those paths before proceeding.
+2. Section heading and intro — rewrite
+Current heading: "JDR Home & Land Packages"
+Current intro: "Explore architecturally designed JDR homes paired with premium Dovecote lots."
+Replace with:
+Heading: JDR House & Land Packages
+Intro (two lines, centred, matching the typography of other section intros on the page):
+Line 1 (regular): Four JDR Homes packages are currently available on Dovecote Estate lots.
+Line 2 (italic, slightly smaller, muted): One optional turnkey pathway. Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots.
+3. Replace all four cards with verified data
+Each card structure (top to bottom):
+
+Render image (keep existing image for each lot if it's the correct JDR render; otherwise leave a placeholder and flag for me)
+Card title: [Model Name] — Lot [number]
+Small label underneath title (muted, uppercase, letter-spaced 0.08em): [FACADE] · JDR HOMES
+One-line description (italic, smaller)
+Spec line: beds · baths · car · home size · lot size
+Price in bold, right-aligned with "House & Land" label
+Bullet list of 4 standout features per package
+Button: View Floor Plan — opens the corresponding PDF in a new tab
+
+Card 1 — Lot 15
+Title: Hudson 27 — Lot 15
+Label: HAVEN FACADE · JDR HOMES
+Description: Four-bedroom family home with double living, alfresco and double garage.
+Specs: 4 Bed · 2 Bath · 2 Living · 2 Car · 246m² home · 770m² lot
+Price: $830,000 (House & Land)
+Features:
+
+Master with walk-in robe and ensuite
+Open-plan kitchen, dining and living
+Separate lounge and alfresco
+Double garage
+Button link: /pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf (opens in new tab)
+
+Card 2 — Lot 17
+Title: Riverstone 23 — Lot 17
+Label: STANDARD FACADE · JDR HOMES
+Description: Three-bedroom coastal home with open-plan living and alfresco on a 770m² lot.
+Specs: 3 Bed · 2 Bath · 1 Living · 2 Car · 216m² home · 770m² lot
+Price: $766,000 (House & Land)
+Features:
+
+Master with walk-in robe and ensuite
+Open-plan kitchen, dining and living
+Covered alfresco
+Double garage
+Button link: /pdfs/HL_Lot-17-Dovecote-Estate-Stanley.pdf (opens in new tab)
+
+Card 3 — Lot 23
+Title: Wattle 21 — Lot 23
+Label: HAVEN FACADE · JDR HOMES
+Description: Three-bedroom coastal home with open-plan living and rear alfresco.
+Specs: 3 Bed · 2 Bath · 1 Living · 2 Car · 190m² home · 714m² lot
+Price: $734,000 (House & Land)
+Features:
+
+Master with walk-in robe and ensuite
+Open-plan kitchen, dining and living
+Rear alfresco
+Double garage
+Button link: /pdfs/HL_Lot-23-Dovecote-Estate-Stanley.pdf (opens in new tab)
+
+Card 4 — Lot 24
+Title: Mariner 14 — Lot 24
+Label: GABLES FACADE · JDR HOMES
+Description: Compact two-bedroom coastal home on a generous 714m² lot.
+Specs: 2 Bed · 1 Bath · 1 Living · 1 Car · 134m² home · 714m² lot
+Price: $646,000 (House & Land)
+Features:
+
+Two bedrooms with built-in robes
+Open-plan kitchen, dining and lounge
+Single garage
+Entry-level turnkey price point
+Button link: /pdfs/HL_Lot-24-Dovecote-Estate-Stanley.pdf (opens in new tab)
+
+4. Grid layout
+Four cards in a single row of 4 on desktop (1200px+), matching their widths so the row is balanced. On tablet (768–1199px) flow to 2×2. On mobile (below 768px) stack to single column.
+The cards should all be the same height regardless of bullet list length. Use CSS grid or flexbox with equal-height cards.
+5. Button behaviour
+All "View Floor Plan" buttons open the corresponding PDF in a new browser tab (target="_blank" rel="noopener noreferrer"). Test each one.
+Below the 4-card grid, add a small centred line:
+Full JDR Homes packages and plans: jdrhomes.com.au →
+Link opens in new tab.
+6. Section placement
+The JDR section currently sits between Available Lots and The Stanley Lifestyle. Keep it exactly where it is. Do not move it.
+7. Preserve existing images if they are JDR renders
+The current 4 cards have render images. If these are pulled from JDR's website and match the correct packages (Hudson 27, Riverstone 23, Wattle 21, Mariner 14), keep them but reassign them to the correct lot:
+
+The Hudson 27 render should be on the Lot 15 card
+The Riverstone 23 render should be on the Lot 17 card
+The Wattle 21 render should be on the Lot 23 card
+The Mariner 14 render should be on the Lot 24 card
+
+If any of the existing images do not match the correct package (e.g. are generic stock images or wrong-facade renders), remove them and leave the image area blank for now. Flag which cards have missing or uncertain images so I can source correct ones.
+8. Remove AI-written bullet copy
+The current cards contain bullet points like "Premium coastal façade", "Energy efficient glazing", "Quality fixtures". These read as generic marketing copy. Replace them entirely with the verified bullets listed above per card. Do not retain any of the previous bullet copy.
+9. Verification
+Before confirming complete:
+
+Each card shows correct Model Name, facade, lot number, specs, size, and price
+Each "View Floor Plan" button opens the correct PDF in a new tab
+The 4-card row is balanced at desktop width
+Section placement unchanged
+Em dash in the intro/heading area — none (use hyphens only in compound words)
+Cards all equal height
+
+Commit with message "JDR packages section rebuilt with verified data from JDR PDFs, repositioned as optional pathway, PDF floor plan links working" and give me the commit hash.
