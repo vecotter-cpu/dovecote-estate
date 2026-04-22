@@ -1,0 +1,45 @@
+Update the JDR article on the News page (accessed via hamburger menu → "News") to cover all four JDR Homes packages now available at Dovecote Estate, instead of just two.
+1. Update the article headline
+Current headline: JDR Homes Packages Available on Lots 23 and 24
+New headline: JDR Homes Packages Available on Four Dovecote Lots
+Update both the news card (grid tile on the News page) and the full article detail page to use the new headline.
+2. Update the news card preview text
+Current: Tasmanian builder JDR Homes has published house-and-land packages on two Dovecote Estate lots. Optional turnkey pathway for buyers who prefer a ready-to-build solution.
+New: Tasmanian builder JDR Homes has published four house-and-land packages at Dovecote Estate, ranging from two-bedroom to four-bedroom coastal homes. Optional turnkey pathway for buyers who prefer a ready-to-build solution.
+3. Update the full article body copy
+Replace the entire existing body copy of the full article detail page with the following:
+
+Tasmanian builder JDR Homes has published four house-and-land packages for Dovecote Estate Stanley, offering buyers an optional turnkey pathway on specific lots.
+Hudson 27 — Lot 15
+4 bed, 2 bath, 2 living, 2 car on a 770m² lot, with a 246m² home. Haven facade. Total package price: $830,000.
+Riverstone 23 — Lot 17
+3 bed, 2 bath, 1 living, 2 car on a 770m² lot, with a 216m² home. Standard facade. Total package price: $766,000.
+Wattle 21 — Lot 23
+3 bed, 2 bath, 1 living, 2 car on a 714m² lot, with a 190m² home. Haven facade. Total package price: $734,000.
+Mariner 14 — Lot 24
+2 bed, 1 bath, 1 living, 1 car on a 714m² lot, with a 134m² home. Gables facade. Total package price: $646,000.
+All four packages include JDR Homes' 'Essentials' specification with a minimum 6-star energy rating. Site cost allowances are confirmed following soil tests and survey. Full plans, inclusions and specifications are available directly from JDR Homes.
+JDR Homes is based in Ulverstone on Tasmania's north-west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
+Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots at Dovecote Estate. The JDR packages are offered as one option among many, particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
+Enquiries regarding JDR packages can be directed to JDR Homes directly, or via the Dovecote Estate sales team for assistance coordinating the land purchase and build contract.
+
+4. Keep the two CTA links at the bottom of the article unchanged
+
+"View JDR Homes →" linking to https://www.jdrhomes.com.au (opens in new tab)
+"Enquire about these lots →" linking to the Dovecote Estate contact form
+
+5. Keep everything else unchanged
+
+Date on the article (April 2026)
+Article placement on the News page (top-left)
+The Stanley Lifestyle article is not modified
+News page heading, subheading, and cross-link to homepage all remain as they are
+
+Verification:
+
+News card preview shows updated headline and preview text
+Full article page shows new headline and new body copy
+Both CTA links still work
+No em dashes introduced (use hyphens only in compound words, commas or full stops elsewhere)
+
+Once committed, the article should read consistently with the homepage JDR packages section — four packages, four price points, with full specs.

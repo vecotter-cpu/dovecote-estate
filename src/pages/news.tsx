@@ -25,9 +25,9 @@ export default function News() {
   const newsArticles: NewsArticle[] = [
     {
       id: 1,
-      title: "JDR Homes Packages Available on Lots 23 and 24",
+      title: "JDR Homes Packages Available on Four Dovecote Lots",
       date: "October 12, 2025",
-      excerpt: "Tasmanian builder JDR Homes has published house-and-land packages on two Dovecote Estate lots. Optional turnkey pathway for buyers who prefer a ready-to-build solution.",
+      excerpt: "Tasmanian builder JDR Homes has published four house-and-land packages at Dovecote Estate, ranging from two-bedroom to four-bedroom coastal homes. Optional turnkey pathway for buyers who prefer a ready-to-build solution.",
       category: "Development",
       slug: "jdr-homes-packages-lots-23-24",
     },
@@ -118,7 +118,7 @@ export default function News() {
                   Development
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ fontFamily: 'Prata, serif', color: 'var(--forest-green)' }}>
-                  JDR Homes Packages Available on Lots 23 and 24
+                  JDR Homes Packages Available on Four Dovecote Lots
                 </h2>
                 <div className="flex items-center text-gray-500 text-sm mb-8">
                   <Calendar size={16} className="mr-2" />
@@ -126,18 +126,26 @@ export default function News() {
                 </div>
                 <div className="prose prose-lg max-w-none space-y-5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <p className="text-gray-700">
-                    Tasmanian builder JDR Homes has published two house-and-land packages for Dovecote Estate Stanley, offering buyers an optional turnkey pathway on specific lots.
+                    Tasmanian builder JDR Homes has published four house-and-land packages for Dovecote Estate Stanley, offering buyers an optional turnkey pathway on specific lots.
                   </p>
                   <p className="text-gray-700">
-                    <strong>Lot 23: Three-bedroom package</strong><br />
-                    3 bed, 2 bath, 2 car on a 714m² lot, with a 190m² home. Total package price: $734,000.
+                    <strong>Hudson 27 - Lot 15</strong><br />
+                    4 bed, 2 bath, 2 living, 2 car on a 770m² lot, with a 246m² home. Haven facade. Total package price: $830,000.
                   </p>
                   <p className="text-gray-700">
-                    <strong>Lot 24: Two-bedroom package</strong><br />
-                    2 bed, 1 bath, 1 car on a 714m² lot, with a 134m² home. Total package price: $646,000.
+                    <strong>Riverstone 23 - Lot 17</strong><br />
+                    3 bed, 2 bath, 1 living, 2 car on a 770m² lot, with a 216m² home. Standard facade. Total package price: $766,000.
                   </p>
                   <p className="text-gray-700">
-                    Both packages include JDR Homes' 'Essentials' specification with a minimum 6-star energy rating. Site cost allowances are confirmed following soil tests and survey. Full plans, inclusions and specifications are available directly from JDR Homes.
+                    <strong>Wattle 21 - Lot 23</strong><br />
+                    3 bed, 2 bath, 1 living, 2 car on a 714m² lot, with a 190m² home. Haven facade. Total package price: $734,000.
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Mariner 14 - Lot 24</strong><br />
+                    2 bed, 1 bath, 1 living, 1 car on a 714m² lot, with a 134m² home. Gables facade. Total package price: $646,000.
+                  </p>
+                  <p className="text-gray-700">
+                    All four packages include JDR Homes' 'Essentials' specification with a minimum 6-star energy rating. Site cost allowances are confirmed following soil tests and survey. Full plans, inclusions and specifications are available directly from JDR Homes.
                   </p>
                   <p className="text-gray-700">
                     JDR Homes is based in Ulverstone on Tasmania's north-west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
