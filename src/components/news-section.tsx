@@ -154,8 +154,8 @@ const CARDS: CardData[] = [
   // Row 3
   {
     type: "standard",
-    image: "/images/Stanley_look_out_1776843807058.jpg",
-    imageAlt: "Visitors at The Nut lookout platform overlooking Stanley Bay",
+    image: "/images/godfrey-beach-6th-best-australia.png",
+    imageAlt: "Aerial view of Godfrey's Beach, Stanley, awarded 6th Best Beach in Australia 2026",
     publication: "9TRAVEL",
     date: "2026",
     headline: "Best Beaches in Australia 2026",
