@@ -1,0 +1,23 @@
+Restructure the hero section with the following exact specifications. Do not change any other section of the site.
+COPY
+Replace the H1 with exactly: You've been to Stanley. Now stay.
+Replace the subhead with exactly: Twenty-five residential lots in one of Australia's most tightly held coastal villages.
+Remove any other paragraph, tagline, or descriptor in the hero.
+Below the two existing buttons, add a small text line: Land from $254,000
+LAYOUT
+Change the hero content alignment from centred to left-aligned.
+Anchor the entire content block (H1, subhead, buttons, price line) to the lower-left quadrant of the hero section. On desktop, the content should sit with approximately 8% left margin and begin roughly 55% down the vertical height of the hero.
+The H1 must fit on a single line on desktop viewports 1200px and wider. Adjust font size if necessary to prevent any line break between "Stanley." and "Now stay." On smaller desktop viewports or tablets where a line break is unavoidable, allow the break to occur only after "Stanley." — never between "Now" and "stay."
+The subhead should sit directly beneath the H1 with approximately 1.5x line-height spacing. Subhead width should be constrained to approximately 480–560px so it wraps to 2–3 lines naturally. Style as italic, regular weight, clearly smaller than H1.
+The two existing CTA buttons ("View Available Lots" and "Explore Lifestyle") should sit left-aligned directly below the subhead with approximately 2rem top margin. Keep the button styling exactly as it currently is.
+The "Land from $254,000" text should sit below the buttons at approximately 14–16px, regular weight, in the existing gold/tan accent colour, with light letter-spacing. Left-aligned to the same left edge as the H1.
+IMAGE TREATMENT
+Add a subtle dark gradient overlay to the hero image: from approximately 40% opacity black in the bottom-left corner, fading to 0% opacity by the upper-middle of the frame. This ensures text legibility without darkening the image overall. The upper 50% of the image should remain unobscured.
+SCROLL INDICATOR
+If there is currently a scroll-down arrow or indicator, move it to the bottom-centre or bottom-right of the hero section, away from the content block.
+MOBILE
+On mobile viewports, the content block should remain left-aligned but use the full content width with appropriate side margins. The H1 may break after "Stanley." on mobile — that break is acceptable. Never allow a break between "Now" and "stay."
+Buttons should stack vertically on mobile if they don't fit side-by-side. Price line stays below buttons, left-aligned.
+FINAL
+Test the result on both desktop (1440px) and mobile (375px) viewports before confirming complete.
+Commit with the message "hero v7 — restructured layout, lower-left anchor, single-line H1" and give me the commit hash.
