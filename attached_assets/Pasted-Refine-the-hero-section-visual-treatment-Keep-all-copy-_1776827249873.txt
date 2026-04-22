@@ -1,0 +1,26 @@
+Refine the hero section visual treatment. Keep all copy exactly as it currently is. Do not change copy, do not change any other section. Only adjust visual styling.
+IMAGE OVERLAY
+Add or increase a dark gradient overlay on the hero image. The overlay should start at 50% opacity black in the bottom-left corner, fade to 25% opacity across the full bottom third of the image, and reach 0% opacity by the upper 40% of the frame. This must improve text legibility on the lower half without darkening the sky or the top of the image.
+If a gradient already exists, strengthen it to the above specification.
+H1 STYLING
+Reduce the H1 font weight by one step (if currently semibold, make regular; if regular, keep regular — but do not make it bolder). Keep the serif typeface as-is.
+Confirm H1 colour is pure white (#FFFFFF) with no transparency.
+Add a very subtle text-shadow for additional legibility: 0 2px 12px rgba(0,0,0,0.3). This should be barely visible but add definition against the image.
+SUBHEAD STYLING
+Increase the subhead font size so it is approximately 55–60% the size of the H1. Currently it appears too small relative to the headline.
+Keep italic, regular weight, white colour.
+Ensure there is approximately 1.75rem of space between the H1 and the subhead.
+PRICE MICRO-LINE
+Change the "Land from $254,000" text colour from gold to white at 75% opacity (rgba(255,255,255,0.75)).
+Keep the existing font size (14–16px), light letter-spacing (approximately 0.08em), and regular weight.
+It should be clearly legible against the image but visually subordinate to the buttons.
+CTA BUTTONS
+Keep "View Available Lots" as the primary button in dark green with white text. This is correct.
+Convert "Explore Lifestyle" to a secondary "ghost" button style: transparent background, 1.5px white border, white text. On hover: solid white background with dark green text.
+This creates clear primary/secondary hierarchy between the two CTAs.
+SPACING
+Add approximately 2.5rem of vertical space between the subhead and the button row.
+Add approximately 1.5rem of vertical space between the button row and the "Land from $254,000" line.
+TEST
+Verify the result on desktop (1440px) and mobile (375px) viewports.
+Commit with message "hero v8 — legibility and hierarchy refinement" and give me the commit hash.

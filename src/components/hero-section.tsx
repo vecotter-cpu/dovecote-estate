@@ -46,11 +46,19 @@ export default function HeroSection() {
           </div>
         ))}
 
-        {/* Gradient overlay: 40% black at bottom-left, clear by upper-middle */}
+        {/*
+          Gradient overlay:
+          Layer 1 — full-width bottom third: 25% black fading to 0% at 40% from bottom
+          Layer 2 — bottom-left concentration: 50% black fading to 0% at 60% diagonal
+          Combined: strong legibility in lower-left, sky/upper image stays clean
+        */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to top right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.1) 55%, rgba(0,0,0,0) 70%)'
+            background: [
+              'linear-gradient(to top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 40%)',
+              'linear-gradient(to top right, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.20) 30%, rgba(0,0,0,0) 60%)'
+            ].join(', ')
           }}
         />
       </div>
@@ -59,45 +67,54 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10 flex items-end">
         <div className="pl-[8%] pb-[8%] lg:pb-[11%]">
 
-          {/* H1 — single line on desktop; wraps only after "Stanley." */}
-          <h1 className="text-white font-prata leading-tight text-4xl sm:text-5xl lg:text-[3rem] xl:text-[3.5rem]">
+          {/* H1 — pure white, regular weight, subtle text-shadow for legibility */}
+          <h1
+            className="text-white font-prata font-normal leading-tight text-4xl sm:text-5xl lg:text-[3rem] xl:text-[3.5rem]"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
+          >
             You've been to Stanley.{' '}
             <span className="whitespace-nowrap">Now stay.</span>
           </h1>
 
-          {/* Subhead — italic, regular weight, max ~520px wide */}
+          {/* Subhead — italic, regular weight, ~58% of H1 size, 1.75rem below H1 */}
           <p
-            className="text-white font-prata italic font-normal text-lg md:text-xl leading-relaxed mt-6"
+            className="text-white font-prata italic font-normal leading-relaxed mt-7
+                       text-[1.25rem] sm:text-[1.5rem] lg:text-[1.6rem] xl:text-[1.875rem]"
             style={{ maxWidth: '520px' }}
           >
             Twenty-five residential lots in one of Australia's most tightly held coastal villages.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          {/* CTA Buttons — 2.5rem below subhead */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            {/* Primary: dark green bg, white text */}
             <Button
               onClick={() => scrollToSection("#lots")}
               className="rounded-2xl px-6 py-3 text-base font-medium bg-forest-green text-white shadow hover:opacity-95 transition"
             >
               View Available Lots
             </Button>
+            {/* Secondary ghost: transparent bg, white border + text; hover inverts */}
             <Button
               onClick={() => scrollToSection("#lifestyle")}
-              className="rounded-2xl px-6 py-3 text-base font-medium border border-forest-green text-forest-green bg-white hover:bg-forest-green/5 transition"
+              className="rounded-2xl px-6 py-3 text-base font-medium bg-transparent border-[1.5px] border-white text-white hover:bg-white hover:text-forest-green transition"
             >
               Explore Lifestyle
             </Button>
           </div>
 
-          {/* Price line */}
-          <p className="mt-4 text-sm font-normal tracking-widest" style={{ color: '#C4A96A' }}>
+          {/* Price micro-line — white at 75% opacity, ~1.5rem below buttons */}
+          <p
+            className="mt-6 text-sm font-normal"
+            style={{ color: 'rgba(255,255,255,0.75)', letterSpacing: '0.08em' }}
+          >
             Land from $254,000
           </p>
 
         </div>
       </div>
 
-      {/* Scroll Indicator — bottom-right, clear of content block */}
+      {/* Scroll Indicator — bottom-right */}
       <div className="absolute bottom-8 right-8 z-10 animate-bounce">
         <ChevronDown size={32} color="#8B7040" />
       </div>
