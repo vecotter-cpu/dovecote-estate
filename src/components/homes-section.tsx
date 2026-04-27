@@ -4,74 +4,70 @@ const PACKAGES = [
   {
     id: "lot-15",
     title: "Hudson 27",
-    lot: "Lot 15",
     label: "HAVEN FACADE · JDR HOMES",
-    description: "Four-bedroom family home with double living, alfresco and double garage.",
+    description: "Four bedroom family home with double living, alfresco and double garage.",
     specs: "4 Bed · 2 Bath · 2 Living · 2 Car · 246m² home · 770m² lot",
     price: 830000,
     features: [
-      "Master with walk-in robe and ensuite",
-      "Open-plan kitchen, dining and living",
+      "Master with walk in robe and ensuite",
+      "Open plan kitchen, dining and living",
       "Separate lounge and alfresco",
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf",
     imageUrl: "/images/jdr/lot-15-exterior.png",
-    imageAlt: "JDR Homes Hudson 27 exterior render, Haven facade — 4 bedroom home for Dovecote Estate Lot 15, Stanley",
+    imageAlt: "JDR Homes Hudson 27 exterior render, Haven facade, 4 bedroom home for Dovecote Estate Stanley",
   },
   {
     id: "lot-17",
     title: "Riverstone 23",
-    lot: "Lot 17",
     label: "STANDARD FACADE · JDR HOMES",
-    description: "Three-bedroom coastal home with open-plan living and alfresco on a 770m² lot.",
+    description: "Three bedroom coastal home with open plan living and alfresco on a 770m² lot.",
     specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 216m² home · 770m² lot",
     price: 766000,
     features: [
-      "Master with walk-in robe and ensuite",
-      "Open-plan kitchen, dining and living",
+      "Master with walk in robe and ensuite",
+      "Open plan kitchen, dining and living",
       "Covered alfresco",
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-17-Dovecote-Estate-Stanley.pdf",
     imageUrl: "/images/jdr/lot-17-exterior.png",
-    imageAlt: "JDR Homes Riverstone 23 exterior render, Standard facade — 3 bedroom home for Dovecote Estate Lot 17, Stanley",
+    imageAlt: "JDR Homes Riverstone 23 exterior render, Standard facade, 3 bedroom home for Dovecote Estate Stanley",
   },
   {
     id: "lot-23",
     title: "Wattle 21",
-    lot: "Lot 23",
     label: "HAVEN FACADE · JDR HOMES",
-    description: "Three-bedroom coastal home with open-plan living and rear alfresco.",
+    description: "Three bedroom coastal home with open plan living and rear alfresco.",
     specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 190m² home · 714m² lot",
     price: 734000,
     features: [
-      "Master with walk-in robe and ensuite",
-      "Open-plan kitchen, dining and living",
+      "Master with walk in robe and ensuite",
+      "Open plan kitchen, dining and living",
       "Rear alfresco",
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-23-Dovecote-Estate-Stanley.pdf",
     imageUrl: "/images/jdr/lot-23-exterior.png",
-    imageAlt: "JDR Homes Wattle 21 exterior render, Haven facade — 3 bedroom home for Dovecote Estate Lot 23, Stanley",
+    imageAlt: "JDR Homes Wattle 21 exterior render, Haven facade, 3 bedroom home for Dovecote Estate Stanley",
   },
   {
     id: "lot-24",
     title: "Mariner 14",
-    lot: "Lot 24",
     label: "GABLES FACADE · JDR HOMES",
-    description: "Compact two-bedroom coastal home on a generous 714m² lot.",
+    description: "Compact two bedroom coastal home on a generous 714m² lot.",
     specs: "2 Bed · 1 Bath · 1 Living · 1 Car · 134m² home · 714m² lot",
     price: 646000,
     features: [
-      "Two bedrooms with built-in robes",
-      "Open-plan kitchen, dining and lounge",
+      "Two bedrooms with built in robes",
+      "Open plan kitchen, dining and lounge",
       "Single garage",
-      "Entry-level turnkey price point",
+      "Entry level turnkey price point",
     ],
     pdf: "/pdfs/HL_Lot-24-Dovecote-Estate-Stanley.pdf",
     imageUrl: "/images/jdr/lot-24-exterior.png",
-    imageAlt: "JDR Homes Mariner 14 exterior render, Gables facade — 2 bedroom home for Dovecote Estate Lot 24, Stanley",
+    imageAlt: "JDR Homes Mariner 14 exterior render, Gables facade, 2 bedroom home for Dovecote Estate Stanley",
   },
 ];
 
@@ -86,10 +82,10 @@ export default function HomesSection() {
             JDR House &amp; Land Packages
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
-            Four JDR Homes packages are currently available on Dovecote Estate lots.
+            Buyers are free to build with their preferred builder. We can also assist with introductions to local Tasmanian builders and house and land pathways for those who want a turnkey route.
           </p>
           <p className="text-base italic text-gray-500 max-w-2xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
-            One optional turnkey pathway. Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots.
+            JDR Homes packages available as a turnkey pathway, in addition to building with your preferred builder.
           </p>
         </div>
 
@@ -116,7 +112,7 @@ export default function HomesSection() {
                 {/* Title + lot */}
                 <div className="mb-1">
                   <h3 className="text-lg text-forest-green leading-snug" style={{ fontFamily: "Prata, serif" }}>
-                    {pkg.title} <span className="text-gray-400 font-normal text-base">·</span> {pkg.lot}
+                    {pkg.title}
                   </h3>
                 </div>
 

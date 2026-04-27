@@ -22,13 +22,16 @@ export default function OpportunitySection() {
 
           <div className="mx-auto mb-12 space-y-6 text-left" style={{ maxWidth: '760px' }}>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Stanley is a 600-resident fishing village on Tasmania's north-west coast, hosting more than 145,000 visitors a year, with 75,000 staying overnight. It has been named Tasmania's Top Tiny Tourism Town in 2024 and 2025, and won the People's Choice award at the 2025 Tasmanian Tourism Awards. Residential land inside the township is rarely offered: only 16 properties changed hands across the entire town in the past twelve months.
+              Stanley is one of Tasmania's most tightly held coastal towns. A resident population of around 600. More than 145,000 visitors a year, with 75,000 staying overnight. Only 16 properties changed hands across the entire town in the past twelve months.
             </p>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Tasmania's north-west coast led the state's regional property recovery in 2025, offering some of the most affordable coastal real estate in the country. Mainland investor activity into northern Tasmania rose 56% last year, with total mainland buyer numbers into the state up 43.6%. Regional property prices nationally outperformed the capital cities over the past twelve months. These conditions are forecast to continue for at least the next three to five years.
+              Tasmania's north west coast led the state's regional property recovery in 2025. Mainland investor activity into northern Tasmania rose 56% last year. Regional prices outperformed the capital cities, and forecasts hold that pattern for the next three to five years.
             </p>
             <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
-              For buyers relocating from the mainland, Stanley offers heritage, coastline and genuine community at a fraction of Melbourne or Sydney equivalents. For those buying a second home, the township's tourism profile provides a proven short-stay market. For long-term holders, this is a scarcity asset in a market the data now rates among the strongest in regional Australia. Wynyard Airport is 40 minutes from Stanley, with daily flights to Melbourne.
+              For mainland buyers, Stanley offers heritage, coastline and genuine community at a fraction of Melbourne or Sydney equivalents, with a tourism profile that underpins short stay demand and a scarcity profile that underpins long term value.
+            </p>
+            <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Dovecote Estate is one of the only opportunities to secure new residential land within the township.
             </p>
           </div>
 

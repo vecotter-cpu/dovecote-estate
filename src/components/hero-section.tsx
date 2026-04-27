@@ -74,7 +74,7 @@ export default function HeroSection() {
                        text-[1.25rem] sm:text-[1.5rem] lg:text-[1.6rem] xl:text-[1.875rem]"
             style={{ maxWidth: '520px', color: '#FFFFFF', textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}
           >
-            Twenty-five residential lots in one of Australia's most tightly held coastal villages.
+            One of the last coastal land releases in Stanley. A limited release of residential lots within the township, in one of Australia's most tightly held coastal villages.
           </p>
 
           {/* CTA Buttons — 2.5rem below subhead */}
@@ -100,7 +100,7 @@ export default function HeroSection() {
             className="mt-6 text-sm font-normal"
             style={{ color: 'rgba(255,255,255,0.85)', letterSpacing: '0.08em' }}
           >
-            Land from $248,800
+            Land from $245,000
           </p>
 
         </div>

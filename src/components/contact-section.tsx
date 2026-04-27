@@ -96,9 +96,9 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-4xl font-bold text-forest-green mb-6">Enquire about Dovecote Estate</h2>
+            <h2 className="text-4xl font-bold text-forest-green mb-6">Enquire now to receive the information pack and current availability.</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Twenty-five titled, serviced residential lots are available at Dovecote Estate, Stanley, from $248,800. Request the information pack for full details on each lot, including plans, pricing, and buyer guidance.
+              A limited release of six titled, serviced residential lots in Stanley, from $245,000.
             </p>
             
             <div className="space-y-6">

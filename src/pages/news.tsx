@@ -148,10 +148,10 @@ export default function News() {
                     All four packages include JDR Homes' 'Essentials' specification with a minimum 6-star energy rating. Site cost allowances are confirmed following soil tests and survey. Full plans, inclusions and specifications are available directly from JDR Homes.
                   </p>
                   <p className="text-gray-700">
-                    JDR Homes is based in Ulverstone on Tasmania's north-west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
+                    JDR Homes is based in Ulverstone on Tasmania's north west coast and has built across the region for over three decades. The published Dovecote packages are designed for the site's coastal climate and orientation.
                   </p>
                   <p className="text-gray-700">
-                    Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots at Dovecote Estate. The JDR packages are offered as one option among many, particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
+                    Buyers are free to build with any Tasmanian builder of their choice at Dovecote Estate. The JDR packages are offered as one option among many, particularly suited to buyers who prefer a turnkey outcome with fixed pricing and a single point of contact.
                   </p>
                   <p className="text-gray-700">
                     Enquiries regarding JDR packages can be directed to JDR Homes directly, or via the Dovecote Estate sales team for assistance coordinating the land purchase and build contract.

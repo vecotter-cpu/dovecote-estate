@@ -38,28 +38,18 @@ export default function MarinaSection() {
 
         {/* Left column: copy */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold">Stanley Marina — A Developing Vision</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Stanley Marina, A Regional Proposal</h2>
 
           <p className="mt-4 text-gray-600">
-            Plans for an 80–100 berth marina at Stanley are in early development with Circular Head Council,
-            expanding on the village's existing working port at the foot of The Nut. Pre-application discussions
-            are underway and the concept has been shared publicly with the Stanley community.
+            Stanley is the focus of several regional infrastructure proposals currently under consideration, including a proposed 80 to 100 berth marina at the foot of The Nut. The concept has been shared publicly with the Stanley community and is in early stage discussions with Circular Head Council.
           </p>
 
           <p className="mt-4 text-gray-600">
-            Beyond recreational moorings and berthing, the marina is envisaged as the base for a regular
-            passenger and vehicle ferry service from the mainland to Stanley, adding a direct travel route to
-            the village over time.
+            The site is owned by Circular Head Council. Any development is subject to approvals, community consultation and funding, and no construction has commenced.
           </p>
 
           <p className="mt-4 text-gray-600">
-            The marina is not yet council-approved and no construction has commenced. The site is owned by
-            Circular Head Council, and any development will be subject to approvals, community consultation,
-            and funding.
-          </p>
-
-          <p className="mt-4 text-gray-500 text-sm italic">
-            The marina and ferry are a longer-term opportunity for the village.
+            These proposals are not commitments, but they reflect the long term direction of the region.
           </p>
         </div>
 

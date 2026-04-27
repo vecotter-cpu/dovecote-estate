@@ -18,7 +18,7 @@ export default function WhyNow() {
           </div>
           <div className="rounded-2xl border p-5">
             <h3 className="font-semibold">Lifestyle & Legacy</h3>
-            <p className="mt-2 text-gray-600">Ideal for a dream build or long-term investment.</p>
+            <p className="mt-2 text-gray-600">Ideal for a dream build or long term investment.</p>
           </div>
         </div>
       </div>

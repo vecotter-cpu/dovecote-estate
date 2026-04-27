@@ -138,8 +138,8 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-white/15">
           <div className="text-sm text-[#E8E6E2] leading-relaxed max-w-3xl mx-auto">
             <p>
-              Dovecote Estate is a premium coastal residential subdivision in Stanley, Tasmania. 
-              Serviced residential land and curated house &amp; land packages from $254,000, within walking distance of beaches, The Nut, the marina and the golf club.
+              Dovecote Estate is a premium coastal residential subdivision in Stanley, Tasmania.
+              A limited release of serviced residential land in Stanley, within walking distance of beaches, The Nut and the golf club.
             </p>
           </div>
         </div>

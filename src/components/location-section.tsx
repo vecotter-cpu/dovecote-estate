@@ -18,7 +18,7 @@ export default function LocationSection() {
             />
           </div>
           <p className="text-gray-300 mt-4">
-            Located at 40 Dovecote Rd, Stanley - Your gateway to coastal living in Tasmania
+            Located at 40 Dovecote Rd, Stanley. Your gateway to coastal living in Tasmania.
           </p>
         </div>
       </div>

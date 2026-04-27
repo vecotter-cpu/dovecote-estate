@@ -1,0 +1,109 @@
+Dovecote Estate website copy amends, controlled release update
+Significant changes across the site to reflect a shift to a controlled 6 lot release. Please action the following. Do not make any design or layout changes unless specified, just text replacements and the removal of references to the full 25 lot release.
+Critical site wide change
+Remove all references to "25 lots," "25 titled lots," "25 residential landholdings," or any language that quantifies the total number of lots in the release. The site should now present only 6 lots as the available release. Do not state a total number of lots anywhere on the site, including the hero, the Available Lots section, the JDR Packages section, the footer, and the enquiry section. Sweep the entire site for any reference to "25" in relation to lots and remove or rephrase.
+Formatting note for all copy on the site
+Do not use hyphens, em dashes, or en dashes anywhere. Use commas, full stops, or rephrase. This applies to compound words too where possible, for example "north west coast" not "north-west coast," "long term value" not "long-term value," "short stay demand" not "short-stay demand."
+1. Hero section (homepage)
+Keep the existing headline: "You've been to Stanley. Now stay."
+Replace the current subheading with:
+"One of the last coastal land releases in Stanley. A limited release of residential lots within the township, in one of Australia's most tightly held coastal villages."
+Keep the existing CTAs (View Available Lots, Explore Lifestyle).
+Update the pricing line. Replace "Land from $248,800" with "Land from $245,000."
+2. Why Stanley. Why now. section
+Keep all existing data points and statistics intact (240:1 visitor ratio, 145,000 visitors, 75,000 overnight, 56% mainland investor rise, 43.6% mainland buyer rise, 3.6% annual turnover, 16 properties in 12 months). Replace the body copy with the following tightened version:
+"Stanley is one of Tasmania's most tightly held coastal towns. A resident population of around 600. More than 145,000 visitors a year, with 75,000 staying overnight. Only 16 properties changed hands across the entire town in the past twelve months.
+Tasmania's north west coast led the state's regional property recovery in 2025. Mainland investor activity into northern Tasmania rose 56% last year. Regional prices outperformed the capital cities, and forecasts hold that pattern for the next three to five years.
+For mainland buyers, Stanley offers heritage, coastline and genuine community at a fraction of Melbourne or Sydney equivalents, with a tourism profile that underpins short stay demand and a scarcity profile that underpins long term value.
+Dovecote Estate is one of the only opportunities to secure new residential land within the township."
+3. New Investment section
+Add a new section between "Why Stanley. Why now." and "Available Lots."
+Heading: "A Scarcity Asset"
+Body:
+"Stanley is a tightly held market with limited new supply. This release of six lots is a rare opportunity to secure land inside the township, supporting both lifestyle and long term positioning, with established demand underpinning short stay rental yields and long term capital growth.
+Whether held as a primary residence, a second home, or an income producing asset, the underlying scarcity is the same."
+4. Available Lots section
+This is the most significant change. The section currently shows multiple lots with a "View All 25 Lots" tile. Reduce this section to display only the following 6 lots, in this order. Remove the "Explore All 25 Lots" card entirely. Remove the "25 residential landholdings from $248,800" line.
+Update the section intro copy to:
+"A limited release of six residential lots, each positioned for a specific buyer. Every lot is fully serviced, titled, and build ready."
+The 6 lots to display, with the prices and copy below. Each lot card should include a single distinguishing hook line at the top (above the existing bullets), the price, the size, and the existing servicing bullets.
+Lot 13, Corner Block
+Price: $300,000
+Size: 776m²
+Hook line: "The largest building envelope in the release."
+Existing bullets to retain: corner position, two street frontages, north east aspect toward golf course, fully serviced (NBN, power, water, sealed roads), walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Lot 18, Nut Aspect
+Price: $295,000
+Size: 769m²
+Hook line: "One of only a handful of lots with a direct outlook to The Nut."
+Existing bullets to retain: outlook toward The Nut, central elevated position within the estate, fully serviced, walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Lot 8, Golf Course
+Price: $280,000
+Size: 730m²
+Hook line: "The closest lot in the release to Stanley Golf Club."
+Existing bullets to retain: bordering Stanley Golf Club, open outlook east across the fairway, adjacent to one of Australia's oldest links courses, fully serviced, walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Lot 12, Coastal Aspect
+Price: $270,000
+Size: 716m²
+Hook line: "The closest position to Sawyers Bay in the release."
+Existing bullets to retain: closest position to Sawyers Bay, short walk to the coast, north facing aspect with ocean outlook beyond, fully serviced, walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Lot 15, Builder Pathway
+Price: $250,000
+Size: existing size data on file
+Hook line: "Available with a JDR Homes house and land pathway, build ready from day one."
+Existing bullets to retain plus add: pre matched to a JDR Homes package for buyers seeking a turnkey path, fully serviced, walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Lot 1, Coastal Outlook
+Price: $245,000
+Size: 635m²
+Hook line: "Entry priced position with northern outlook, rare at this price point."
+Existing bullets to retain: outlook toward Sawyers Bay, north facing aspect with Nut views beyond, entry pricing within the release, fully serviced, walking distance to beach, cafés, The Nut and golf club, titled and build ready.
+Each lot card retains its "Enquire Now" CTA.
+5. JDR House & Land Packages section
+This section becomes critical given building hesitation is the main buyer concern. Make the builder freedom message clearly visible.
+Replace the existing intro copy with:
+"Buyers are free to build with their preferred builder. We can also assist with introductions to local Tasmanian builders and house and land pathways for those who want a turnkey route."
+Keep all four existing JDR package cards visible (Hudson 27, Riverstone 23, Wattle 21, Mariner 14) with their existing imagery, descriptions, specifications, prices, and "View Floor Plan" CTAs. The only change to the cards themselves is to remove the lot number from each heading.
+Update the headings as follows:
+
+"Hudson 27 · Lot 15" becomes "Hudson 27"
+"Riverstone 23 · Lot 17" becomes "Riverstone 23"
+"Wattle 21 · Lot 23" becomes "Wattle 21"
+"Mariner 14 · Lot 24" becomes "Mariner 14"
+
+Remove the line "Four JDR Homes packages are currently available on Dovecote Estate lots." Replace with: "JDR Homes packages available as a turnkey pathway, in addition to building with your preferred builder."
+Remove the line "One optional turnkey pathway. Buyers are welcome to build with any Tasmanian builder of their choice on any of the 25 titled lots" entirely (replaced by the new intro copy above).
+6. Stanley Marina section
+Replace the entire section. Remove all references to a passenger and vehicle ferry service.
+New section heading: "Stanley Marina, A Regional Proposal"
+New body copy:
+"Stanley is the focus of several regional infrastructure proposals currently under consideration, including a proposed 80 to 100 berth marina at the foot of The Nut. The concept has been shared publicly with the Stanley community and is in early stage discussions with Circular Head Council.
+The site is owned by Circular Head Council. Any development is subject to approvals, community consultation and funding, and no construction has commenced.
+These proposals are not commitments, but they reflect the long term direction of the region."
+Remove the existing italic line "The marina and ferry are a longer term opportunity for the village."
+7. Map section ("Find Us in Stanley")
+Update the line below the map. Current reads: "Located at 40 Dovecote Rd, Stanley, Your gateway to coastal living in Tasmania" (with a hyphen between "Stanley" and "Your").
+Replace with: "Located at 40 Dovecote Rd, Stanley. Your gateway to coastal living in Tasmania."
+8. Closing / enquiry section
+Replace the current heading and intro copy.
+New heading: "Enquire now to receive the information pack and current availability."
+New intro line: "A limited release of six titled, serviced residential lots in Stanley, from $245,000."
+Remove any references to "stage," staging language, or "25 lots" anywhere on the page. Update the form's "Interest" dropdown to reflect the 6 lots if it currently lists all 25.
+9. Footer
+Current footer copy reads: "Serviced residential land and curated house & land packages from $254,000, within walking distance of beaches, The Nut, the marina and the golf club."
+Replace with:
+"A limited release of serviced residential land in Stanley, within walking distance of beaches, The Nut and the golf club."
+Remove the marina reference from the footer (it's covered properly in the Marina section now).
+Pricing reconciliation
+Standardise all "from" pricing across the site to "$245,000." This matches Lot 1 (Coastal Outlook) which is the entry priced lot in the release. Remove any references to $248,800 or $254,000.
+Final sweep
+Before publishing, do a full site sweep for the following terms and remove or rephrase any remaining instances:
+
+"25 lots"
+"25 titled lots"
+"25 residential landholdings"
+"all 25"
+"$248,800"
+"$254,000"
+Any hyphens, em dashes, or en dashes
+
+Please confirm once changes are live and provide a preview link for review.
