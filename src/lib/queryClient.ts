@@ -122,7 +122,7 @@ export const MOCK_LOTS = [
     id: "lot-15",
     name: "Lot 15, Builder Pathway",
     sqm: 777,
-    price: 250000,
+    price: 310800,
     description: "Available with a JDR Homes house and land pathway, build ready from day one.",
     features: [
       "Pre matched to a JDR Homes package for buyers seeking a turnkey path",
