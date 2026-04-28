@@ -6,6 +6,10 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 const GALLERY_IMAGES = [
   {
+    src: "/images/lots/town-sites.png",
+    alt: "Aerial view of Stanley township showing the location of Dovecote Estate in relation to the town centre, supermarket, and Stanley Golf Club.",
+  },
+  {
     src: "/images/lots/godfreys-beach-aerial.jpg",
     alt: "Aerial view of Dovecote Estate looking toward Godfrey's Beach, showing the six released lots.",
   },
