@@ -97,7 +97,7 @@ export default function LotsSection() {
   }, []);
 
   return (
-    <section id="lots-grid" className="py-24 md:py-32 bg-smoke-white">
+    <section id="lots" className="py-24 md:py-32 bg-smoke-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-forest-green mb-6" style={{ fontFamily: 'Prata, serif' }}>Available Lots</h2>

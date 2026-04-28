@@ -96,8 +96,8 @@ export default function Navigation() {
 
         {/* Right-side nav */}
         <div className="flex items-center space-x-4 right-group">
-          <Link
-            href="/contact"
+          <button
+            onClick={() => scrollToSection("#contact")}
             className={`border rounded-full px-5 py-2 text-sm transition-all duration-300 ${
               isScrolled
                 ? "bg-transparent border-white text-white hover:bg-white hover:text-[#0E300E]"
@@ -105,7 +105,7 @@ export default function Navigation() {
             }`}
           >
             Contact
-          </Link>
+          </button>
 
           {/* Hamburger */}
           <button 
@@ -133,6 +133,17 @@ export default function Navigation() {
           <li>
             <button
               onClick={() => {
+                scrollToSection("#home");
+                document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+                document.querySelector('#menu-panel')?.classList.remove('open');
+              }}
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
                 scrollToSection("#lots");
                 document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
                 document.querySelector('#menu-panel')?.classList.remove('open');
@@ -144,24 +155,24 @@ export default function Navigation() {
           <li>
             <button
               onClick={() => {
+                scrollToSection("#packages");
+                document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+                document.querySelector('#menu-panel')?.classList.remove('open');
+              }}
+            >
+              JDR Home Packages
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
                 scrollToSection("#lifestyle");
                 document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
                 document.querySelector('#menu-panel')?.classList.remove('open');
               }}
             >
-              Explore Lifestyle
+              Lifestyle
             </button>
-          </li>
-          <li>
-            <Link 
-              href="/news"
-              onClick={() => {
-                document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
-                document.querySelector('#menu-panel')?.classList.remove('open');
-              }}
-            >
-              News
-            </Link>
           </li>
           <li>
             <Link 
@@ -175,15 +186,39 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
-            <Link 
-              href="/contact"
+            <button
+              onClick={() => {
+                scrollToSection("#press-coverage");
+                document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+                document.querySelector('#menu-panel')?.classList.remove('open');
+              }}
+            >
+              News &amp; Updates
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                scrollToSection("#contact");
+                document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+                document.querySelector('#menu-panel')?.classList.remove('open');
+              }}
+            >
+              Contact Us
+            </button>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/dovecoteestate"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
                 document.querySelector('#menu-panel')?.classList.remove('open');
               }}
             >
-              Contact
-            </Link>
+              Instagram
+            </a>
           </li>
         </ul>
       </nav>

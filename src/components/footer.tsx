@@ -72,13 +72,13 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a 
-                  href="/news" 
+                <button 
+                  onClick={() => scrollToSection("#press-coverage")} 
                   className="hover:underline underline-offset-4"
                   data-testid="footer-link-news"
                 >
-                  News & Updates
-                </a>
+                  News &amp; Updates
+                </button>
               </li>
               <li>
                 <a 

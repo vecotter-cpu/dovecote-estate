@@ -1,0 +1,41 @@
+Dovecote Estate, hero CTAs and accordion menu link check
+Please review and fix all internal navigation links across the site to ensure they correctly anchor to their relevant sections on the homepage. The site is single page, so all menu and CTA links should smooth scroll to the appropriate section rather than navigating to a separate page.
+Hero section CTAs
+On the homepage hero section, below the headline "You've been to Stanley. Now stay." and the subheading copy, there are two CTA buttons:
+
+"View Available Lots" should anchor link to the Available Lots section
+"Explore Lifestyle" should anchor link to the Stanley Lifestyle section
+
+Both should smooth scroll and land the user at the top of the relevant section so the heading and intro copy are visible.
+Accordion / hamburger menu links
+The hamburger menu (top right of the site, accessed via the accordion icon) contains the following links. Please ensure each one smooth scrolls to the correct section on the homepage:
+
+Home → top of page / hero section
+Available Lots → Available Lots section
+JDR Home Packages → JDR House & Land Packages section
+Lifestyle → The Stanley Lifestyle section
+Gallery → Gallery section
+News & Updates → Press & Coverage section (or News section if separate)
+Contact Us → Enquiry / Contact form section
+Instagram → external link to the Dovecote Estate Instagram account (open in new tab)
+
+Footer links
+The footer also lists Quick Links (Home, Available Lots, JDR Home Packages, News & Updates, Contact Us, Lifestyle, Gallery, Instagram). Please ensure these mirror the accordion menu behaviour and anchor link to the same sections. Instagram in the footer should also open in a new tab.
+Implementation notes
+
+All internal links should use anchor IDs and smooth scroll behaviour
+Each section should have an appropriate ID if it doesn't already (suggested IDs below)
+Links should work correctly on both desktop and mobile
+External links (Instagram) should open in a new tab with target="_blank" and rel="noopener noreferrer"
+
+Suggested anchor IDs if not already in place:
+
+#hero or top of page
+#available-lots
+#jdr-packages
+#lifestyle
+#gallery
+#news
+#contact
+
+Please confirm once all links are working correctly and provide a preview link for review. Flag any menu items that don't have a matching section on the page so we can decide whether to add the section, remove the link, or redirect it.
