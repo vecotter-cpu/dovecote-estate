@@ -80,16 +80,20 @@ export default function Gallery() {
       alt: "Development aerial overview"
     },
     {
-      src: "/assets/Screen_Shot_2025-07-08_at_4.22.25_pm_1751955897100.png",
-      alt: "Aerial view of Dovecote Estate Stanley showing numbered lots with coastal backdrop"
+      src: "/images/lots/godfreys-beach-aerial.jpg",
+      alt: "Aerial view of Dovecote Estate looking toward Godfrey's Beach, showing the six released lots."
     },
     {
-      src: "/assets/Screen_Shot_2025-07-08_at_4.22.11_pm_1751955897101.png",
-      alt: "Stanley township with Golf Club and supermarket locations highlighted"
+      src: "/images/lots/aerial-straight-back.jpg",
+      alt: "Aerial view of Dovecote Estate from the rear, showing the six released lots within the township."
     },
     {
-      src: "/assets/Screen_Shot_2025-07-08_at_4.21.57_pm_1751955897101.png",
-      alt: "Coastal subdivision with ocean views and beach access"
+      src: "/images/lots/aerial-golf-course.jpg",
+      alt: "Aerial view of Dovecote Estate looking toward Stanley Golf Course and the coast."
+    },
+    {
+      src: "/images/lots/nut-aerial-back.jpg",
+      alt: "Aerial view of Dovecote Estate with The Nut and Stanley township in the background."
     }
   ];
 
