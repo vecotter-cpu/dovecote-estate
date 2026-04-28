@@ -15,42 +15,8 @@ const PACKAGES = [
       "Double garage",
     ],
     pdf: "/pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf",
-    imageUrl: "/images/jdr/lot-15-exterior.png",
-    imageAlt: "JDR Homes Hudson 27 exterior render, Haven facade, 4 bedroom home for Dovecote Estate Stanley",
-  },
-  {
-    id: "lot-17",
-    title: "Riverstone 23",
-    label: "STANDARD FACADE · JDR HOMES",
-    description: "Three bedroom coastal home with open plan living and alfresco on a 770m² lot.",
-    specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 216m² home · 770m² lot",
-    price: 766000,
-    features: [
-      "Master with walk in robe and ensuite",
-      "Open plan kitchen, dining and living",
-      "Covered alfresco",
-      "Double garage",
-    ],
-    pdf: "/pdfs/HL_Lot-17-Dovecote-Estate-Stanley.pdf",
-    imageUrl: "/images/jdr/lot-17-exterior.png",
-    imageAlt: "JDR Homes Riverstone 23 exterior render, Standard facade, 3 bedroom home for Dovecote Estate Stanley",
-  },
-  {
-    id: "lot-23",
-    title: "Wattle 21",
-    label: "HAVEN FACADE · JDR HOMES",
-    description: "Three bedroom coastal home with open plan living and rear alfresco.",
-    specs: "3 Bed · 2 Bath · 1 Living · 2 Car · 190m² home · 714m² lot",
-    price: 734000,
-    features: [
-      "Master with walk in robe and ensuite",
-      "Open plan kitchen, dining and living",
-      "Rear alfresco",
-      "Double garage",
-    ],
-    pdf: "/pdfs/HL_Lot-23-Dovecote-Estate-Stanley.pdf",
-    imageUrl: "/images/jdr/lot-23-exterior.png",
-    imageAlt: "JDR Homes Wattle 21 exterior render, Haven facade, 3 bedroom home for Dovecote Estate Stanley",
+    imageUrl: "/assets/gallery_lot1.png",
+    imageAlt: "Hudson 27 by JDR Homes, four bedroom family home with double living, alfresco and double garage.",
   },
   {
     id: "lot-24",
@@ -82,15 +48,12 @@ export default function HomesSection() {
             JDR House &amp; Land Packages
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
-            Buyers are free to build with their preferred builder. We can also assist with introductions to local Tasmanian builders and house and land pathways for those who want a turnkey route.
-          </p>
-          <p className="text-base italic text-gray-500 max-w-2xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
-            JDR Homes packages available as a turnkey pathway, in addition to building with your preferred builder.
+            Two JDR Homes packages available as a turnkey pathway, in addition to building with your preferred builder. Buyers are free to build with their preferred builder. We can also assist with introductions to local Tasmanian builders and house and land pathways for those who want a turnkey route.
           </p>
         </div>
 
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        {/* 2-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-3xl mx-auto">
           {PACKAGES.map((pkg) => (
             <div
               key={pkg.id}

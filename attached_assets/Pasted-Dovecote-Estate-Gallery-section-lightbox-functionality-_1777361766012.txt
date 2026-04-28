@@ -1,0 +1,25 @@
+Dovecote Estate, Gallery section lightbox functionality
+The Gallery section currently displays images as thumbnails only, with no way for users to enlarge or scroll through them. Please add lightbox functionality so users can click any image to open it in full size and navigate through the full gallery from there.
+Action required:
+When a user clicks any image thumbnail in the Gallery section, the image should open in a full screen lightbox / modal overlay with the following functionality:
+
+Full size display of the selected image, centred on screen with a dark semi transparent background overlay
+Left and right arrow navigation (clickable arrows on screen, plus keyboard arrow key support) to scroll through all images in the gallery one by one
+Close button (X icon) in the top right corner, plus support for closing via the Escape key or clicking outside the image
+Image counter (e.g. "3 / 12") displayed somewhere on screen so users know where they are in the gallery
+Smooth transition between images when navigating
+Touch swipe support on mobile for left / right navigation
+Captions or alt text displayed below the image if available
+Loop behaviour, so reaching the last image and clicking next returns to the first image
+
+Implementation notes:
+
+Use a lightweight, well supported lightbox library (e.g. PhotoSwipe, GLightbox, Fancybox, or similar) rather than building from scratch
+Ensure the lightbox is responsive and works correctly on desktop, tablet, and mobile
+Preload adjacent images for smoother navigation
+Disable page scrolling while the lightbox is open
+Maintain accessibility standards (keyboard navigation, focus management, ARIA labels)
+
+Please confirm once the gallery lightbox is working and provide a preview link for review.
+
+Send that through and the gallery will work the way users expect, click any image, scroll through the full set, close out when done. The library suggestions in there give Replit options to pick from based on what plays nicely with the existing site setup.
