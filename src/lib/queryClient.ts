@@ -56,7 +56,7 @@ export const MOCK_LOTS = [
     id: "lot-13",
     name: "Lot 13, Corner Block",
     sqm: 776,
-    price: 300000,
+    price: 310400,
     description: "The largest building envelope in the release.",
     features: [
       "Corner position with two street frontages",
@@ -72,7 +72,7 @@ export const MOCK_LOTS = [
     id: "lot-18",
     name: "Lot 18, Nut Aspect",
     sqm: 769,
-    price: 295000,
+    price: 307600,
     description: "One of only a handful of lots with a direct outlook to The Nut.",
     features: [
       "Outlook toward The Nut",
@@ -88,7 +88,7 @@ export const MOCK_LOTS = [
     id: "lot-8",
     name: "Lot 8, Golf Course",
     sqm: 730,
-    price: 280000,
+    price: 292000,
     description: "The closest lot in the release to Stanley Golf Club.",
     features: [
       "Bordering Stanley Golf Club",
@@ -105,7 +105,7 @@ export const MOCK_LOTS = [
     id: "lot-12",
     name: "Lot 12, Coastal Aspect",
     sqm: 716,
-    price: 270000,
+    price: 286400,
     description: "The closest position to Sawyers Bay in the release.",
     features: [
       "Closest position to Sawyers Bay in the release",
@@ -123,7 +123,7 @@ export const MOCK_LOTS = [
     name: "Lot 15, Builder Pathway",
     sqm: 777,
     price: 310800,
-    description: "Available with a JDR Homes house and land pathway, build ready from day one.",
+    description: "Premium 777m² position, available with a JDR Homes house and land pathway.",
     features: [
       "Pre matched to a JDR Homes package for buyers seeking a turnkey path",
       "Fully serviced: NBN, power, water, sealed roads",
@@ -137,7 +137,7 @@ export const MOCK_LOTS = [
     id: "lot-1",
     name: "Lot 1, Coastal Outlook",
     sqm: 635,
-    price: 245000,
+    price: 254000,
     description: "Entry priced position with northern outlook, rare at this price point.",
     features: [
       "Outlook toward Sawyers Bay",

@@ -1,0 +1,39 @@
+Dovecote Estate, lot pricing update across the site
+Updated pricing for the 6 lots in the controlled release. Please apply the following changes across all relevant sections of the site.
+1. Available Lots section, individual lot card prices
+Update the price displayed on each of the 6 lot cards as follows:
+
+Lot 13, Corner Block: $310,400 (size 776m²)
+Lot 18, Nut Aspect: $307,600 (size 769m²)
+Lot 8, Golf Course: $292,000 (size 730m²)
+Lot 12, Coastal Aspect: $286,400 (size 716m²)
+Lot 1, Coastal Outlook: $254,000 (size 635m²)
+Lot 15, Builder Pathway: $310,800 (size 777m²)
+
+All other lot card content (hook lines, bullet points, "Enquire Now" CTA) remains unchanged with one exception, see point 4 below.
+2. Hero section pricing
+Update the pricing line below the hero CTAs.
+Current: "Land from $245,000"
+New: "Land from $254,000"
+3. Closing / enquiry section intro
+Update the intro line below the section heading.
+Current: "A limited release of six titled, serviced residential lots in Stanley, from $245,000."
+New: "A limited release of six titled, serviced residential lots in Stanley, from $254,000."
+4. Lot 15 hook line update
+The current hook line for Lot 15 reads: "Available with a JDR Homes house and land pathway, build ready from day one."
+This positioning made sense when Lot 15 was priced as an entry level builder pathway option, but at $310,800 it's now one of the premium lots in the release. Replace the hook line with:
+"Premium 777m² position, available with a JDR Homes house and land pathway."
+5. Footer
+The footer should not list any specific "from" pricing. Confirm the current footer copy reads:
+"A limited release of serviced residential land in Stanley, within walking distance of beaches, The Nut and the golf club."
+If any pricing has been added to the footer in a previous update, remove it.
+6. Final pricing sweep
+Before publishing, please run a full site sweep for the following figures and ensure they have all been removed or replaced with the updated pricing:
+
+$245,000 (replace with $254,000 in hero, closing section, and any other "from" references)
+$248,800 (legacy figure, should not appear anywhere)
+$250,000 (the previous Lot 15 price, should not appear anywhere)
+$280,000, $270,000, $295,000, $300,000 (previous controlled release prices, should not appear anywhere)
+
+Confirm that the only prices visible on the site are the six new prices listed in section 1 above, plus the "from $254,000" reference in the hero and closing section.
+Please confirm once changes are live and provide a preview link for review.

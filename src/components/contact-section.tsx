@@ -98,7 +98,7 @@ export default function ContactSection() {
           <div>
             <h2 className="text-4xl font-bold text-forest-green mb-6">Enquire now to receive the information pack and current availability.</h2>
             <p className="text-lg text-gray-700 mb-8">
-              A limited release of six titled, serviced residential lots in Stanley, from $245,000.
+              A limited release of six titled, serviced residential lots in Stanley, from $254,000.
             </p>
             
             <div className="space-y-6">

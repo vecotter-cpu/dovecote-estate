@@ -100,7 +100,7 @@ export default function HeroSection() {
             className="mt-6 text-sm font-normal"
             style={{ color: 'rgba(255,255,255,0.85)', letterSpacing: '0.08em' }}
           >
-            Land from $245,000
+            Land from $254,000
           </p>
 
         </div>

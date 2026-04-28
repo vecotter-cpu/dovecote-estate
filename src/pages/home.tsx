@@ -14,11 +14,11 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Dovecote Estate Stanley Tasmania | Residential Land & House Packages From $245,000";
+    document.title = "Dovecote Estate Stanley Tasmania | Residential Land & House Packages From $254,000";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'A limited release of serviced residential land in Stanley, Tasmania. From $245,000. Walk to beaches, The Nut and the golf club. One of the last coastal land releases in the township.');
+      metaDescription.setAttribute('content', 'A limited release of serviced residential land in Stanley, Tasmania. From $254,000. Walk to beaches, The Nut and the golf club. One of the last coastal land releases in the township.');
     }
   }, []);
 
