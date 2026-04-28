@@ -3,7 +3,7 @@ import { FileText } from "lucide-react";
 const PACKAGES = [
   {
     id: "lot-15",
-    title: "Hudson 27",
+    title: "Hudson",
     label: "HAVEN FACADE · JDR HOMES",
     description: "Four bedroom family home with double living, alfresco and double garage.",
     specs: "4 Bed · 2 Bath · 2 Living · 2 Car · 246m² home · 770m² lot",
@@ -17,6 +17,7 @@ const PACKAGES = [
     pdf: "/pdfs/HL_Lot-15-Dovecote-Estate-Stanley.pdf",
     imageUrl: "/assets/gallery_lot1.png",
     imageAlt: "Hudson 27 by JDR Homes, four bedroom family home with double living, alfresco and double garage.",
+    hidePrice: true,
   },
   {
     id: "lot-24",
@@ -98,6 +99,7 @@ export default function HomesSection() {
                 </p>
 
                 {/* Price */}
+                {!pkg.hidePrice && (
                 <div className="flex items-baseline justify-between mb-4">
                   <span className="text-2xl font-bold text-caramel" style={{ fontFamily: "Inter, sans-serif" }}>
                     ${pkg.price.toLocaleString()}
@@ -106,6 +108,7 @@ export default function HomesSection() {
                     House &amp; Land
                   </span>
                 </div>
+                )}
 
                 {/* Features */}
                 <ul className="text-xs text-gray-600 space-y-1 mb-6 flex-1" style={{ fontFamily: "Inter, sans-serif" }}>
