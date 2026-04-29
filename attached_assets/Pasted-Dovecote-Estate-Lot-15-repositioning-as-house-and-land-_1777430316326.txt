@@ -1,0 +1,47 @@
+Dovecote Estate, Lot 15 repositioning as house and land package card
+Lot 15 is being repositioned from a land only listing to a house and land package, and should be visually differentiated from the other 5 land only lots in the Available Lots section.
+1. Lot 15 card content
+Replace the existing Lot 15 card content with:
+
+Heading: Lot 15, Builder Pathway
+Price: $830,000
+Price label: "House & Land" (displayed prominently alongside or below the price, matching the styling used in the JDR Packages section)
+Size: 770m² (this matches the JDR Homes package specification, confirmed correct)
+Hook line: "Premium 770m² position, available with a JDR Homes house and land pathway."
+Bullet points:
+
+Pre matched to a JDR Homes package for buyers seeking a turnkey path
+Fully serviced: NBN, power, water, sealed roads
+Walking distance to beach, cafés, The Nut and the golf club
+Titled and build ready
+
+
+CTA: "Enquire Now" (unchanged)
+
+2. Visual differentiation
+To clearly distinguish Lot 15 (house and land) from the other 5 lots (land only), please apply the following visual treatment:
+
+Add a small badge or tag at the top of the Lot 15 card reading "House & Land Package"
+Display the price as "$830,000" with "House & Land" displayed prominently next to or below it (similar to how the JDR Packages section currently displays "House & Land" alongside its prices)
+Optionally apply a subtle visual differentiator to the card itself (e.g. a slightly different background tint, a bordered accent, or a featured ribbon) to help it stand apart from the land only cards at a glance
+
+The goal is for buyers scanning the section to immediately understand that Lot 15 is a different type of offering, not a wildly more expensive land only lot.
+3. Card position in the section
+Move the Lot 15 card to either the first or last position in the Available Lots grid to reinforce the differentiation. Recommended position: last card in the grid, so buyers see the land only options first (in price order or by aspect) and then encounter Lot 15 as a distinct turnkey alternative at the end. This positions it as a separate option rather than a confusingly priced land lot mixed in with the others.
+The final order should be:
+
+Lot 1, Coastal Outlook ($254,000, 635m²)
+Lot 12, Coastal Aspect ($286,400, 716m²)
+Lot 8, Golf Course ($292,000, 730m²)
+Lot 18, Nut Aspect ($307,600, 769m²)
+Lot 13, Corner Block ($310,400, 776m²)
+Lot 15, Builder Pathway ($830,000, 770m², House & Land)
+
+(Land only lots ordered by price ascending, with the house and land package last.)
+4. Cross check across the site
+
+Ensure no copy elsewhere on the site references Lot 15 at the previous land only price ($310,800 or $250,000)
+The JDR Packages section should align with the $830,000 figure for the Hudson 27 / Lot 15 pairing if applicable
+Any "from" pricing on the site (hero, footer, closing section) should remain at Lot 1's $254,000 as the entry priced lot, not Lot 15
+
+Please confirm once changes are live and provide a preview link for review.

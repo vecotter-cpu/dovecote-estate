@@ -163,38 +163,59 @@ export default function LotsSection() {
 
         {/* 3×2 grid: 6 lot cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {lots.map((lot) => (
-            <Card key={lot.id} className="bg-mist-white hover:shadow-lg transition-shadow flex flex-col">
-              <CardHeader className="flex-shrink-0 pb-3">
-                <CardTitle className="text-xl text-forest-green mb-1">{lot.name}</CardTitle>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="text-2xl font-bold text-caramel">
-                    ${Number(lot.price ?? 0).toLocaleString()}
-                  </span>
-                  <span className="text-sm text-gray-500 font-normal">{(lot as any).sqm}m²</span>
-                </div>
-                <p className="text-gray-700 text-sm font-medium leading-relaxed">
-                  {lot.description}
-                </p>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col pt-0">
-                <ul className="text-sm text-gray-600 mb-6 space-y-2 flex-grow">
-                  {((lot as any).features ?? []).map((feature: string, i: number) => (
-                    <li key={i} className="flex items-start">
-                      <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  onClick={() => scrollToSection("#contact")}
-                  className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition mt-auto"
-                >
-                  Enquire Now
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {lots.map((lot) => {
+            const isHL = (lot as any).isHouseAndLand;
+            return (
+              <Card
+                key={lot.id}
+                className={`hover:shadow-lg transition-shadow flex flex-col relative overflow-hidden ${
+                  isHL
+                    ? "bg-[#0E300E]/[0.04] border-2 border-forest-green/30"
+                    : "bg-mist-white"
+                }`}
+              >
+                {/* House & Land badge */}
+                {isHL && (
+                  <div className="absolute top-4 right-4 z-10 bg-forest-green text-white text-[0.6rem] uppercase tracking-[0.12em] font-medium px-2.5 py-1 rounded-full">
+                    House &amp; Land Package
+                  </div>
+                )}
+                <CardHeader className="flex-shrink-0 pb-3">
+                  <CardTitle className="text-xl text-forest-green mb-1 pr-32">{lot.name}</CardTitle>
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <span className="text-2xl font-bold text-caramel">
+                      ${Number(lot.price ?? 0).toLocaleString()}
+                    </span>
+                    {isHL && (
+                      <span className="text-xs text-gray-400 font-normal" style={{ fontFamily: "Inter, sans-serif" }}>
+                        House &amp; Land
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-sm text-gray-500 font-normal mb-3 block">{(lot as any).sqm}m²</span>
+                  <p className="text-gray-700 text-sm font-medium leading-relaxed">
+                    {lot.description}
+                  </p>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col pt-0">
+                  <ul className="text-sm text-gray-600 mb-6 space-y-2 flex-grow">
+                    {((lot as any).features ?? []).map((feature: string, i: number) => (
+                      <li key={i} className="flex items-start">
+                        <Check className="mr-2 mt-0.5 flex-shrink-0" size={16} color="#8B7040" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    onClick={() => scrollToSection("#contact")}
+                    className="w-full rounded-2xl px-5 py-3 text-sm font-medium bg-forest-green text-white shadow hover:opacity-95 transition mt-auto"
+                  >
+                    Enquire Now
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

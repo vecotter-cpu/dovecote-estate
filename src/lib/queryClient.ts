@@ -53,52 +53,20 @@ const MOCK_HOME_PACKAGES = [
 
 export const MOCK_LOTS = [
   {
-    id: "lot-13",
-    name: "Lot 13, Corner Block",
-    sqm: 776,
-    price: 310400,
-    description: "The largest building envelope in the release.",
+    id: "lot-1",
+    name: "Lot 1, Coastal Outlook",
+    sqm: 635,
+    price: 254000,
+    description: "Entry priced position with northern outlook, rare at this price point.",
     features: [
-      "Corner position with two street frontages",
-      "North east aspect toward the golf course",
+      "Outlook toward Sawyers Bay",
+      "North facing aspect with Nut views beyond",
+      "Entry pricing within the release",
       "Fully serviced: NBN, power, water, sealed roads",
       "Walking distance to beach, cafés, The Nut and the golf club",
       "Titled and build ready"
     ],
-    bucket: "Corner Block",
-    status: "available"
-  },
-  {
-    id: "lot-18",
-    name: "Lot 18, Nut Aspect",
-    sqm: 769,
-    price: 307600,
-    description: "One of only a handful of lots with a direct outlook to The Nut.",
-    features: [
-      "Outlook toward The Nut",
-      "Central elevated position within the estate",
-      "Fully serviced: NBN, power, water, sealed roads",
-      "Walking distance to beach, cafés, The Nut and the golf club",
-      "Titled and build ready"
-    ],
-    bucket: "Nut Aspect",
-    status: "available"
-  },
-  {
-    id: "lot-8",
-    name: "Lot 8, Golf Course",
-    sqm: 730,
-    price: 292000,
-    description: "The closest lot in the release to Stanley Golf Club.",
-    features: [
-      "Bordering Stanley Golf Club",
-      "Open outlook east across the fairway",
-      "Adjacent to one of Australia's oldest links courses",
-      "Fully serviced: NBN, power, water, sealed roads",
-      "Walking distance to beach, cafés, The Nut and the golf club",
-      "Titled and build ready"
-    ],
-    bucket: "Golf Course",
+    bucket: "Coastal Outlook",
     status: "available"
   },
   {
@@ -119,11 +87,61 @@ export const MOCK_LOTS = [
     status: "available"
   },
   {
+    id: "lot-8",
+    name: "Lot 8, Golf Course",
+    sqm: 730,
+    price: 292000,
+    description: "The closest lot in the release to Stanley Golf Club.",
+    features: [
+      "Bordering Stanley Golf Club",
+      "Open outlook east across the fairway",
+      "Adjacent to one of Australia's oldest links courses",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled and build ready"
+    ],
+    bucket: "Golf Course",
+    status: "available"
+  },
+  {
+    id: "lot-18",
+    name: "Lot 18, Nut Aspect",
+    sqm: 769,
+    price: 307600,
+    description: "One of only a handful of lots with a direct outlook to The Nut.",
+    features: [
+      "Outlook toward The Nut",
+      "Central elevated position within the estate",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled and build ready"
+    ],
+    bucket: "Nut Aspect",
+    status: "available"
+  },
+  {
+    id: "lot-13",
+    name: "Lot 13, Corner Block",
+    sqm: 776,
+    price: 310400,
+    description: "The largest building envelope in the release.",
+    features: [
+      "Corner position with two street frontages",
+      "North east aspect toward the golf course",
+      "Fully serviced: NBN, power, water, sealed roads",
+      "Walking distance to beach, cafés, The Nut and the golf club",
+      "Titled and build ready"
+    ],
+    bucket: "Corner Block",
+    status: "available"
+  },
+  {
     id: "lot-15",
     name: "Lot 15, Builder Pathway",
-    sqm: 777,
-    price: 310800,
-    description: "Premium 777m² position, available with a JDR Homes house and land pathway.",
+    sqm: 770,
+    price: 830000,
+    description: "Premium 770m² position, available with a JDR Homes house and land pathway.",
+    isHouseAndLand: true,
     features: [
       "Pre matched to a JDR Homes package for buyers seeking a turnkey path",
       "Fully serviced: NBN, power, water, sealed roads",
@@ -131,23 +149,6 @@ export const MOCK_LOTS = [
       "Titled and build ready"
     ],
     bucket: "Builder Pathway",
-    status: "available"
-  },
-  {
-    id: "lot-1",
-    name: "Lot 1, Coastal Outlook",
-    sqm: 635,
-    price: 254000,
-    description: "Entry priced position with northern outlook, rare at this price point.",
-    features: [
-      "Outlook toward Sawyers Bay",
-      "North facing aspect with Nut views beyond",
-      "Entry pricing within the release",
-      "Fully serviced: NBN, power, water, sealed roads",
-      "Walking distance to beach, cafés, The Nut and the golf club",
-      "Titled and build ready"
-    ],
-    bucket: "Coastal Outlook",
     status: "available"
   }
 ];
