@@ -21,7 +21,7 @@ const PACKAGES = [
   },
   {
     id: "lot-24",
-    title: "Mariner 14",
+    title: "Mariner",
     label: "GABLES FACADE · JDR HOMES",
     description: "Compact two bedroom coastal home on a generous 714m² lot.",
     specs: "2 Bed · 1 Bath · 1 Living · 1 Car · 134m² home · 714m² lot",
