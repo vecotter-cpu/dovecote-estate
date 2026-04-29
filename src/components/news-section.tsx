@@ -167,9 +167,9 @@ const CARDS: CardData[] = [
     type: "standard",
     image: "/images/the_nut_1776843807058.jpg",
     imageAlt: "The Nut volcanic plug rising above Stanley, Tasmania",
-    publication: "SPIRIT OF TASMANIA",
+    publication: "STANLEY AND TARKINE",
     headline: "Stanley: Tassie's Top Tourism Town, Gold Winner",
-    link: "https://www.spiritoftasmania.com.au/blog/stanley-tassie-s-top-tourism-town-2021-gold-winner",
+    link: "https://stanleyandtarkine.com.au/about-stanley-and-tarkine/tassies-top-tourism-town-2021/",
   },
 ];
 
